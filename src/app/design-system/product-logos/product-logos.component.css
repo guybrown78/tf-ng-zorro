@@ -1,0 +1,23 @@
+.logo-container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+.logo-name-code{
+	margin: 30px 10px;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 6px;
+}
+.logo-name-code .code{
+	color: #D0DFE3;
+	font-style: italic;
+}
+.logo-name-code .code span{
+	color: #363154;
+}

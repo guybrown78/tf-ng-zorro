@@ -1,0 +1,38 @@
+<tf-ng-side-drawer [opened]="isOpened" (opened-changed)="isOpened=$event">
+		
+	<ul nz-menu [nzMode]="'inline'" class="slider-menu">
+
+		<span *ngFor="let item of navigationData">
+			<!-- Menu item with sub menu items -->
+			<li 
+				*ngIf="item.hasSub"
+				nz-submenu
+			>
+				<span title>{{ item.label }}</span>
+				<ul>
+					<li 
+						*ngFor="let subItem of item.subItems" 
+						nz-menu-item 
+						[routerLink]="subItem.routerLink"
+						(click)="onItemSelected()"
+					>
+						{{ subItem.label }}
+					</li>
+				</ul>
+			</li>
+
+			<!-- Menu item -->
+			<li 
+				*ngIf="!item.hasSub"
+				nz-menu-item
+				[routerLink]="item.routerLink"
+				(click)="onItemSelected()"
+			>
+				<span title>{{ item.label }}</span>
+			</li>
+
+		</span>
+	</ul>
+	
+
+</tf-ng-side-drawer>

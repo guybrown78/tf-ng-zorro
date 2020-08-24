@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Roboto Condensed', sans-serif;
+	background-color: #224595;
+	width: 100%;
+	height: 100vh;
+}
