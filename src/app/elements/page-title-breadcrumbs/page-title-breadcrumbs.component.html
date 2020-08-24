@@ -1,0 +1,22 @@
+
+<tf-ng-page-title-breadcrumbs [show-back-button]="false">
+	<span nz-typography><strong>Hello Beth,</strong> welcome to your dashboard</span>
+</tf-ng-page-title-breadcrumbs>
+
+<tf-ng-page-title-breadcrumbs [show-back-button]="false">
+	<span nz-typography><strong>Page Title</strong></span>
+</tf-ng-page-title-breadcrumbs>
+
+<tf-ng-page-title-breadcrumbs (back-button-clicked)="onBackButtonClicked()">
+	<nz-breadcrumb>
+		<nz-breadcrumb-item>
+			<a [routerLink]="['/']">Home</a>
+		</nz-breadcrumb-item>
+		<nz-breadcrumb-item>
+			<a [routerLink]="['/one']">Parent Page</a>
+		</nz-breadcrumb-item>
+		<nz-breadcrumb-item>
+			Breadcrumb
+		</nz-breadcrumb-item>
+	</nz-breadcrumb>
+</tf-ng-page-title-breadcrumbs>

@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 // forms
 import { InputsComponent } from './forms/inputs/inputs.component';
 
+// elements
+import { PageTitleBreadcrumbsComponent } from './elements/page-title-breadcrumbs/page-title-breadcrumbs.component'
 // layouts
 import { CardsComponent } from './layout/cards/cards.component'; 
 import { ListsComponent } from './layout/lists/lists.component'; 
@@ -44,7 +46,9 @@ const routes: Routes = [
 	{ path: 'decoupled-login', component: TwoComponent },
 	{ path: 'reactive-login', component: TwoComponent },
 	{ path: 'header', component: TwoComponent },
-	{ path: 'title-breadcrumbs', component: TwoComponent },
+	
+	{ path: 'title-breadcrumbs', component: PageTitleBreadcrumbsComponent },
+	
 	{ path: 'buttons', component: TwoComponent },
 	{ path: 'icons', component: TwoComponent },
 	{ path: 'stats', component: TwoComponent },

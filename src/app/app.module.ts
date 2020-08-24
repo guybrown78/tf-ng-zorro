@@ -27,6 +27,7 @@ import { CardsComponent } from './layout/cards/cards.component';
 import { TablesComponent } from './layout/tables/tables.component';
 import { ListsComponent } from './layout/lists/lists.component';
 import { TabsComponent } from './layout/tabs/tabs.component';
+import { PageTitleBreadcrumbsComponent } from './elements/page-title-breadcrumbs/page-title-breadcrumbs.component';
 
 registerLocaleData(en);
 
@@ -45,7 +46,8 @@ registerLocaleData(en);
     CardsComponent,
     TablesComponent,
     ListsComponent,
-    TabsComponent
+    TabsComponent,
+    PageTitleBreadcrumbsComponent
   ],
   imports: [
     BrowserModule,
