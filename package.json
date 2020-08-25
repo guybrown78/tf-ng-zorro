@@ -25,6 +25,7 @@
     "rxjs": "~6.3.3",
     "tf-ng-core": "0.0.6",
     "tslib": "^1.9.0",
+    "web-animations-js": "^2.3.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
