@@ -35,11 +35,11 @@ export class NavigationComponent implements OnInit {
 					title:"Form components",
 					label:"Other Form Components"
 				},
-				{
-					routerLink:"/login",
-					title:"Opinionated Login Form",
-					label:"Login form"
-				},
+				// {
+				// 	routerLink:"/login",
+				// 	title:"Opinionated Login Form",
+				// 	label:"Login form"
+				// },
 				{
 					routerLink:"/reactive-form",
 					title:"Angular Reactive Form (FormGroup, FormBuilder, Validators)",
@@ -62,36 +62,36 @@ export class NavigationComponent implements OnInit {
 					title:"Page Title and Breadcrumbs",
 					label:"Page Title / Breadcrumbs"
 				},
-				{
-					routerLink:"/buttons",
-					title:"Simple button components",
-					label:"Buttons"
-				},
-				{
-					routerLink:"/icons",
-					title:"Available svg icons",
-					label:"Icons"
-				},
-				{
-					routerLink:"/stats",
-					title:"Page statistics cards",
-					label:"Statistic Cards"
-				},
-				{
-					routerLink:"/dropdowns",
-					title:"Simple dropdown components",
-					label:"Dropdown"
-				},
-				{
-					routerLink:"/statuses",
-					title:"Status components",
-					label:"Status"
-				},
-				{
-					routerLink:"/search",
-					title:"Search autocomplete components",
-					label:"Search Autocomplete"
-				}
+				// {
+				// 	routerLink:"/buttons",
+				// 	title:"Simple button components",
+				// 	label:"Buttons"
+				// },
+				// {
+				// 	routerLink:"/icons",
+				// 	title:"Available svg icons",
+				// 	label:"Icons"
+				// },
+				// {
+				// 	routerLink:"/stats",
+				// 	title:"Page statistics cards",
+				// 	label:"Statistic Cards"
+				// },
+				// {
+				// 	routerLink:"/dropdowns",
+				// 	title:"Simple dropdown components",
+				// 	label:"Dropdown"
+				// },
+				// {
+				// 	routerLink:"/statuses",
+				// 	title:"Status components",
+				// 	label:"Status"
+				// },
+				// {
+				// 	routerLink:"/search",
+				// 	title:"Search autocomplete components",
+				// 	label:"Search Autocomplete"
+				// }
 			]
 		},
 		{
@@ -129,32 +129,32 @@ export class NavigationComponent implements OnInit {
 					title:"Table examples",
 					label:"Tables"
 				},
-				{
-					routerLink:"/tabs",
-					title:"Tab examples",
-					label:"Tabs"
-				},
+				// {
+				// 	routerLink:"/tabs",
+				// 	title:"Tab examples",
+				// 	label:"Tabs"
+				// },
 			]
 		},
-		{
-			routerLink:"/modals",
-			title:"Modals pop-up components",
-			label:"Modals",
-			hasSub:false,
-			subItems:null
-		},
-		{
-			label:"Feedback",
-			title:"",
-			hasSub:true,
-			subItems:[
-				{
-					routerLink:"/alerts",
-					title:"Feedback - alerts",
-					label:"Alerts"
-				}
-			]
-		},
+		// {
+		// 	routerLink:"/modals",
+		// 	title:"Modals pop-up components",
+		// 	label:"Modals",
+		// 	hasSub:false,
+		// 	subItems:null
+		// },
+		// {
+		// 	label:"Feedback",
+		// 	title:"",
+		// 	hasSub:true,
+		// 	subItems:[
+		// 		{
+		// 			routerLink:"/alerts",
+		// 			title:"Feedback - alerts",
+		// 			label:"Alerts"
+		// 		}
+		// 	]
+		// },
 		{
 			label:"Example Pages",
 			title:"",
