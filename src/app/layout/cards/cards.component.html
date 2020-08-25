@@ -1,3 +1,52 @@
-<p>
-  cards works!
-</p>
+<tf-ng-card>
+	<h2 nz-typography>Standard Card</h2>
+	<br />
+</tf-ng-card>
+
+<div nz-row [nzGutter]="16">
+	<div nz-col nzSpan="12">
+		<tf-ng-card>
+			<h2 nz-typography>2 Card Row - Card 1</h2>
+			<br />
+		</tf-ng-card>
+	</div>
+	<div nz-col nzSpan="12">
+		<tf-ng-card>
+			<h2 nz-typography>2 Card Row - Card 2</h2>
+			<br />
+		</tf-ng-card>
+	</div>
+</div>
+
+<div nz-row [nzGutter]="16">
+	<div nz-col nzSpan="8">
+		<tf-ng-card>
+			<h2 nz-typography>3 Card Row - Card 1</h2>
+			<br />
+		</tf-ng-card>
+	</div>
+	<div nz-col nzSpan="8">
+		<tf-ng-card>
+			<h2 nz-typography>3 Card Row - Card 2</h2>
+			<br />
+		</tf-ng-card>
+	</div>
+	<div nz-col nzSpan="8">
+		<tf-ng-card>
+			<h2 nz-typography>3 Card Row - Card 3</h2>
+			<br />
+		</tf-ng-card>
+	</div>
+</div>
+
+<tf-ng-card>
+	<h2 nz-typography>Standard Card With Card Content</h2>
+	<tf-ng-card-content>
+		<span nz-typography>Lorum ipsum</span>
+	</tf-ng-card-content>
+</tf-ng-card>
+
+<tf-ng-card colour="navy">
+	<h2 nz-typography class="white">Standard Dark (Navy) Card</h2>
+	<br />
+</tf-ng-card>

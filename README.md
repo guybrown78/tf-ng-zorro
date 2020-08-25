@@ -2,26 +2,30 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
 
-## Development server
+## ADD NG-ZORRO
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+...todo - instructions
 
-## Code scaffolding
+## ADD NG-ZORRO / Transform theme
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+...todo - instructions
 
-## Build
+## ADD TF-NG-CORE
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+...todo - instructions
 
-## Running unit tests
+## PLOYFILLS 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+in polyfill.ts
 
-## Running end-to-end tests
+Uncommented...
+import 'classlist.js'; 
+import 'web-animations-js';
+import 'zone.js/dist/zone';
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+... save
 
-## Further help
+Install below npm
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+npm install --save classlist.js
+npm install --save web-animations-js
