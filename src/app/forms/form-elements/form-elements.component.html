@@ -1,0 +1,105 @@
+<tf-ng-form-card>
+	<form nz-form>
+			<h3 nz-typography class="navy">Textarea</h3>
+			<nz-divider></nz-divider>
+			
+			<nz-form-item>
+				<nz-form-label nzFor="about">About You</nz-form-label>
+				<nz-form-control>
+					<textarea rows="4" nz-input id="about" placeholder="Type here"></textarea>
+					<nz-form-explain>
+						Describe yourself
+					</nz-form-explain>
+				</nz-form-control>
+			</nz-form-item>
+
+
+			<nz-form-item>
+				<nz-form-label nzFor="msg">Message</nz-form-label>
+				
+				<nz-form-control nzValidateStatus="error" nzHasFeedback >
+					<textarea rows="6" nz-input id="msg" placeholder="Type your message"></textarea>
+					<nz-form-explain>
+						You need to add your message!
+					</nz-form-explain>
+				</nz-form-control>
+			</nz-form-item>
+
+
+		</form>
+</tf-ng-form-card>
+
+<br />
+
+<tf-ng-form-card>
+	<form nz-form>
+			<h3 nz-typography class="navy">Select</h3>
+			<nz-divider></nz-divider>
+
+			<nz-form-item>
+				<nz-form-label nzFor="list">List</nz-form-label>
+				<nz-form-control>
+					<nz-select>
+						<nz-option nzLabel="option 1" nzValue="option1"></nz-option>
+						<nz-option nzLabel="option 2" nzValue="option2"></nz-option>
+						<nz-option nzLabel="option 3" nzValue="option3"></nz-option>
+						<nz-option nzLabel="option 4" nzValue="option4"></nz-option>
+					</nz-select>
+					<nz-form-explain>
+						Select an item from the list
+					</nz-form-explain>
+				</nz-form-control>
+			</nz-form-item>
+
+			<nz-form-item>
+				<nz-form-label nzFor="list">Location</nz-form-label>
+				<nz-form-control nzValidateStatus="error">
+					<nz-select>
+						<nz-option nzLabel="England" nzValue="1"></nz-option>
+						<nz-option nzLabel="Scotland" nzValue="2"></nz-option>
+						<nz-option nzLabel="Wales" nzValue="3"></nz-option>
+						<nz-option nzLabel="Northern Ireland" nzValue="4"></nz-option>
+					</nz-select>
+					<nz-form-explain>
+						Please select a location
+					</nz-form-explain>
+				</nz-form-control>
+			</nz-form-item>
+
+		</form>
+</tf-ng-form-card>
+
+<br />
+
+<tf-ng-form-card>
+	<form nz-form>
+			<h3 nz-typography class="navy">Checkbox</h3>
+			<nz-divider></nz-divider>
+
+
+			<nz-form-control>
+				<label nz-checkbox>
+					<span>Remember Me</span>
+				</label>
+			</nz-form-control>
+
+			<nz-form-control>
+				<label nz-checkbox>
+					<span>Send Notifications</span>
+				</label>
+				<nz-form-explain>
+					We will only contact you with relevant information
+				</nz-form-explain>
+			</nz-form-control>
+
+		</form>
+</tf-ng-form-card>
+
+<br />
+
+<tf-ng-form-card>
+	<form nz-form>
+			<h3 nz-typography class="navy">Radio</h3>
+			<nz-divider></nz-divider>
+		</form>
+</tf-ng-form-card>

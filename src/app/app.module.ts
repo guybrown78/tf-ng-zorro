@@ -28,6 +28,12 @@ import { TablesComponent } from './layout/tables/tables.component';
 import { ListsComponent } from './layout/lists/lists.component';
 import { TabsComponent } from './layout/tabs/tabs.component';
 import { PageTitleBreadcrumbsComponent } from './elements/page-title-breadcrumbs/page-title-breadcrumbs.component';
+import { AppHeaderComponent } from './elements/app-header/app-header.component';
+import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
+import { FormElementsComponent } from './forms/form-elements/form-elements.component';
+import { FileSelectComponent } from './forms/file-select/file-select.component';
+import { DatePickerComponent } from './forms/date-picker/date-picker.component';
+import { LoginComponent } from './forms/login/login.component';
 
 registerLocaleData(en);
 
@@ -47,7 +53,13 @@ registerLocaleData(en);
     TablesComponent,
     ListsComponent,
     TabsComponent,
-    PageTitleBreadcrumbsComponent
+    PageTitleBreadcrumbsComponent,
+    AppHeaderComponent,
+    ReactiveFormComponent,
+    FormElementsComponent,
+    FileSelectComponent,
+    DatePickerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

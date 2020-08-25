@@ -1,0 +1,21 @@
+<tf-ng-form-card>
+	<form nz-form>
+			<h3 nz-typography class="navy">Date Picker</h3>
+			<nz-divider></nz-divider>
+
+			<nz-form-control>
+				<nz-date-picker [nzFormat]="dateFormat"></nz-date-picker>
+			</nz-form-control>
+
+			
+			<nz-form-control>
+				<nz-month-picker [nzFormat]="monthFormat" nzPlaceHolder="Select month"></nz-month-picker>
+			</nz-form-control>
+
+			<nz-form-control>
+				<nz-range-picker [nzFormat]="dateFormat"></nz-range-picker>
+			</nz-form-control>
+
+
+		</form>
+</tf-ng-form-card>

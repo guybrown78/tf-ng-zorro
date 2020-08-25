@@ -1,0 +1,64 @@
+<h2 nz-typography class="white">Application Header / Masthead</h2>
+
+<div class="header-wrapper">
+	<div class="info">
+		<h3 nz-typography class="white">Hide Header</h3>
+		<p nz-typography class="white">Header Items are hidden but the header still displays and effects the page layout.</p>
+		<p nz-typography class="white">The <span class="aqua">show-app-logo</span> property should be set to <span class="italic aqua">false</span> and the header should have no children slots for this variation</p>
+	</div>
+	<div class="header-container">
+		
+		<tf-ng-header 
+			is-logo-clickable="false"
+			app-code="T"
+			app-title="Transform"
+			[show-app-logo]="false"
+		>
+		</tf-ng-header>
+
+	</div>
+</div>
+
+
+<div class="header-wrapper">
+	<div class="info">
+		<h3 nz-typography class="white">Sign In Header</h3>
+		<p nz-typography class="white">
+			Plain white hexagon <span class="italic">(no button click)</span>. This header variation should be used when the application header doesn't require the heaxagon to be a navigation button. <span class="italic">This will usually occur on the sign-in page.</span>
+		</p>
+		<p nz-typography class="white">In this example, the hexagon is showing a single T "Transform". The T suggests that app, or current state of the app doesn't belong to a specific product.</p>
+	</div>
+	<div class="header-container">
+		
+		<tf-ng-header 
+			[is-logo-clickable]="false"
+			app-code="T"
+			app-title="Transform"
+			[show-app-logo]="true"
+		>
+		</tf-ng-header>
+
+	</div>
+</div>
+
+
+<div class="header-wrapper">
+	<div class="info">
+		<h3 nz-typography class="white">Navigation Header</h3>
+		<p nz-typography class="white">
+			Gradient hexagon <span class="italic">(with button click)</span>. The <span class="aqua">is-logo-clickable</span> property determines the state of the hexagon logo. If it is <span class="italic aqua">true</span> then it is rendered as a gradient and opend the <span class="aqua">tf-ng-side-drawer</span> when clicked.
+		</p>
+		<p nz-typography class="white"></p>
+	</div>
+	<div class="header-container">
+		
+		<tf-ng-header 
+			[is-logo-clickable]="true"
+			app-code="T"
+			app-title="Transform"
+			[show-app-logo]="true"
+		>
+		</tf-ng-header>
+
+	</div>
+</div>

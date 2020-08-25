@@ -1,3 +1,75 @@
-<p>
-  inputs works!
-</p>
+<tf-ng-card colour="white">
+	<!-- <tf-ng-form-card> -->
+		<form nz-form>
+	
+			<h3 nz-typography class="navy">Input Form Elements</h3>
+			<nz-divider></nz-divider>
+	
+	
+			<input nz-input placeholder="Basic usage" />
+	
+			<br />
+			<br />
+	
+			<nz-form-item>
+				<nz-form-label nzFor="email">E-mail</nz-form-label>
+				<nz-form-control>
+					<input nz-input id="email" />
+					<nz-form-explain>
+						The input is not valid E-mail!
+					</nz-form-explain>
+				</nz-form-control>
+			</nz-form-item>
+	
+			<nz-form-item>
+				<nz-form-label nzRequired nzFor="email2">E-mail</nz-form-label>
+				<nz-form-control>
+					<input nz-input id="email2" />
+					<nz-form-explain>
+						Enter the email address you registered with
+					</nz-form-explain>
+				</nz-form-control>
+			</nz-form-item>
+	
+	
+			<nz-form-item >
+				<nz-form-label nzRequired nzFor="email3">E-mail</nz-form-label>
+				<nz-form-control nzValidateStatus="error" nzHasFeedback nzErrorTip="That's not an email address">
+					<input nz-input id="email3" />
+					<nz-form-explain>
+						That's not an email address
+					</nz-form-explain>
+				</nz-form-control>
+			</nz-form-item>
+	
+	
+			<br />
+	
+			<nz-input-group [nzSuffix]="suffixIconSearch">
+				<input type="text" nz-input placeholder="input search text" />
+			</nz-input-group>
+			<ng-template #suffixIconSearch>
+				<i nz-icon nzType="search"></i>
+			</ng-template>
+			
+			<br />
+			<br />
+	
+	
+			<nz-form-item >
+				<nz-form-label nzRequired nzFor="un">Username</nz-form-label>
+				<nz-form-control>
+					<nz-input-group [nzPrefix]="prefixTemplateUser">
+						<input type="text" id="un" nz-input placeholder="Enter your username" />
+					</nz-input-group>
+					<ng-template #prefixTemplateUser><i nz-icon nzType="user"></i></ng-template>
+					<nz-form-explain>
+						Your username is the name you log in with
+					</nz-form-explain>
+				</nz-form-control>
+			</nz-form-item>
+	
+			
+		</form>
+	<!-- </tf-ng-form-card> -->
+</tf-ng-card>

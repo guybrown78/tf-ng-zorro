@@ -3,9 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 // forms
 import { InputsComponent } from './forms/inputs/inputs.component';
+import { FileSelectComponent } from './forms/file-select/file-select.component'
+import { DatePickerComponent } from './forms/date-picker/date-picker.component'
+import { FormElementsComponent } from './forms/form-elements/form-elements.component'
+import { LoginComponent } from './forms/login/login.component'
+import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component'
 
 // elements
 import { PageTitleBreadcrumbsComponent } from './elements/page-title-breadcrumbs/page-title-breadcrumbs.component'
+import { AppHeaderComponent } from './elements/app-header/app-header.component'
+
 // layouts
 import { CardsComponent } from './layout/cards/cards.component'; 
 import { ListsComponent } from './layout/lists/lists.component'; 
@@ -39,16 +46,20 @@ const routes: Routes = [
 		data: {} 
 	},
 	{ path: 'modals', component: TwoComponent },
+
 	{ path: 'inputs', component: InputsComponent },
-	{ path: 'file-select', component: TwoComponent },
-	{ path: 'form-elements', component: TwoComponent },
-	{ path: 'login', component: TwoComponent },
-	{ path: 'decoupled-login', component: TwoComponent },
-	{ path: 'reactive-login', component: TwoComponent },
-	{ path: 'header', component: TwoComponent },
+	{ path: 'file-select', component: FileSelectComponent },
+	{ path: 'date-picker', component: DatePickerComponent },
+	{ path: 'form-elements', component: FormElementsComponent },
+	{ path: 'login', component: LoginComponent },
+	{ path: 'reactive-form', component: ReactiveFormComponent },
+	// { path: 'decoupled-login', component: TwoComponent },
+	// { path: 'reactive-login', component: TwoComponent },
 	
+	
+	{ path: 'header', component: AppHeaderComponent },
 	{ path: 'title-breadcrumbs', component: PageTitleBreadcrumbsComponent },
-	
+
 	{ path: 'buttons', component: TwoComponent },
 	{ path: 'icons', component: TwoComponent },
 	{ path: 'stats', component: TwoComponent },
@@ -75,7 +86,7 @@ const routes: Routes = [
 	{ path: 'example-four', component: TwoComponent },
 	{ path: 'product-hub', component: TwoComponent },
 	{ path: 'ngform', component: TwoComponent },
-	{ path: 'reactive-form', component: TwoComponent },
+	
 	// Design system
 	{ path: 'typography', component: TypographyComponent },
 	{ path: 'colour-pallete', component: ColourPalleteComponent },

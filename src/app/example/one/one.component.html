@@ -1,3 +1,78 @@
-<p>
-  one works!
-</p>
+<tf-ng-page-title-breadcrumbs (back-button-clicked)="onBackButtonClicked()">
+	<nz-breadcrumb>
+		<nz-breadcrumb-item>
+			<a [routerLink]="['/']">Home</a>
+		</nz-breadcrumb-item>
+		<nz-breadcrumb-item>
+			<a [routerLink]="['/one']">Parent Page</a>
+		</nz-breadcrumb-item>
+		<nz-breadcrumb-item>
+			Breadcrumb
+		</nz-breadcrumb-item>
+	</nz-breadcrumb>
+</tf-ng-page-title-breadcrumbs>
+
+
+
+
+<tf-ng-card colour="grey">
+	<nz-card>
+		
+    <nz-tabset>
+      <nz-tab nzTitle="Tab 1">
+				
+				<nz-table #basicTable [nzData]="listOfData">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Code</th>
+							<th>Status</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let data of basicTable.data">
+							<td>{{ data.name }}</td>
+							<td>{{ data.code }}</td>
+							<td>
+								<nz-tag [nzColor]="data.status === 'Live' ? '#40c7a3' : '#b92950'">{{ data.status }}</nz-tag>
+							</td>
+						<td align="right">
+		
+								<nz-dropdown>
+									<button 
+										nz-button 
+										nz-dropdown
+									>
+										<span>Actions</span> 
+										<i nz-icon type="down"></i>
+									</button>
+									<ul nz-menu>
+										<li nz-menu-item>
+											<a>Edit</a>
+										</li>
+										<li nz-menu-item>
+											<a>Add Delegates</a>
+										</li>
+										<li nz-menu-item>
+											<a>Delete</a>
+										</li>
+									</ul>
+								</nz-dropdown>
+							</td>
+						</tr>
+					</tbody>
+				</nz-table>
+		
+				
+      </nz-tab>
+      <nz-tab nzTitle="Tab 2">
+        <p nz-typography>Content 2 Lorum ipsum solar dolar ...</p>
+      </nz-tab>
+      <nz-tab nzTitle="Tab 3">
+        <p nz-typography>Lorum ipsum solar dolar ...</p>
+      </nz-tab>
+    </nz-tabset>
+	
+	</nz-card>
+</tf-ng-card>

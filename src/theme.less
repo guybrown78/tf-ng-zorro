@@ -56,11 +56,11 @@
 // -------- Colors -----------
 @primary-color : @blue-600;
 @info-color : @blue-600;
-@success-color : @green-6;
+@success-color : #40c7a3;
 @processing-color : @blue-600;
-@error-color : @red-6;
-@highlight-color : @red-6;
-@warning-color : @gold-6;
+@error-color : #b92950;
+@highlight-color : #b92950;
+@warning-color : #b97129;
 @normal-color : #d9d9d9;
 
 // Color used by default to control hover and active backgrounds and for
@@ -92,7 +92,7 @@
 @code-family : 'Roboto Condensed', sans-serif;
 @heading-color : @blue-600;
 @text-color : @navy-600;//fade(#000, 65%);
-@text-color-secondary :@grey-600;// fade(#000, 45%);
+@text-color-secondary : @grey-600;// fade(#000, 45%);
 @heading-color-dark :@grey-600; //fade(#fff, 100%);
 @text-color-dark : @grey-600; //fade(#fff, 85%);
 @text-color-secondary-dark: @grey-300; //fade(#fff, 65%);
@@ -298,8 +298,8 @@
 
 // Form
 // ---
-@label-required-color : @highlight-color;
-@label-color : @heading-color;
+@label-required-color : @blue-600;//@highlight-color;
+@label-color : @navy-600;
 @form-item-margin-bottom : 24px;
 @form-item-trailing-colon : true;
 @form-vertical-label-padding : 0 0 8px;
@@ -317,7 +317,7 @@
 @input-padding-vertical-base : 4px;
 @input-padding-vertical-sm : 1px;
 @input-padding-vertical-lg : 6px;
-@input-placeholder-color : hsv(0, 0, 75%);
+@input-placeholder-color : @grey-600;//hsv(0, 0, 75%);
 @input-color : @text-color;
 @input-border-color : @border-color-base;
 @input-bg : #fff;
@@ -594,21 +594,51 @@
 @list-item-meta-title-margin-bottom: @padding-sm;
 
 
-
-
+h1, h2, h3, h4, h5, h6 {
+	color: @blue-600;
+	font-weight: 500;
+	margin: 0.5rem 0;
+}
+h1.white, h2.white, h3.white, h4.white, h5.white, h6.white, p.white, span.white{
+	color: #FFFFFF;
+}
+h1.aqua, h2.aqua, h3.aqua, h4.aqua, h5.aqua, h6.aqua, p.aqua, span.aqua{
+	color: @aqua-600;
+}
+h1.navy, h2.navy, h3.navy, h4.navy, h5.navy, h6.navy, p.navy, span.navy{
+	color: @navy-600;
+}
+h1.grey, h2.grey, h3.grey, h4.grey, h5.grey, h6.grey, p.grey, span.grey{
+	color: @grey-600;
+}
+h1.blue, h2.blue, h3.blue, h4.blue, h5.blue, h6.blue, p.blue, span.blue{
+	color: @blue-600;
+}
+span.italic{
+	font-style: italic;
+}
 .ant-form{
 	margin: 0 auto;
+	width: 60%;
+	max-width: 600px;
+	padding-top:1rem;
+	padding-bottom:1rem;
 }
 .ant-form-item-control-wrapper{
 	width:100%;
 }
+
 .ant-form-item{
 	display: flex;
 	flex-direction: column;
 }
 .ant-form-item .ant-form-item-label{
 	text-align: left;
+	width: 100%;
 }
+// .ant-form-item-label{
+// 	width: 100%;
+// }
 .ant-menu-inline{
 	border-right:none;
 }
@@ -620,4 +650,8 @@
 .ant-menu-item-selected:focus,
 .ant-menu-item-selected:active {
 	color: @navy-600;
+}
+
+.ant-divider-horizontal {
+	margin: 1rem 0;
 }

@@ -1,0 +1,25 @@
+<tf-ng-form-card>
+	<form nz-form>
+			<h3 nz-typography class="navy">File Select/DragDrop Inputs</h3>
+			<nz-divider></nz-divider>
+
+
+
+			<nz-upload
+				nzType="drag"
+				[nzMultiple]="true"
+				nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+				(nzChange)="handleChange($event)"
+			>
+				<p class="ant-upload-drag-icon">
+					<i nz-icon nzType="inbox"></i>
+				</p>
+				<p class="ant-upload-text">Click or drag file to this area to upload</p>
+				<p class="ant-upload-hint">
+					Support for a single or bulk upload
+				</p>
+			</nz-upload>
+		
+
+		</form>
+</tf-ng-form-card>

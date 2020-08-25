@@ -26,6 +26,11 @@ export class NavigationComponent implements OnInit {
 					label:"File Select/DragDrop"
 				},
 				{
+					routerLink:"/date-picker",
+					title:"Date Picker",
+					label:"Date Picker"
+				},
+				{
 					routerLink:"/form-elements",
 					title:"Form components",
 					label:"Other Form Components"
@@ -34,16 +39,6 @@ export class NavigationComponent implements OnInit {
 					routerLink:"/login",
 					title:"Opinionated Login Form",
 					label:"Login form"
-				},
-				{
-					routerLink:"/decoupled-login",
-					title:"Decoupled login form example",
-					label:"Decoupled login form"
-				},
-				{
-					routerLink:"/ngform",
-					title:"Angular Template Form (ngForm)",
-					label:"Template Form"
 				},
 				{
 					routerLink:"/reactive-form",
