@@ -27,5 +27,7 @@ export class OneComponent {
       status: 'ARCHIVED'
     }
 	];
-	
+	onBackButtonClicked(){
+		console.log("hjgslhs sjhb")
+	}
 }
