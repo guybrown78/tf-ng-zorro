@@ -1,0 +1,13 @@
+.row{
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}	
+.row img{
+	display: block;
+	padding:0;
+	margin:auto 1rem;
+}	
+.row span{
+	margin-right: 1rem;
+}	

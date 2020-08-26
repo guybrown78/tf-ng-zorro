@@ -4,7 +4,7 @@
 	<div class="info">
 		<h3 nz-typography class="white">Hide Header</h3>
 		<p nz-typography class="white">Header Items are hidden but the header still displays and effects the page layout.</p>
-		<p nz-typography class="white">The <span class="aqua">show-app-logo</span> property should be set to <span class="italic aqua">false</span> and the header should have no children slots for this variation</p>
+		<p nz-typography class="white">The <span class="aqua">show-app-logo</span> property should be set to <span class="italic aqua">false</span> and the header should have no children content for this variation</p>
 	</div>
 	<div class="header-container">
 		
@@ -61,4 +61,72 @@
 		</tf-ng-header>
 
 	</div>
+</div>
+
+
+<div class="header-wrapper">
+	<div class="info">
+		<h3 nz-typography class="white">Client Logo</h3>
+		<p nz-typography class="white">
+			Use the component <span class="aqua">tf-app-client-logo</span> to accept a client logo image and display the image within the fixed image area.
+		</p>
+		<p nz-typography class="white">
+			The component is added to the header as a child node and uses the <span class="aqua">clientLogo</span> content section.
+		</p>
+	</div>
+	<div class="header-container">
+		
+		<tf-ng-header 
+			app-code="cm"
+			app-title="Competence Management"
+		>
+
+			<tf-ng-client-logo 
+				clientLogo
+				client-logo-source="https://dwglogo.com/wp-content/uploads/2016/01/Petrofac-Logo.png"
+			>
+			</tf-ng-client-logo>
+
+		</tf-ng-header>
+
+	</div>
+
+	<div class="header-container">
+		
+		<tf-ng-header 
+			app-code="cm"
+			app-title="Competence Management"
+		>
+
+			<tf-ng-client-logo 
+				clientLogo
+				client-logo-source="https://www.altrad.com/assets/images/d/Logo_Altrad-70a68d1e.jpg"
+			>
+			</tf-ng-client-logo>
+
+		</tf-ng-header>
+
+	</div>
+
+	<div class="info">
+		<p class="white">Binding properties can be achieved in the ususal angular way...</p>
+	</div>
+
+	<div class="header-container">
+		
+		<tf-ng-header 
+			[app-code]="tenants[index].code"
+			[app-title]="tenants[index].title"
+		>
+
+			<tf-ng-client-logo 
+				clientLogo
+				[client-logo-source]="tenantLogo"
+			>
+			</tf-ng-client-logo>
+
+		</tf-ng-header>
+
+	</div>
+
 </div>
