@@ -10,9 +10,33 @@
 
 			<button nz-button nzType="primary">Primary</button>
 			
-			<button nz-button nzSize="large" nzType="primary">Large Button</button>
+			<button nz-button nzSize="large" class="navy">Large Button</button>
 
-			<button nz-button class="aqua">Primary</button>
+			<button nz-button class="grey">Subtle Grey</button>
+		</div>
+
+	</tf-ng-card-content>
+</tf-ng-card>
+
+<tf-ng-card>
+	<h2 nz-typography>Button States</h2>
+	<tf-ng-card-content>
+		
+		<div class="button-container">
+
+			<button nz-button nzSize="small" nzLoading class="aqua">Small Button</button>
+
+			<button nz-button disabled class="aqua">Primary</button>
+			
+			<button nz-button nzLoading class="blue">Default</button>
+			<button nz-button disabled class="blue">Default</button>
+			
+			<button nz-button nzLoading nzSize="large" class="navy">Large Button</button>
+			<button nz-button disabled nzSize="large" class="navy">Large Button</button>
+
+			<button nz-button nzLoading class="grey">Subtle Grey</button>
+			<button nz-button disabled class="grey">Subtle Grey</button>
+
 		</div>
 
 	</tf-ng-card-content>
@@ -23,7 +47,25 @@
 	<tf-ng-card-content>
 		
 		<div class="button-container">
+			<button nz-button nzSize="small" class="blue">
+				<i nz-icon nzType="left"></i>Back
+			</button>
 
+			<button nz-button class="aqua">
+				<i nz-icon nzType="down"></i>More
+			</button>
+
+			<button nz-button>
+				<i nz-icon nzType="search"></i>Search
+			</button>
+			
+			<button nz-button nzSize="large" class="navy">
+				<i nz-icon nzType="mail"></i>Send Welcome Email
+			</button>
+
+			<button nz-button class="grey">
+				<i nz-icon nzType="bell" nzTheme="fill"></i>4 New messages
+			</button>
 		</div>
 
 	</tf-ng-card-content>
@@ -36,6 +78,26 @@
 		
 		<div class="button-container">
 
+			<button nz-button class="aqua">
+				Next<i nz-icon nzType="caret-right"></i>
+			</button>
+
+			<button nz-button nzSize="large">
+				Install for Windows<i nz-icon nzType="windows"></i>
+			</button>
+
+			<button nz-button>
+				Download all<i nz-icon nzType="cloud-download"></i>
+			</button>
+
+			<button nz-button class="navy">
+				Hide<i nz-icon nzType="up"></i>
+			</button>
+
+			<button nz-button nzSize="small" class="grey">
+				more information<i nz-icon nzType="ellipsis" nzTheme="outline"></i>
+			</button>
+
 		</div>
 
 	</tf-ng-card-content>
@@ -46,6 +108,26 @@
 	<tf-ng-card-content>
 		
 		<div class="button-container">
+
+			<button nz-button nzSize="small" nzShape="circle" class="blue">
+				<i nz-icon nzType="download"></i>
+			</button>
+
+			<button nz-button nzShape="circle" class="blue">
+				<i nz-icon nzType="up"></i>
+			</button>
+
+			<button nz-button nzSize="large" nzShape="circle" class="aqua">
+				<i nz-icon nzType="plus"></i>
+			</button>
+
+			<button nz-button nzShape="circle" class="navy">
+				<i nz-icon nzTheme="fill" nzType="edit"></i>
+			</button>
+
+			<button nz-button nzShape="circle" class="grey">
+				<i nz-icon nzType="right"></i>
+			</button>
 
 		</div>
 
