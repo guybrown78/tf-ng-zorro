@@ -7,8 +7,9 @@
 	<span nz-typography><strong>Page Title</strong></span>
 </tf-ng-page-title-breadcrumbs>
 
+
 <tf-ng-page-title-breadcrumbs (back-button-clicked)="onBackButtonClicked()">
-	<nz-breadcrumb>
+	<nz-breadcrumb nzSeparator=">">
 		<nz-breadcrumb-item>
 			<a [routerLink]="['/']">Home</a>
 		</nz-breadcrumb-item>
@@ -20,3 +21,21 @@
 		</nz-breadcrumb-item>
 	</nz-breadcrumb>
 </tf-ng-page-title-breadcrumbs>
+
+
+<tf-ng-page-title-breadcrumbs (back-button-clicked)="onBackButtonClicked()">
+	<nz-breadcrumb [nzSeparator]="iconTemplate">
+		<nz-breadcrumb-item>
+			<a [routerLink]="['/']">Home</a>
+		</nz-breadcrumb-item>
+		<nz-breadcrumb-item>
+			<a [routerLink]="['/one']">Parent Page</a>
+		</nz-breadcrumb-item>
+		<nz-breadcrumb-item>
+			Breadcrumb
+		</nz-breadcrumb-item>
+	</nz-breadcrumb>
+</tf-ng-page-title-breadcrumbs>
+
+
+<ng-template #iconTemplate><i nz-icon nzType="right"></i></ng-template>
