@@ -1,0 +1,15 @@
+.large-screen-stat-card{
+	display: none;
+}
+.small-screen-stat-card{
+	display: block;
+}
+
+@media (min-width: 640px) {
+	.large-screen-stat-card{
+		display: block;
+	}
+	.small-screen-stat-card{
+		display: none;
+	}
+}

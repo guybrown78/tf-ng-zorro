@@ -12,6 +12,9 @@ import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.compo
 // elements
 import { PageTitleBreadcrumbsComponent } from './elements/page-title-breadcrumbs/page-title-breadcrumbs.component'
 import { AppHeaderComponent } from './elements/app-header/app-header.component'
+import { ButtonsComponent } from './elements/buttons/buttons.component'
+import { IconsComponent } from './elements/icons/icons.component'
+import { StatsComponent } from './elements/stats/stats.component'
 
 // layouts
 import { CardsComponent } from './layout/cards/cards.component'; 
@@ -59,10 +62,10 @@ const routes: Routes = [
 	
 	{ path: 'header', component: AppHeaderComponent },
 	{ path: 'title-breadcrumbs', component: PageTitleBreadcrumbsComponent },
-
-	{ path: 'buttons', component: TwoComponent },
-	{ path: 'icons', component: TwoComponent },
-	{ path: 'stats', component: TwoComponent },
+	{ path: 'buttons', component: ButtonsComponent},
+	{ path: 'icons', component: IconsComponent },
+	{ path: 'stats', component: StatsComponent },
+	
 	{ path: 'dropdowns', component: TwoComponent },
 	{ path: 'statuses', component: TwoComponent },
 	{ path: 'search', component: TwoComponent },

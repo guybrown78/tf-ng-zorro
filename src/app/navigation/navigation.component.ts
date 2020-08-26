@@ -62,21 +62,21 @@ export class NavigationComponent implements OnInit {
 					title:"Page Title and Breadcrumbs",
 					label:"Page Title / Breadcrumbs"
 				},
-				// {
-				// 	routerLink:"/buttons",
-				// 	title:"Simple button components",
-				// 	label:"Buttons"
-				// },
-				// {
-				// 	routerLink:"/icons",
-				// 	title:"Available svg icons",
-				// 	label:"Icons"
-				// },
-				// {
-				// 	routerLink:"/stats",
-				// 	title:"Page statistics cards",
-				// 	label:"Statistic Cards"
-				// },
+				{
+					routerLink:"/buttons",
+					title:"Simple button components",
+					label:"Buttons"
+				},
+				{
+					routerLink:"/icons",
+					title:"Available svg icons",
+					label:"Icons"
+				},
+				{
+					routerLink:"/stats",
+					title:"Page statistics cards",
+					label:"Statistic Cards"
+				},
 				// {
 				// 	routerLink:"/dropdowns",
 				// 	title:"Simple dropdown components",

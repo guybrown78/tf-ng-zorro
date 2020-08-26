@@ -1,0 +1,91 @@
+<h2 nz-typography class="white">Statistic Cards</h2>
+<p nz-typography class="white">...</p>
+
+
+<tf-ng-card colour="navy">
+	<div nz-row [nzGutter]="16">
+
+		<div nz-col nzSpan="6">
+			<tf-ng-stat-data-card colour="blue">
+				<span title>Data Title</span>
+				<span data>75,562</span>
+			</tf-ng-stat-data-card>
+		</div>
+
+		<div nz-col nzSpan="6">
+			<tf-ng-stat-data-card colour="green">
+				<span title>Avg. Open Rate</span>
+				<span data>58.16%</span>
+			</tf-ng-stat-data-card>
+		</div>
+
+		<div nz-col nzSpan="6">
+			<tf-ng-stat-data-card colour="amber">
+				<span title>Avg. Click Rate</span>
+				<span data>8.57%</span>
+			</tf-ng-stat-data-card>
+		</div>
+
+		<div nz-col nzSpan="6">
+			<tf-ng-stat-data-card colour="red">
+				<span title>Todays sales</span>
+				<span data>£2642.59</span>
+			</tf-ng-stat-data-card>
+		</div>
+
+
+	</div>
+</tf-ng-card>
+
+<tf-ng-card colour="navy">
+	<div nz-row [nzGutter]="16">
+		<div nz-col nzSpan="8">
+			<tf-ng-stat-data-card colour="red">
+				<span title>Not Started</span>
+				<span data>1</span>
+			</tf-ng-stat-data-card>
+		</div>
+		<div nz-col nzSpan="8">
+			<tf-ng-stat-data-card colour="amber">
+				<span title>In Progress</span>
+				<span data>19</span>
+			</tf-ng-stat-data-card>
+		</div>
+		<div nz-col nzSpan="8">
+			<tf-ng-stat-data-card colour="green">
+				<span title>Completed</span>
+				<span data>1</span>
+			</tf-ng-stat-data-card>
+		</div>
+	</div>
+</tf-ng-card>
+
+
+<p nz-typography class="white">...</p>
+
+<tf-ng-card colour="navy" padding="none">
+	<nz-carousel nzAutoPlay nzDotPosition="bottom">
+		<div nz-carousel-content style="padding:1rem;">
+			<tf-ng-stat-data-card colour="red">
+				<span title>Not Started</span>
+				<span data>1</span>
+			</tf-ng-stat-data-card>
+		</div>
+		<div nz-carousel-content style="padding:1rem;">
+			<tf-ng-stat-data-card colour="amber">
+				<span title>In Progress</span>
+				<span data>19</span>
+			</tf-ng-stat-data-card>
+		</div>
+	<div nz-carousel-content style="padding:1rem;">
+			<tf-ng-stat-data-card colour="green">
+				<span title>Completed</span>
+				<span data>1</span>
+			</tf-ng-stat-data-card>
+		</div>
+	</nz-carousel>
+</tf-ng-card>
+
+<p nz-typography class="white">...</p>
+
+<stats-responsive-example></stats-responsive-example>

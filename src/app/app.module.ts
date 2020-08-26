@@ -34,6 +34,10 @@ import { FormElementsComponent } from './forms/form-elements/form-elements.compo
 import { FileSelectComponent } from './forms/file-select/file-select.component';
 import { DatePickerComponent } from './forms/date-picker/date-picker.component';
 import { LoginComponent } from './forms/login/login.component';
+import { ButtonsComponent } from './elements/buttons/buttons.component';
+import { IconsComponent } from './elements/icons/icons.component';
+import { StatsComponent } from './elements/stats/stats.component';
+import { ResponsiveExampleComponent } from './elements/stats/responsive-example/responsive-example.component';
 
 registerLocaleData(en);
 
@@ -59,7 +63,11 @@ registerLocaleData(en);
     FormElementsComponent,
     FileSelectComponent,
     DatePickerComponent,
-    LoginComponent
+    LoginComponent,
+    ButtonsComponent,
+    IconsComponent,
+    StatsComponent,
+    ResponsiveExampleComponent
   ],
   imports: [
     BrowserModule,

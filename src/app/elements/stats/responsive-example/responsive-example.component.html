@@ -1,0 +1,26 @@
+<tf-ng-card class="large-screen-stat-card" colour="navy">
+	<div nz-row [nzGutter]="16">
+
+		<div nz-col [nzSpan]="24 / appStatsData.length" *ngFor="let stat of appStatsData">
+			<tf-ng-stat-data-card [colour]="stat.status">
+				<span title>{{stat.title}}</span>
+				<span data>{{stat.data}}</span>
+			</tf-ng-stat-data-card>
+		</div>
+	
+	</div>
+</tf-ng-card>
+
+
+<tf-ng-card class="small-screen-stat-card" colour="navy" padding="none">
+	<nz-carousel nzAutoPlay nzDotPosition="bottom">
+
+		<div nz-carousel-content style="padding:1rem;" *ngFor="let stat of appStatsData">
+			<tf-ng-stat-data-card [colour]="stat.status">
+				<span title>{{stat.title}}</span>
+				<span data>{{stat.data}}</span>
+			</tf-ng-stat-data-card>
+		</div>
+
+	</nz-carousel>
+</tf-ng-card>
