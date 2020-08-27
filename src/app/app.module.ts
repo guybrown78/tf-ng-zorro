@@ -13,6 +13,7 @@ import en from '@angular/common/locales/en';
 
 import { TfNgCoreModule } from 'tf-ng-core'
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -39,6 +40,7 @@ import { IconsComponent } from './elements/icons/icons.component';
 import { StatsComponent } from './elements/stats/stats.component';
 import { ResponsiveExampleComponent } from './elements/stats/responsive-example/responsive-example.component';
 import { CoursesComponent } from './example/two/courses/courses.component';
+import { DropdownsComponent } from './elements/dropdowns/dropdowns.component';
 
 registerLocaleData(en);
 
@@ -70,6 +72,7 @@ registerLocaleData(en);
     StatsComponent,
     ResponsiveExampleComponent,
     CoursesComponent,
+    DropdownsComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,6 +84,7 @@ registerLocaleData(en);
 		BrowserAnimationsModule,
 		TfNgCoreModule,
 		NzButtonModule,
+		NzDropDownModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_GB }],
   bootstrap: [AppComponent]

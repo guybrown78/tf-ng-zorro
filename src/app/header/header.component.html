@@ -3,12 +3,34 @@
 	app-title="Transform / NGZorro"
 >
 
-	<tf-ng-hexagon 
-		size="xl" 
-		colour="aqua"
-		quickLinks
-	>
-	</tf-ng-hexagon>
+	<div quickLinks>
+		
+		<nz-dropdown 
+			nzPlacement="bottomCenter"
+			nzTrigger="click"
+		>
+			<button 
+				nz-button 
+				nz-dropdown
+				class="quick-link-btn"
+			>
+				<tf-ng-hexagon 
+					size="xl" 
+					colour="aqua"
+					outline-colour="blue"
+				>
+					<i nz-icon nzType="plus" nzTheme="outline"></i>
+				</tf-ng-hexagon>
+			</button>
+			<ul nz-menu>
+				<li nz-menu-item>Add Course</li>
+				<li nz-menu-item>Assign Course</li>
+				<li nz-menu-item>Assign Category</li>
+			</ul>
+		</nz-dropdown>
+		
+	</div>
+	
 
 	<tf-ng-client-logo 
 		clientLogo

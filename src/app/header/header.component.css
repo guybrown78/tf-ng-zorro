@@ -1,0 +1,19 @@
+.anticon{
+	font-size: 20px;
+}
+.quick-link-btn{
+	background-color: transparent;
+	width:50px;
+	height:58px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #363154;
+}
+.quick-link-btn:focus,.quick-link-btn:hover,.quick-link-btn:active{
+	color: #363154;
+	outline: none;
+	background-color: transparent;
+	border-color: transparent;
+	box-shadow:none;
+}

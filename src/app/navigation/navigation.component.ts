@@ -77,11 +77,11 @@ export class NavigationComponent implements OnInit {
 					title:"Page statistics cards",
 					label:"Statistic Cards"
 				},
-				// {
-				// 	routerLink:"/dropdowns",
-				// 	title:"Simple dropdown components",
-				// 	label:"Dropdown"
-				// },
+				{
+					routerLink:"/dropdowns",
+					title:"Simple dropdown components",
+					label:"Dropdown"
+				},
 				// {
 				// 	routerLink:"/statuses",
 				// 	title:"Status components",

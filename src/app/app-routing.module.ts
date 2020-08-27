@@ -15,6 +15,7 @@ import { AppHeaderComponent } from './elements/app-header/app-header.component'
 import { ButtonsComponent } from './elements/buttons/buttons.component'
 import { IconsComponent } from './elements/icons/icons.component'
 import { StatsComponent } from './elements/stats/stats.component'
+import { DropdownsComponent } from './elements/dropdowns/dropdowns.component'
 
 // layouts
 import { CardsComponent } from './layout/cards/cards.component'; 
@@ -65,8 +66,9 @@ const routes: Routes = [
 	{ path: 'buttons', component: ButtonsComponent},
 	{ path: 'icons', component: IconsComponent },
 	{ path: 'stats', component: StatsComponent },
+	{ path: 'dropdowns', component: DropdownsComponent },
 	
-	{ path: 'dropdowns', component: TwoComponent },
+	
 	{ path: 'statuses', component: TwoComponent },
 	{ path: 'search', component: TwoComponent },
 	{ path: 'modals', component: TwoComponent },
