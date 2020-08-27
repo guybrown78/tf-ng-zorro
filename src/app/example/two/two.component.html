@@ -1,3 +1,25 @@
-<p>
-  two works!
-</p>
+<tf-ng-page-title-breadcrumbs (back-button-clicked)="onBackButtonClicked()">
+	<nz-breadcrumb nzSeparator=">">
+		<nz-breadcrumb-item>
+			<a [routerLink]="['/one']">Dashboard</a>
+		</nz-breadcrumb-item>
+		<nz-breadcrumb-item>
+			Courses
+		</nz-breadcrumb-item>
+	</nz-breadcrumb>
+</tf-ng-page-title-breadcrumbs>
+
+
+		
+<nz-tabset>
+	<nz-tab nzTitle="All">
+		<example-courses></example-courses>
+	</nz-tab>
+	<nz-tab nzTitle="Live">
+		<example-courses status="live"></example-courses>
+	</nz-tab>
+	<nz-tab nzTitle="Archived">
+		<example-courses status="archived"></example-courses>
+	</nz-tab>
+</nz-tabset>
+	

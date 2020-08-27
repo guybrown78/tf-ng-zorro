@@ -1,0 +1,58 @@
+<tf-ng-card *ngIf="data">
+	<nz-table 
+		#basicTable 
+		[nzData]="data"
+		nzTableLayout="fixed"
+		nzShowPagination="false"
+	>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Code</th>
+				<th>Status</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let data of basicTable.data">
+				<td nzEllipsis>{{ data.name }}</td>
+				<td>{{ data.code }}</td>
+				<td>
+					<tf-ng-status 
+						[colour]="
+							data.status.toLowerCase() === 'live' ? 'green'
+							: data.status.toLowerCase() === 'archived' ? 'red'
+							: 'amber'
+						">
+							{{ data.status.toUpperCase() }}
+						</tf-ng-status>
+				</td>
+			<td align="right">
+
+					<nz-dropdown>
+						<button 
+							nz-button 
+							nz-dropdown
+						>
+							<span>Actions</span> 
+							<i nz-icon type="down"></i>
+						</button>
+						<ul nz-menu>
+							<li nz-menu-item>
+								<a>Edit</a>
+							</li>
+							<li nz-menu-item>
+								<a>Add Delegates</a>
+							</li>
+							<li nz-menu-item>
+								<a>Delete</a>
+							</li>
+						</ul>
+					</nz-dropdown>
+				</td>
+			</tr>
+		</tbody>
+	</nz-table>
+		
+
+</tf-ng-card>

@@ -1,8 +1,13 @@
 <tf-ng-card>
 	<h2 nz-typography>Table</h2>
-	<tf-ng-card-content>
+	<!-- <tf-ng-card-content colour="grey"> -->
 		
-		<nz-table #basicTable [nzData]="listOfData">
+		<nz-table 
+			#basicTable 
+			[nzData]="listOfData"
+			nzTableLayout="fixed"
+			nzShowPagination="false"
+		>
 			<thead>
 				<tr>
 					<th>Name</th>
@@ -13,10 +18,17 @@
 			</thead>
 			<tbody>
 				<tr *ngFor="let data of basicTable.data">
-					<td>{{ data.name }}</td>
+					<td nzEllipsis>{{ data.name }}</td>
 					<td>{{ data.code }}</td>
 					<td>
-						<nz-tag [nzColor]="data.status === 'Live' ? '#40c7a3' : '#b92950'">{{ data.status }}</nz-tag>
+						<tf-ng-status 
+						[colour]="
+							data.status.toLowerCase() === 'live' ? 'green'
+							: data.status.toLowerCase() === 'archived' ? 'red'
+							: 'amber'
+						">
+							{{ data.status.toUpperCase() }}
+						</tf-ng-status>
 					</td>
 				<td align="right">
 
@@ -45,5 +57,5 @@
 			</tbody>
 		</nz-table>
 		
-	</tf-ng-card-content>
+	<!-- </tf-ng-card-content> -->
 </tf-ng-card>

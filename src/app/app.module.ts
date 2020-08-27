@@ -38,6 +38,7 @@ import { ButtonsComponent } from './elements/buttons/buttons.component';
 import { IconsComponent } from './elements/icons/icons.component';
 import { StatsComponent } from './elements/stats/stats.component';
 import { ResponsiveExampleComponent } from './elements/stats/responsive-example/responsive-example.component';
+import { CoursesComponent } from './example/two/courses/courses.component';
 
 registerLocaleData(en);
 
@@ -67,7 +68,8 @@ registerLocaleData(en);
     ButtonsComponent,
     IconsComponent,
     StatsComponent,
-    ResponsiveExampleComponent
+    ResponsiveExampleComponent,
+    CoursesComponent,
   ],
   imports: [
     BrowserModule,

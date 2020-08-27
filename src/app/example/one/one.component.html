@@ -1,78 +1,76 @@
-<tf-ng-page-title-breadcrumbs (back-button-clicked)="onBackButtonClicked()">
-	<nz-breadcrumb nzSeparator=">">
-		<nz-breadcrumb-item>
-			<a [routerLink]="['/']">Home</a>
-		</nz-breadcrumb-item>
-		<nz-breadcrumb-item>
-			<a [routerLink]="['/one']">Parent Page</a>
-		</nz-breadcrumb-item>
-		<nz-breadcrumb-item>
-			Breadcrumb
-		</nz-breadcrumb-item>
-	</nz-breadcrumb>
+<tf-ng-page-title-breadcrumbs [show-back-button]="false">
+	<span nz-typography><strong>Hello Beth,</strong> welcome to your dashboard</span>
 </tf-ng-page-title-breadcrumbs>
 
 
 <stats-responsive-example></stats-responsive-example>
 
-<tf-ng-card colour="grey">
-	<nz-card>
-		
-    <nz-tabset>
-      <nz-tab nzTitle="Tab 1">
+
+<div nz-row [nzGutter]="16">
+	<div nz-col nzSpan="12">
+		<tf-ng-card>
+			<h2 nz-typography>Most Popular Courses</h2>
+			
+			<nz-list 
+				[nzHeader]="headerTemplate"
+				[nzFooter]="footerTemplate"
+			>
+				<nz-list-item *ngFor="let item of dataMostPopular">
 				
-				<nz-table #basicTable [nzData]="listOfData">
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Code</th>
-							<th>Status</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr *ngFor="let data of basicTable.data">
-							<td>{{ data.name }}</td>
-							<td>{{ data.code }}</td>
-							<td>
-								<nz-tag [nzColor]="data.status === 'Live' ? '#40c7a3' : '#b92950'">{{ data.status }}</nz-tag>
-							</td>
-						<td align="right">
+					<div nz-row>
+						<div nz-col nzSpan="16">
+							<span nz-typography>{{ item.name }}</span>
+						</div>
+						<div nz-col nzSpan="8" class="text-center">
+							<span nz-typography class="blue">{{ item.registered }}</span>
+						</div>
+					</div>
+
+				</nz-list-item>
+			</nz-list>
 		
-								<nz-dropdown>
-									<button 
-										nz-button 
-										nz-dropdown
-									>
-										<span>Actions</span> 
-										<i nz-icon type="down"></i>
-									</button>
-									<ul nz-menu>
-										<li nz-menu-item>
-											<a>Edit</a>
-										</li>
-										<li nz-menu-item>
-											<a>Add Delegates</a>
-										</li>
-										<li nz-menu-item>
-											<a>Delete</a>
-										</li>
-									</ul>
-								</nz-dropdown>
-							</td>
-						</tr>
-					</tbody>
-				</nz-table>
-		
+		</tf-ng-card>
+	</div>
+	<div nz-col nzSpan="12">
+		<tf-ng-card>
+			<h2 nz-typography>Least Popular Courses</h2>
+			
+			<nz-list 
+				[nzHeader]="headerTemplate"
+				[nzFooter]="footerTemplate"
+			>
+				<nz-list-item *ngFor="let item of dataLeastPopular">
 				
-      </nz-tab>
-      <nz-tab nzTitle="Tab 2">
-        <p nz-typography>Content 2 Lorum ipsum solar dolar ...</p>
-      </nz-tab>
-      <nz-tab nzTitle="Tab 3">
-        <p nz-typography>Lorum ipsum solar dolar ...</p>
-      </nz-tab>
-    </nz-tabset>
-	
-	</nz-card>
-</tf-ng-card>
+					<div nz-row>
+						<div nz-col nzSpan="16">
+							<span nz-typography>{{ item.name }}</span>
+						</div>
+						<div nz-col nzSpan="8" class="text-center">
+							<span nz-typography class="blue">{{ item.registered }}</span>
+						</div>
+					</div>
+
+				</nz-list-item>
+			</nz-list>
+
+		</tf-ng-card>
+	</div>
+</div>
+
+
+<ng-template #headerTemplate>
+	<div nz-row>
+		<div nz-col nzSpan="16">Course</div>
+		<div nz-col nzSpan="8" class="text-center">Course Code</div>
+	</div>
+</ng-template>
+
+
+<ng-template #footerTemplate>
+	<div nz-row>
+		<div nz-col nzSpan="16">&nbsp;</div>
+		<div nz-col nzSpan="8" class="text-center">
+			<button nz-button nzBlock routerLink="/two" >View All</button>
+		</div>
+	</div>
+</ng-template>

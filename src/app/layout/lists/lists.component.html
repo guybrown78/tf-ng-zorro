@@ -1,22 +1,40 @@
 <tf-ng-card>
 	<h2 nz-typography>Lists</h2>
-	<tf-ng-card-content>
-		<nz-list nzHeader="Header">
+
+		<nz-list 
+			[nzHeader]="headerTemplate"
+			[nzFooter]="footerTemplate"
+		>
       <nz-list-item *ngFor="let item of data">
-
+			
 				<div nz-row>
-
-					<div nz-col nzFlex="auto">
+					<div nz-col nzSpan="16">
 						<span nz-typography>{{ item.name }}</span>
 					</div>
-
-					<div nz-col nzFlex="100px">
+					<div nz-col nzSpan="8" class="text-center">
 						<span nz-typography class="blue">{{ item.code }}</span>
 					</div>
-					
-				</div> 
-				
+				</div>
+
       </nz-list-item>
     </nz-list>
-	</tf-ng-card-content>
+
 </tf-ng-card>
+
+
+<ng-template #headerTemplate>
+	<div nz-row>
+		<div nz-col nzSpan="16">Course</div>
+		<div nz-col nzSpan="8" class="text-center">Course Code</div>
+	</div>
+</ng-template>
+
+
+<ng-template #footerTemplate>
+	<div nz-row>
+		<div nz-col nzSpan="16">&nbsp;</div>
+		<div nz-col nzSpan="8" class="text-center">
+			<button nz-button nzBlock>View All</button>
+		</div>
+	</div>
+</ng-template>

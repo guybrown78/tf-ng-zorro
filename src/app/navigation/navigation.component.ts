@@ -129,11 +129,11 @@ export class NavigationComponent implements OnInit {
 					title:"Table examples",
 					label:"Tables"
 				},
-				// {
-				// 	routerLink:"/tabs",
-				// 	title:"Tab examples",
-				// 	label:"Tabs"
-				// },
+				{
+					routerLink:"/tabs",
+					title:"Tab examples",
+					label:"Tabs"
+				},
 			]
 		},
 		// {

@@ -1,3 +1,53 @@
-<p>
-  tabs works!
-</p>
+<h3 nz-typography class="white">Page Tabs</h3>
+<p nz-typography class="white">Page tabs are used on the the blue background before presenting the page data within cards</p>
+
+<nz-tabset>
+	<nz-tab nzTitle="Tab 1">
+		<p nzTypography class="white">Tab one content</p>
+	</nz-tab>
+	<nz-tab nzTitle="Tab 2">
+		<p nzTypography class="white">Tab two content</p>
+	</nz-tab>
+	<nz-tab nzDisabled="true" nzTitle="Tab 3">
+		<p nzTypography class="white">Tab three content</p>
+	</nz-tab>
+	<nz-tab nzTitle="Tab 4">
+		<p nzTypography class="white">Tab four content</p>
+	</nz-tab>
+
+</nz-tabset>
+	
+
+<tf-ng-card>
+	<h3 nz-typography class="blue">Sub Tabs</h3>
+	<p nz-typography class="navy">Tabs can also be used as a sub menu to break up data/content presentations. Apply a colour class to the nx-tabset to change the tabs colour</p>
+	<!-- <tf-ng-card-content> -->
+		<nz-tabset class="navy">
+			<nz-tab nzTitle="Tab 1">
+				<p nzTypography class="navy">Tab one content</p>
+			</nz-tab>
+			<nz-tab nzTitle="Tab 2">
+				<p nzTypography class="navy">Tab two content</p>
+			</nz-tab>
+			<nz-tab nzDisabled="true" nzTitle="Tab 3"></nz-tab>
+			<nz-tab nzTitle="Tab 4">
+				<p nzTypography class="navy">Tab four content</p>
+			</nz-tab>
+		
+		</nz-tabset>
+	<!-- </tf-ng-card-content> -->
+	
+</tf-ng-card>
+
+<nz-tabset>
+	<nz-tab nzTitle="All">
+		<example-courses></example-courses>
+	</nz-tab>
+	<nz-tab nzTitle="Live">
+		<example-courses status="live"></example-courses>
+	</nz-tab>
+	<nz-tab nzTitle="Archived">
+		<example-courses status="archived"></example-courses>
+	</nz-tab>
+</nz-tabset>
+
