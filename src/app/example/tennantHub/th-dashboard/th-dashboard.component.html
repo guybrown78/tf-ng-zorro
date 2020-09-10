@@ -1,0 +1,57 @@
+<tf-ng-page-title-breadcrumbs [show-back-button]="false">
+	<span nz-typography><strong>Hello {{ userName }},</strong> welcome to your Transform dashboard</span>
+</tf-ng-page-title-breadcrumbs>
+
+
+<nz-tabset>
+	<nz-tab nzTitle="Active Apps">
+			
+		<tf-ng-info-panel>
+
+			<tf-ng-info-panel-item-container 	*ngFor="let product of activeProducts">
+				<tf-ng-ph-overview-card 
+					is-active="true" 
+					[product-code]="product.code"
+					[product-title]="product.title"
+					(button-clicked)="onActiveProductSelected($event)"
+				></tf-ng-ph-overview-card>
+			</tf-ng-info-panel-item-container>
+
+		</tf-ng-info-panel>
+
+	</nz-tab>
+	<nz-tab nzTitle="More Apps">
+		
+		<p nz-typography class="white">
+			Below are the additional products we recommend for your business.
+		</p>
+
+		<tf-ng-info-panel>
+
+			<tf-ng-info-panel-item-container 	*ngFor="let product of additionalProducts">
+				<tf-ng-ph-overview-card *ngIf="product.cta"
+					[card-title]="product.cardTitle ? product.cardTitle : 'Recommended Software'"
+					[is-active]="false" 
+					[product-code]="product.code"
+					[product-title]="product.title"
+					[product-description]="product.desc"
+					[product-cta]="product.cta"
+					[marketing-cta-as-button]="true"
+					(cta-clicked)="onProductCTASelected($event)"
+				></tf-ng-ph-overview-card>
+				<!--  -->
+				<tf-ng-ph-overview-card *ngIf="!product.cta"
+					[card-title]="product.cardTitle ? product.cardTitle : 'Recommended Software'"
+					[is-active]="false" 
+					[product-code]="product.code"
+					[product-title]="product.title"
+					[product-description]="product.desc"
+					(cta-clicked)="onProductCTASelected($event)"
+				></tf-ng-ph-overview-card>
+			</tf-ng-info-panel-item-container>
+
+		</tf-ng-info-panel>
+
+	</nz-tab>
+</nz-tabset>
+	

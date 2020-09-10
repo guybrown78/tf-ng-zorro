@@ -170,6 +170,11 @@ export class NavigationComponent implements OnInit {
 					title:"",
 					label:"Page Two"
 				},
+				{
+					routerLink:"/th",
+					title:"",
+					label:"Tennant Hub"
+				},
 			]
 		},
 		{

@@ -14,6 +14,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ...todo - instructions
 
+
 ## PLOYFILLS 
 
 in polyfill.ts
@@ -29,3 +30,13 @@ Install below npm
 
 npm install --save classlist.js
 npm install --save web-animations-js
+
+
+
+
+
+
+
+
+
+ng serve --port 0 --open

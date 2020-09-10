@@ -33,6 +33,10 @@ import { ColourPalleteComponent } from './design-system/colour-pallete/colour-pa
 import { ProductLogosComponent } from './design-system/product-logos/product-logos.component';
 import { BrowserIconsComponent } from './design-system/browser-icons/browser-icons.component';
 
+//
+import { ThDashboardComponent } from './example/tennantHub/th-dashboard/th-dashboard.component';
+import { ThUsersComponent } from './example/tennantHub/th-users/th-users.component';
+import { ThUserDetailComponent } from './example/tennantHub/th-user-detail/th-user-detail.component';
 const routes: Routes = [
 	{ 
 		path: '', 
@@ -97,6 +101,12 @@ const routes: Routes = [
 	{ path: 'colour-pallete', component: ColourPalleteComponent },
 	{ path: 'product-logos', component: ProductLogosComponent },
 	{ path: 'browser-icons', component: BrowserIconsComponent },
+
+	//Product examples
+	{ path: 'th', component: ThDashboardComponent },
+	{ path: 'th/dashboard', component: ThDashboardComponent },
+	{ path: 'th/users', component: ThUsersComponent },
+	{ path: 'th/user/:id', component: ThUserDetailComponent },
 ];
 
 

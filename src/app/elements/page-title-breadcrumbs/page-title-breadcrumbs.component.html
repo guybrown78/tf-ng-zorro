@@ -22,6 +22,25 @@
 	</nz-breadcrumb>
 </tf-ng-page-title-breadcrumbs>
 
+<tf-ng-page-title-breadcrumbs (back-button-clicked)="onBackButtonClicked()">
+	<nz-breadcrumb nzSeparator=">">
+		<nz-breadcrumb-item>
+			<a [routerLink]="['/']">Home</a>
+		</nz-breadcrumb-item>
+		<nz-breadcrumb-item>
+			<a [routerLink]="['/one']">Parent Page</a>
+		</nz-breadcrumb-item>
+		<nz-breadcrumb-item>
+			Breadcrumb
+		</nz-breadcrumb-item>
+	</nz-breadcrumb>
+
+	<button 
+		nz-button 
+		nzType="primary"
+		right
+	>Action</button>
+</tf-ng-page-title-breadcrumbs>
 
 <!-- <tf-ng-page-title-breadcrumbs (back-button-clicked)="onBackButtonClicked()">
 	<nz-breadcrumb [nzSeparator]="iconTemplate">

@@ -1,0 +1,104 @@
+<tf-ng-page-title-breadcrumbs (back-button-clicked)="onBackButtonClicked()">
+	<nz-breadcrumb nzSeparator=">">
+		<nz-breadcrumb-item>
+			<a [routerLink]="['/th/dashboard']">Dashboard</a>
+		</nz-breadcrumb-item>
+		<nz-breadcrumb-item>
+			Users
+		</nz-breadcrumb-item>
+	</nz-breadcrumb>
+
+	<button 
+		nz-button 
+		nzType="primary"
+		right
+		(click)="onTitleBarAction()"
+	>Add User</button>
+</tf-ng-page-title-breadcrumbs>
+
+
+
+
+<tf-ng-card *ngIf="data">
+
+	<tf-ng-card colour="blue">
+		<div nz-row>
+      <div nz-col nzSpan="12">
+
+				<nz-input-group 
+					nzSearch 
+					[nzPrefix]="prefixIconUserSearch"
+				>
+					<input 
+						placeholder="Find a User..." 
+						nz-input 
+						[(ngModel)]="inputValue" 
+						(input)="onChange($event)" 
+					/>
+				</nz-input-group>
+				<ng-template #prefixIconUserSearch>
+					<i nz-icon nzType="search" nzTheme="outline"></i>
+				</ng-template>
+
+			</div>
+		</div>
+	</tf-ng-card>
+
+	<nz-table 
+		#basicTable 
+		[nzData]="data"
+		nzTableLayout="fixed"
+		[nzPageSize]="itemsPerPage"
+		nzShowPagination="true"
+		[(nzPageIndex)]="currentPage" 
+		[nzTotal]="totalItems" 
+		[nzSize]="'small'" 
+		[nzShowTotal]="totalTemplate"
+	>
+		<thead>
+			<tr>
+				<th width="40%">Name</th>
+				<th>Last Activity</th>
+				<th>Access</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let data of basicTable.data">
+				<td nzEllipsis width="40%">{{ data | getUsersFullName }}</td>
+				<td>{{ data.lastLogin | getLastLogin }}</td>
+				<td>
+					<tf-ng-status [colour]="(data | getUsersAccess).colour">
+						{{ (data | getUsersAccess).status }}
+					</tf-ng-status>
+				</td> 
+			<td align="right">
+
+					<nz-dropdown nzTrigger="click">
+						<button 
+							nz-button 
+							nz-dropdown
+						>
+							<span>Actions</span> 
+							<i nz-icon type="down"></i>
+						</button>
+						<ul nz-menu>
+							<li nz-menu-item (click)="onUserDetailsSelected(data)">Details</li>
+							<li nz-menu-item nzDisabled>Reset Access</li>
+							<li nz-menu-divider></li>
+							<li nz-menu-item>
+								<span nzTypography class="red">Delete</span>
+							</li>
+						</ul>
+					</nz-dropdown>
+				</td>
+			</tr>
+		</tbody>
+	</nz-table>
+		
+
+</tf-ng-card>
+
+<ng-template #totalTemplate let-total>
+	{{ currentPage | getPaginationMessage: totalItems:itemsPerPage:'Users' }}
+</ng-template>

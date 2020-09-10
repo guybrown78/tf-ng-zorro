@@ -41,6 +41,14 @@ import { StatsComponent } from './elements/stats/stats.component';
 import { ResponsiveExampleComponent } from './elements/stats/responsive-example/responsive-example.component';
 import { CoursesComponent } from './example/two/courses/courses.component';
 import { DropdownsComponent } from './elements/dropdowns/dropdowns.component';
+import { ThDashboardComponent } from './example/tennantHub/th-dashboard/th-dashboard.component';
+import { ThUsersComponent } from './example/tennantHub/th-users/th-users.component';
+
+import { GetLastLoginPipe } from './example/tennantHub/th-users/get-last-login.pipe';
+import { GetUsersFullNamePipe } from './example/tennantHub/pipes/get-users-full-name.pipe';
+import { GetUsersAccessPipe } from './example/tennantHub/th-users/get-users-access.pipe';
+import { GetPaginationMessagePipe } from './example/tennantHub/th-users/get-pagination-message.pipe';
+import { ThUserDetailComponent } from './example/tennantHub/th-user-detail/th-user-detail.component';
 
 registerLocaleData(en);
 
@@ -73,6 +81,13 @@ registerLocaleData(en);
     ResponsiveExampleComponent,
     CoursesComponent,
     DropdownsComponent,
+    ThDashboardComponent,
+    ThUsersComponent,
+    GetLastLoginPipe,
+    GetUsersFullNamePipe,
+    GetUsersAccessPipe,
+    GetPaginationMessagePipe,
+    ThUserDetailComponent,
   ],
   imports: [
     BrowserModule,

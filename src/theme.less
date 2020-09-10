@@ -506,10 +506,10 @@
 
 // Pagination
 // ---
-@pagination-item-size: 32px;
-@pagination-item-size-sm: 24px;
-@pagination-font-family: Arial;
-@pagination-font-weight-active: 500;
+@pagination-item-size: 28px;
+@pagination-item-size-sm: 20px;
+@pagination-font-family: 'Roboto Condensed';
+@pagination-font-weight-active: 400;
 
 // Breadcrumb
 // ---
@@ -599,22 +599,24 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 500;
 	margin: 0.5rem 0;
 }
-h1.white, h2.white, h3.white, h4.white, h5.white, h6.white, p.white, span.white{
+h1.white, h2.white, h3.white, h4.white, h5.white, h6.white, p.white, span.white, .anticon.white{
 	color: #FFFFFF;
 }
-h1.aqua, h2.aqua, h3.aqua, h4.aqua, h5.aqua, h6.aqua, p.aqua, span.aqua{
+h1.aqua, h2.aqua, h3.aqua, h4.aqua, h5.aqua, h6.aqua, p.aqua, span.aqua, .anticon.aqua{
 	color: @aqua-600;
 }
-h1.navy, h2.navy, h3.navy, h4.navy, h5.navy, h6.navy, p.navy, span.navy{
+h1.navy, h2.navy, h3.navy, h4.navy, h5.navy, h6.navy, p.navy, span.navy, .anticon.navy{
 	color: @navy-600;
 }
-h1.grey, h2.grey, h3.grey, h4.grey, h5.grey, h6.grey, p.grey, span.grey{
+h1.grey, h2.grey, h3.grey, h4.grey, h5.grey, h6.grey, p.grey, span.grey, .anticon.grey{
 	color: @grey-600;
 }
-h1.blue, h2.blue, h3.blue, h4.blue, h5.blue, h6.blue, p.blue, span.blue{
+h1.blue, h2.blue, h3.blue, h4.blue, h5.blue, h6.blue, p.blue, span.blue, .anticon.blue{
 	color: @blue-600;
 }
-
+h1.red, h2.red, h3.red, h4.red, h5.red, h6.red, p.red, span.red, .anticon.red{
+	color: @error-color;
+}
 a.grey{
 	color: @grey-600;
 }
@@ -646,6 +648,37 @@ span.italic{
 }
 .ant-form-item-control-wrapper{
 	width:100%;
+}
+
+// border-radius: 9999px;
+
+.ant-input-search-enter-button > input,
+.ant-input-search > input,
+.ant-input-search-lg > input{
+	border-radius: 9999px;
+	height: 40px;
+	padding: 6px 11px;
+	font-size:16px;
+	background-color: @blue-500;
+	color: #FFFFFF;
+	border-color: @blue-600;
+	padding-left: 36px!important;
+}
+.ant-input-search-enter-button .anticon{
+	color: @grey-600;
+}
+// .ant-input-search-enter-button .ant-input-affix-wrapper .ant-input:not(:first-child),
+// .ant-input-search .ant-input-affix-wrapper .ant-input:not(:first-child),
+// .ant-input-search-lg .ant-input-affix-wrapper .ant-input:not(:first-child)  {
+// 	padding-left: 36px;
+// }
+.ant-input-search-enter-button > input:focus,
+.ant-input-search > input:focus,
+.ant-input-search-lg > input:focus{
+	border-radius: 9999px;
+	background-color: #FFFFFF;
+	color: @blue-600;
+	border-color: @blue-600;
 }
 
 .ant-form-item{
@@ -788,21 +821,45 @@ span.italic{
 	border-color: @navy-300;
 }
 
-
+.ant-table-small {
+	border: 0 solid transparent; 
+	border-radius: 0;
+}
+.ant-table-small > .ant-table-content > .ant-table-body {
+	margin: 0;
+}
 .ant-table-tbody > tr {
 	background-color: #FFFFFF;
 }
+
+
+.ant-table-small > .ant-table-content > .ant-table-header > table > .ant-table-thead > tr > th, 
+.ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th, 
+.ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-thead > tr > th, 
+.ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-thead > tr > th, 
+.ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-thead > tr > th, 
+.ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th, 
+.ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th, 
+.ant-table-small > .ant-table-content > .ant-table-header > table > .ant-table-tbody > tr > td, 
+.ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr > td, 
+.ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-tbody > tr > td, 
+.ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-tbody > tr > td, 
+.ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-tbody > tr > td, 
+.ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-tbody > tr > td, 
+.ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td, 
+.ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td,
 .ant-table-thead > tr > th, 
 .ant-table-tbody > tr > td {
 	padding: 8px 8px;
 }
+
 .ant-table-thead > tr > th{
 	padding-top: 4px;
 	padding-bottom: 4px;
 	font-size: 0.8rem;
 	text-transform: uppercase;
 }
-
+ 
 
 .ant-list-header, 
 .ant-list-footer, 
@@ -892,4 +949,38 @@ span.italic{
 .ant-tabs.blue .ant-tabs-nav .ant-tabs-tab-disabled, 
 .ant-tabs.blue .ant-tabs-nav .ant-tabs-tab-disabled:hover {
 	color: rgba(@blue-600, 0.25);
+}
+
+.ant-pagination.mini 
+.ant-pagination-prev, 
+.ant-pagination.mini 
+.ant-pagination-next,
+.ant-pagination-item {
+	min-width: 20px;
+	height: 20px;
+	margin: 0;
+	line-height: 18px;
+	font-size: 15px;
+}
+.ant-pagination-item {
+	font-family: 'Roboto Condensed';
+	background-color: @grey-600;
+	border: 1px solid @grey-600;
+	border-radius: 3px;
+}
+.ant-pagination-item-active, .ant-pagination-item-active:hover {
+	background-color:#FFF;
+	border-color:#FFF;
+	color:@blue-600;
+}
+.ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-link-icon, 
+.ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-link-icon {
+	color: @navy-600;
+}
+.ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination-prev .ant-pagination-item-link:hover, 
+.ant-pagination-next .ant-pagination-item-link,
+.ant-pagination-next .ant-pagination-item-link:hover {
+	background-color: transparent;
+	border: 1px solid transparent;
 }

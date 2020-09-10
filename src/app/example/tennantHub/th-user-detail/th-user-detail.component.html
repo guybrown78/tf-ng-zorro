@@ -1,0 +1,20 @@
+<tf-ng-page-title-breadcrumbs *ngIf="user" (back-button-clicked)="onBackButtonClicked()">
+	<nz-breadcrumb nzSeparator=">">
+		<nz-breadcrumb-item>
+			<a [routerLink]="['/th/dashboard']">Dashboard</a>
+		</nz-breadcrumb-item>
+		<nz-breadcrumb-item>
+			<a [routerLink]="['/th/users']">Users</a>
+		</nz-breadcrumb-item>
+		<nz-breadcrumb-item>
+			{{ user | getUsersFullName }}
+		</nz-breadcrumb-item>
+	</nz-breadcrumb>
+
+	<button 
+		nz-button 
+		nzType="primary"
+		right
+		(click)="onTitleBarAction()"
+	>Add User</button>
+</tf-ng-page-title-breadcrumbs>
