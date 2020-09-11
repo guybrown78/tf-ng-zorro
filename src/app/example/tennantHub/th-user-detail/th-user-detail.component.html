@@ -10,11 +10,75 @@
 			{{ user | getUsersFullName }}
 		</nz-breadcrumb-item>
 	</nz-breadcrumb>
-
-	<button 
-		nz-button 
-		nzType="primary"
-		right
-		(click)="onTitleBarAction()"
-	>Add User</button>
 </tf-ng-page-title-breadcrumbs>
+
+
+
+<tf-ng-form-card>
+
+	<form *ngIf="user" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+		<h3 nz-typography class="navy">{{ user | getUsersFullName }}</h3>
+		<span nz-typography class="navy">{{ user.emailAddress }}</span>
+		<nz-divider></nz-divider>
+		
+		<nz-form-item>
+			<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="firstName">
+				First Name
+			</nz-form-label>
+			<nz-form-control [nzSm]="14" [nzXs]="24">
+				<input nz-input id="firstName" formControlName="firstName" />
+				<nz-form-explain *ngIf="validateForm.get('firstName')?.dirty && validateForm.get('firstName')?.errors"
+					>You must include the users first name</nz-form-explain
+				>
+			</nz-form-control>
+		</nz-form-item>
+
+
+		<nz-form-item>
+			<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="lastName">
+				Last Name
+			</nz-form-label>
+			<nz-form-control [nzSm]="14" [nzXs]="24">
+				<input nz-input id="lastName" formControlName="lastName" />
+				<nz-form-explain *ngIf="validateForm.get('lastName')?.dirty && validateForm.get('lastName')?.errors"
+					>You must include the users last name</nz-form-explain
+				>
+			</nz-form-control>
+		</nz-form-item>
+
+		<nz-form-item>
+			<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="email">
+				Email address
+			</nz-form-label>
+			<nz-form-control [nzSm]="14" [nzXs]="24">
+				<input nz-input type="email" formControlName="email" id="email" />
+				<nz-form-explain *ngIf="validateForm.get('email')?.dirty && validateForm.get('email')?.errors">
+					The input is not valid E-mail!
+				</nz-form-explain>
+			</nz-form-control>
+		</nz-form-item>
+
+
+		
+
+		<div class="btn-container">
+			<nz-form-item>
+				<nz-form-control>
+					<label nz-checkbox formControlName="enabled">
+						Enabled
+					</label>
+				</nz-form-control>
+			</nz-form-item>
+	
+			<nz-form-item>
+				<nz-form-control>
+					<button nz-button nzType="primary">Save Changes</button>
+				</nz-form-control>
+			</nz-form-item>
+		</div>
+		
+
+	</form>
+	
+</tf-ng-form-card>

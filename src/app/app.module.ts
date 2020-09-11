@@ -44,10 +44,10 @@ import { DropdownsComponent } from './elements/dropdowns/dropdowns.component';
 import { ThDashboardComponent } from './example/tennantHub/th-dashboard/th-dashboard.component';
 import { ThUsersComponent } from './example/tennantHub/th-users/th-users.component';
 
-import { GetLastLoginPipe } from './example/tennantHub/th-users/get-last-login.pipe';
+import { GetLastLoginPipe } from './example/tennantHub/pipes/get-last-login.pipe';
 import { GetUsersFullNamePipe } from './example/tennantHub/pipes/get-users-full-name.pipe';
-import { GetUsersAccessPipe } from './example/tennantHub/th-users/get-users-access.pipe';
-import { GetPaginationMessagePipe } from './example/tennantHub/th-users/get-pagination-message.pipe';
+import { GetUsersAccessPipe } from './example/tennantHub/pipes/get-users-access.pipe';
+import { GetPaginationMessagePipe } from './example/tennantHub/pipes/get-pagination-message.pipe';
 import { ThUserDetailComponent } from './example/tennantHub/th-user-detail/th-user-detail.component';
 
 registerLocaleData(en);

@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { userData } from '../userData';
-import { GetLastLoginPipe } from './get-last-login.pipe';
+import { GetLastLoginPipe } from '../pipes/get-last-login.pipe';
 import { GetUsersFullNamePipe } from '../pipes/get-users-full-name.pipe';
-import { GetUsersAccessPipe } from './get-users-access.pipe';
-import { GetPaginationMessagePipe } from './get-pagination-message.pipe';
+import { GetUsersAccessPipe } from '../pipes/get-users-access.pipe';
+import { GetPaginationMessagePipe } from '../pipes/get-pagination-message.pipe';
 @Component({
   selector: 'app-th-users',
   templateUrl: './th-users.component.html',
