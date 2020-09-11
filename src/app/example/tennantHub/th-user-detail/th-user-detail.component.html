@@ -16,23 +16,52 @@
 
 <tf-ng-form-card>
 
-	<form *ngIf="user" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+
+	<form *ngIf="user" nz-form [formGroup]="userDetailsForm" (ngSubmit)="submitForm()">
 
 		<h3 nz-typography class="navy">{{ user | getUsersFullName }}</h3>
 		<span nz-typography class="navy">{{ user.emailAddress }}</span>
 		<nz-divider></nz-divider>
 		
+		<tf-ng-card colour="white">
+			
+	
+			<div class="btn-container reset-password-card" >
+				<div class="left" >
+					<p nzTypography [ngClass]="userPasswordResetSent ? 'grey' : 'navy'">User has fogotten password. Issuing a password reset will send a 'password reset' code in a link to {{ user.emailAddress }}.<br />They have 48 hours to use the code by clicking the link.</p>
+				</div>
+			
+				<button 
+					nz-button 
+					class="blue" 
+					type="button" 
+					[disabled]="userPasswordResetSent" 
+					(click)="sendUserPasswordReset()"
+				>Issue Password</button>
+			</div>
+		</tf-ng-card>
+
 		<nz-form-item>
 			<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="firstName">
 				First Name
 			</nz-form-label>
 			<nz-form-control [nzSm]="14" [nzXs]="24">
-				<input nz-input id="firstName" formControlName="firstName" />
-				<nz-form-explain *ngIf="validateForm.get('firstName')?.dirty && validateForm.get('firstName')?.errors"
+		
+					<input 
+						nz-input 
+						id="firstName" 
+						formControlName="firstName" 
+						placeholder="First Name"
+					/>
+
+			
+				<nz-form-explain *ngIf="userDetailsForm.get('firstName')?.dirty && userDetailsForm.get('firstName')?.errors"
 					>You must include the users first name</nz-form-explain
 				>
 			</nz-form-control>
 		</nz-form-item>
+
 
 
 		<nz-form-item>
@@ -41,7 +70,7 @@
 			</nz-form-label>
 			<nz-form-control [nzSm]="14" [nzXs]="24">
 				<input nz-input id="lastName" formControlName="lastName" />
-				<nz-form-explain *ngIf="validateForm.get('lastName')?.dirty && validateForm.get('lastName')?.errors"
+				<nz-form-explain *ngIf="userDetailsForm.get('lastName')?.dirty && userDetailsForm.get('lastName')?.errors"
 					>You must include the users last name</nz-form-explain
 				>
 			</nz-form-control>
@@ -53,13 +82,11 @@
 			</nz-form-label>
 			<nz-form-control [nzSm]="14" [nzXs]="24">
 				<input nz-input type="email" formControlName="email" id="email" />
-				<nz-form-explain *ngIf="validateForm.get('email')?.dirty && validateForm.get('email')?.errors">
-					The input is not valid E-mail!
+				<nz-form-explain *ngIf="userDetailsForm.get('email')?.dirty && userDetailsForm.get('email')?.errors">
+					The input is not valid Email Address
 				</nz-form-explain>
 			</nz-form-control>
 		</nz-form-item>
-
-
 		
 
 		<div class="btn-container">
@@ -73,7 +100,12 @@
 	
 			<nz-form-item>
 				<nz-form-control>
-					<button nz-button nzType="primary">Save Changes</button>
+					<button 
+						nz-button 
+						type="submit"
+						[ngClass]="!userDetailsForm.dirty || !userDetailsForm.valid ? 'grey' : 'aqua'"
+						[disabled]="!userDetailsForm.dirty || !userDetailsForm.valid"
+					>Save Changes</button>
 				</nz-form-control>
 			</nz-form-item>
 		</div>
@@ -82,3 +114,4 @@
 	</form>
 	
 </tf-ng-form-card>
+

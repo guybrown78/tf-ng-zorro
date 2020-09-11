@@ -641,11 +641,34 @@ span.italic{
 
 .ant-form{
 	margin: 0 auto;
-	width: 60%;
+	width: 100%;
 	max-width: 600px;
 	padding-top:1rem;
 	padding-bottom:1rem;
 }
+
+
+// @screen-sm-min : @screen-sm;
+// @screen-md-min : @screen-md;
+// @screen-lg-min : @screen-lg;
+// @screen-xl-min : @screen-xl;
+// @screen-xxl-min : @screen-xxl;
+@media (min-width: @screen-lg) {
+  .ant-form{
+		width: 60%;
+	}
+}
+@media (min-width: @screen-md) {
+  .ant-form{
+		width: 75%;
+	}
+}
+@media (min-width: @screen-sm) {
+  .ant-form{
+		width: 85%;
+	}
+}
+
 .ant-form-item-control-wrapper{
 	width:100%;
 }
@@ -669,6 +692,14 @@ span.italic{
 	border-color: @blue-600;
 	padding-left: 36px!important;
 }
+.ant-input::-webkit-input-placeholder {
+	color: #D0DFE3;
+}
+.has-error .ant-input::-webkit-input-placeholder
+{
+	color: #b92950;
+}
+
 .ant-input-search-enter-button .anticon{
 	color: @grey-600;
 }
@@ -684,6 +715,11 @@ span.italic{
 	background-color: #FFFFFF;
 	color: @blue-600;
 	border-color: @blue-600;
+}
+
+.ant-form-explain, 
+.ant-form-extra {
+	font-size: 14px;
 }
 
 .ant-form-item{
@@ -988,4 +1024,16 @@ span.italic{
 .ant-pagination-next .ant-pagination-item-link:hover {
 	background-color: transparent;
 	border: 1px solid transparent;
+}
+
+
+.ant-message-notice-content {
+	border-radius: 9999px;
+}
+.ant-message {
+	top:73px!important;
+	// bottom: 24px;
+}
+.ant-message .anticon {
+	font-size: 21px;
 }

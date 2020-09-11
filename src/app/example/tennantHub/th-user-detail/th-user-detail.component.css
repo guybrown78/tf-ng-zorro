@@ -1,6 +1,23 @@
 .btn-container{
 	display:flex;
 	flex-direction: row;
-	justify-content: space-between;
 	align-items: center;
+	justify-content: space-between;
+}
+.reset-password-card{
+	flex-direction: column;
+	align-items: flex-end;
+}
+.btn-container .left{
+	margin-right: 16px;
+	flex: 1 1 0%;
+}
+
+
+
+@media (min-width: 890px) {
+	.reset-password-card{
+		flex-direction: row;
+		align-items: center;
+	}
 }
