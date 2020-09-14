@@ -360,9 +360,9 @@
 @popover-distance: @popover-arrow-width + 4px;
 
 // Modal
-// --
+// --	
 @modal-header-bg: @component-background;
-@modal-mask-bg: rgba(0, 0, 0, 0.65);
+@modal-mask-bg: rgba(@navy-400, 0.65);
 
 // Progress
 // --
@@ -745,7 +745,24 @@ span.italic{
 .ant-menu-item-selected:active {
 	color: @navy-600;
 }
-
+.ant-menu.user-account{
+	background-color: @grey-600;
+	color: @navy-600;
+	border-right: 1px solid @grey-600;
+}
+.ant-menu.user-account .ant-menu-item, 
+.ant-menu.user-account .ant-menu-submenu-title,
+.ant-menu.user-account .ant-menu-item:active, 
+.ant-menu.user-account .ant-menu-submenu-title:active,
+.ant-menu.user-account .ant-menu-item:focus, 
+.ant-menu.user-account .ant-menu-submenu-title:focus{
+	background-color: @grey-600;
+	color: @navy-600;
+}
+.ant-menu.user-account .ant-menu-item:hover, 
+.ant-menu.user-account .ant-menu-submenu-title:hover{
+	background-color: @grey-700;
+}
 .ant-select-selection--multiple .ant-select-selection__choice {
 	color: #FFFFFF;
 	background-color: @blue-600;
@@ -1047,4 +1064,17 @@ span.italic{
 }
 .ant-message .anticon {
 	font-size: 21px;
+}
+
+.ant-modal-content {
+	padding:0 1rem;
+	border-radius: 0.5rem;
+}
+.ant-modal-footer {
+	border-top: none;
+	padding: 16px 0px;
+}
+.ant-modal-header {
+	padding: 16px 0px;
+	border-bottom: 4px solid @aqua-600;
 }

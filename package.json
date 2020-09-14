@@ -21,10 +21,10 @@
     "@angular/router": "~7.2.0",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.4",
-    "moment": "^2.27.0",
+    "moment": "^2.28.0",
     "ng-zorro-antd": "^7.5.1",
     "rxjs": "~6.3.3",
-    "tf-ng-core": "0.0.12",
+    "tf-ng-core": "0.0.16",
     "tslib": "^1.9.0",
     "web-animations-js": "^2.3.2",
     "zone.js": "~0.8.26"

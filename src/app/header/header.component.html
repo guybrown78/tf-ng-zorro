@@ -37,7 +37,25 @@
 		clientLogo
 		*ngIf="routeData.clientLogoSrc"
 		[client-logo-source]="routeData.clientLogoSrc"
+		show-user-account="true"
+		[is-open]="isUserAccountsMenuOpen"
+		(is-open-clicked)="onUserAccountsMenuToggle($event)"
 	>
+		<ul nz-menu userAccountMenu class="user-account">
+			<li nz-menu-item (click)="onUserAccountItemSelected('signout')">Sign Out</li>
+		</ul>
 	</tf-ng-client-logo>
 
 </tf-ng-header>
+
+
+
+<nz-modal 
+	[(nzVisible)]="isSignOutModalVisible" 
+	nzTitle="Log Out" 
+	(nzOnCancel)="handleCancelSignOut()" 
+	nzOkText="Yes, Log Me Out"
+	(nzOnOk)="handleOkSignOut()"
+>
+	<p nzTypography>Please confirm that you would like to end your session and log out</p>
+</nz-modal>

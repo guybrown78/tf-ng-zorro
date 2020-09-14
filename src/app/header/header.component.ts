@@ -11,7 +11,8 @@ export class HeaderComponent {
 	routeData:any;
 	routeDataChage:any;
 	routeDataSubscription: Subscription;
-
+	isUserAccountsMenuOpen:boolean = false;
+	isSignOutModalVisible = false;
   constructor(
 		private routeDataService: RouteDataService,
 	) {
@@ -26,6 +27,25 @@ export class HeaderComponent {
 	onRouteDataChanged(data:any){
 		this.routeData = { ...data }
 	}
+	onUserAccountsMenuToggle(isOpen:boolean){
+		console.log("onUserAccountsMenuToggle", isOpen);
+		this.isUserAccountsMenuOpen = isOpen;
+	}
+	onUserAccountItemSelected(item:string){
+		if(item === 'signout'){
+			console.log("Sign out")
+			this.isSignOutModalVisible = true;
+		}
+		this.isUserAccountsMenuOpen = false;
+	}
+
+	handleCancelSignOut(){
+		this.isSignOutModalVisible = false;
+	}
+	handleOkSignOut(){
+		this.isSignOutModalVisible = false;
+	}
+
 	ngOnDestroy() {
     this.routeDataSubscription.unsubscribe();
   }
