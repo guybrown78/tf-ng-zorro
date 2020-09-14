@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { RouteDataService } from '../../../appServices/route-data.service'
+import { Subscription } from 'rxjs';
 
 import { userData } from '../userData';
 import { GetLastLoginPipe } from '../pipes/get-last-login.pipe';
@@ -18,20 +20,29 @@ import { GetPaginationMessagePipe } from '../pipes/get-pagination-message.pipe';
 	]
 })
 
-export class ThUsersComponent  {
+export class ThUsersComponent implements OnInit  {
 	data:any = []
 	currentPage:number = 1
 	itemsPerPage:number = 10
 	totalItems:number;
+	routeDataChageSubscription:Subscription;
   constructor(
 		private router: Router,
+		private route: ActivatedRoute,
 		private getUsersFullName: GetUsersFullNamePipe,
 		private getLastLogin: GetLastLoginPipe,
 		private getUsersAccess: GetUsersAccessPipe,
 		private getPaginationMessage: GetPaginationMessagePipe,
+		private routeDataService: RouteDataService,
 	) { 
 		this.data = [ ...userData ]
 		this.totalItems = this.data.length;
+	}
+
+	ngOnInit() {
+		this.routeDataChageSubscription = this.route.data.subscribe(data => {
+				this.routeDataService.announceRouteData(data)
+		})
 	}
 
 	onBackButtonClicked(){
@@ -51,7 +62,11 @@ export class ThUsersComponent  {
 	}
 
 	onUserDetailsSelected(user:any){
-		console.log(user)
 		this.router.navigate([`/th/user/${user.sub}`]);
+	}
+
+	ngOnDestroy() {
+		this.routeDataChageSubscription.unsubscribe();
+		this.routeDataService.announceRouteData(this.routeDataService.defaultRoutData)
 	}
 }

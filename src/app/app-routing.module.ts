@@ -53,60 +53,76 @@ const routes: Routes = [
 		component: TwoComponent, 
 		data: {} 
 	},
-	{ path: 'modals', component: TwoComponent },
+	{ path: 'modals', component: TwoComponent, data:{} },
 
-	{ path: 'inputs', component: InputsComponent },
-	{ path: 'file-select', component: FileSelectComponent },
-	{ path: 'date-picker', component: DatePickerComponent },
-	{ path: 'form-elements', component: FormElementsComponent },
-	{ path: 'login', component: LoginComponent },
-	{ path: 'reactive-form', component: ReactiveFormComponent },
+	{ path: 'inputs', component: InputsComponent, data:{} },
+	{ path: 'file-select', component: FileSelectComponent, data:{} },
+	{ path: 'date-picker', component: DatePickerComponent, data:{} },
+	{ path: 'form-elements', component: FormElementsComponent, data:{} },
+	{ path: 'login', component: LoginComponent, data:{} },
+	{ path: 'reactive-form', component: ReactiveFormComponent, data:{} },
 	// { path: 'decoupled-login', component: TwoComponent },
 	// { path: 'reactive-login', component: TwoComponent },
 	
 	
-	{ path: 'header', component: AppHeaderComponent },
-	{ path: 'title-breadcrumbs', component: PageTitleBreadcrumbsComponent },
-	{ path: 'buttons', component: ButtonsComponent},
-	{ path: 'icons', component: IconsComponent },
-	{ path: 'stats', component: StatsComponent },
-	{ path: 'dropdowns', component: DropdownsComponent },
+	{ path: 'header', component: AppHeaderComponent, data:{} },
+	{ path: 'title-breadcrumbs', component: PageTitleBreadcrumbsComponent, data:{} },
+	{ path: 'buttons', component: ButtonsComponent, data:{}},
+	{ path: 'icons', component: IconsComponent, data:{} },
+	{ path: 'stats', component: StatsComponent, data:{} },
+	{ path: 'dropdowns', component: DropdownsComponent, data:{} },
 	
 	
-	{ path: 'statuses', component: TwoComponent },
-	{ path: 'search', component: TwoComponent },
-	{ path: 'modals', component: TwoComponent },
-	{ path: 'alerts', component: TwoComponent },
-	{ path: 'layouts', component: TwoComponent },
+	{ path: 'statuses', component: TwoComponent, data:{} },
+	{ path: 'search', component: TwoComponent, data:{} },
+	{ path: 'modals', component: TwoComponent, data:{} },
+	{ path: 'alerts', component: TwoComponent, data:{} },
+	{ path: 'layouts', component: TwoComponent, data:{} },
 
-	{ path: 'cards', component: CardsComponent },
-	{ path: 'tables', component: TablesComponent },
-	{ path: 'lists', component: ListsComponent },
-	{ path: 'tabs', component: TabsComponent },
+	{ path: 'cards', component: CardsComponent, data:{} },
+	{ path: 'tables', component: TablesComponent, data:{} },
+	{ path: 'lists', component: ListsComponent, data:{} },
+	{ path: 'tabs', component: TabsComponent, data:{} },
 
-	{ path: 'nodes', component: TwoComponent },
-	{ path: 'node-flex', component: TwoComponent },
-	{ path: 'node-row', component: TwoComponent },
+	{ path: 'nodes', component: TwoComponent, data:{} },
+	{ path: 'node-flex', component: TwoComponent, data:{} },
+	{ path: 'node-row', component: TwoComponent, data:{} },
 	
 
-	{ path: 'example-one', component: TwoComponent },
-	{ path: 'example-two', component: TwoComponent },
-	{ path: 'example-three', component: TwoComponent },
-	{ path: 'example-four', component: TwoComponent },
-	{ path: 'product-hub', component: TwoComponent },
-	{ path: 'ngform', component: TwoComponent },
+	{ path: 'example-one', component: TwoComponent, data:{} },
+	{ path: 'example-two', component: TwoComponent, data:{} },
+	{ path: 'example-three', component: TwoComponent, data:{} },
+	{ path: 'example-four', component: TwoComponent, data:{} },
+	{ path: 'product-hub', component: TwoComponent, data:{} },
+	{ path: 'ngform', component: TwoComponent, data:{} },
 	
 	// Design system
-	{ path: 'typography', component: TypographyComponent },
-	{ path: 'colour-pallete', component: ColourPalleteComponent },
-	{ path: 'product-logos', component: ProductLogosComponent },
-	{ path: 'browser-icons', component: BrowserIconsComponent },
+	{ path: 'typography', component: TypographyComponent, data:{} },
+	{ path: 'colour-pallete', component: ColourPalleteComponent, data:{} },
+	{ path: 'product-logos', component: ProductLogosComponent, data:{} },
+	{ path: 'browser-icons', component: BrowserIconsComponent, data:{} },
 
 	//Product examples
-	{ path: 'th', component: ThDashboardComponent },
-	{ path: 'th/dashboard', component: ThDashboardComponent },
-	{ path: 'th/users', component: ThUsersComponent },
-	{ path: 'th/user/:id', component: ThUserDetailComponent },
+	{ path: 'th', component: ThDashboardComponent, data: {
+		appTitle : 'Welcome to your Transform Platform',
+		appCode : 'T',
+		clientLogoSrc:'https://3-tech.com/wp-content/uploads/2019/09/Transform.png'
+	}},
+	{ path: 'th/dashboard', component: ThDashboardComponent, data: {	
+		appTitle : 'Welcome to your Transform Platform',
+		appCode : 'T',
+		clientLogoSrc:'https://3-tech.com/wp-content/uploads/2019/09/Transform.png'
+	}},
+	{ path: 'th/users', component: ThUsersComponent, data: {
+		appTitle : 'Tennant Hub',
+		appCode : 'T',
+		clientLogoSrc:'https://3-tech.com/wp-content/uploads/2019/09/Transform.png'
+	}},
+	{ path: 'th/user/:id', component: ThUserDetailComponent, data: {
+		appTitle : 'Tennant Hub',
+		appCode : 'T',
+		clientLogoSrc:'https://3-tech.com/wp-content/uploads/2019/09/Transform.png'
+	}},
 ];
 
 

@@ -24,6 +24,19 @@ const userData = [
 ];
 
 
+const productData = [
+	{
+		productId:"94bdf525-4c95-4322-9da7-4ea5908341ea",
+		productName:"Learning Management"
+	},
+	{
+		productId:"38d94b20-192a-4024-a80a-ccabeeab58ed",
+		productName:"Tenant Hub"
+	},
+	{
+		productId:"e1d2feff-3c74-44c2-4394-08d832fc5183",
+		productName:"Form Builder"
+	}
+]
 
-
-export { userData }
+export { userData, productData }

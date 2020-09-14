@@ -1,9 +1,9 @@
 <tf-ng-header 
-	app-code="T"
-	app-title="Transform / NGZorro"
+	[app-code]="routeData.appCode"
+	[app-title]="routeData.appTitle"
 >
 
-	<div quickLinks>
+	<div quickLinks *ngIf="routeData.quickLinks">
 		
 		<nz-dropdown 
 			nzPlacement="bottomCenter"
@@ -23,9 +23,10 @@
 				</tf-ng-hexagon>
 			</button>
 			<ul nz-menu>
-				<li nz-menu-item>Add Course</li>
-				<li nz-menu-item>Assign Course</li>
-				<li nz-menu-item>Assign Category</li>
+				<li nz-menu-item 	*ngFor="let option of routeData.quickLinks">
+					{{  option.title }}
+				</li>
+
 			</ul>
 		</nz-dropdown>
 		
@@ -34,7 +35,8 @@
 
 	<tf-ng-client-logo 
 		clientLogo
-		client-logo-source="https://logodix.com/logo/80482.png"
+		*ngIf="routeData.clientLogoSrc"
+		[client-logo-source]="routeData.clientLogoSrc"
 	>
 	</tf-ng-client-logo>
 

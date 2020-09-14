@@ -20,7 +20,7 @@
 
 	<form *ngIf="user" nz-form [formGroup]="userDetailsForm" (ngSubmit)="submitForm()">
 
-		<h3 nz-typography class="navy">{{ user | getUsersFullName }}</h3>
+		<h3 nz-typography class="blue">{{ user | getUsersFullName }}</h3>
 		<span nz-typography class="navy">{{ user.emailAddress }}</span>
 		<nz-divider></nz-divider>
 		
@@ -29,7 +29,10 @@
 	
 			<div class="btn-container reset-password-card" >
 				<div class="left" >
-					<p nzTypography [ngClass]="userPasswordResetSent ? 'grey' : 'navy'">User has fogotten password. Issuing a password reset will send a 'password reset' code in a link to {{ user.emailAddress }}.<br />They have 48 hours to use the code by clicking the link.</p>
+					<span nzTypography [ngClass]="userPasswordResetSent ? 'grey' : 'navy'">
+						Issuing a password reset will send a 'Password Reset' code in a link to {{ user.emailAddress }}.
+					<!-- <br />They have 48 hours to use the code by clicking the link. -->
+				</span>
 				</div>
 			
 				<button 
@@ -38,7 +41,7 @@
 					type="button" 
 					[disabled]="userPasswordResetSent" 
 					(click)="sendUserPasswordReset()"
-				>Issue Password</button>
+				>Issue Password Reset</button>
 			</div>
 		</tf-ng-card>
 
@@ -87,6 +90,31 @@
 				</nz-form-explain>
 			</nz-form-control>
 		</nz-form-item>
+
+
+		<nz-divider></nz-divider>
+		<h4 class="blue">Users Products</h4>
+		<nz-form-item>
+			<!-- <nz-form-label nzFor="enabledProducts">
+				Enabled Products
+			</nz-form-label> -->
+			<nz-select 
+				nzMode="tags" 
+				nzPlaceHolder="Add Products"
+				id="enabledProducts"
+				formControlName="enabledProducts"
+			>
+				<nz-option 
+					*ngFor="let option of availableProducts" 
+					[nzLabel]="option.productName" 
+					[nzValue]="option.productId"
+
+				></nz-option>
+			</nz-select>
+			<nz-form-explain>
+				Add and Remove access to each available Transform product
+			</nz-form-explain>
+		</nz-form-item>
 		
 
 		<div class="btn-container">
@@ -109,6 +137,8 @@
 				</nz-form-control>
 			</nz-form-item>
 		</div>
+		
+
 		
 
 	</form>

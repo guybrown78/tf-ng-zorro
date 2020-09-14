@@ -156,7 +156,7 @@
 @outline-width : 2px;
 @outline-color : @primary-color;
 
-@background-color-light : hsv(0, 0, 98%); // background of header and selected item
+@background-color-light : @grey-200;//hsv(0, 0, 98%); // background of header and selected item
 @background-color-base : hsv(0, 0, 96%); // Default grey background color
 
 // Disabled states
@@ -746,6 +746,17 @@ span.italic{
 	color: @navy-600;
 }
 
+.ant-select-selection--multiple .ant-select-selection__choice {
+	color: #FFFFFF;
+	background-color: @blue-600;
+	border-color: @blue-600;
+}
+.ant-select-selection--multiple .ant-select-selection__choice__remove {
+	color: @blue-200;
+}
+.ant-select-selection--multiple .ant-select-selection__choice__remove:hover {
+	color: #FFFFFF;
+}
 .ant-divider-horizontal {
 	margin: 1rem 0;
 }

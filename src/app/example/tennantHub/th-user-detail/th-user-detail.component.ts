@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { RouteDataService } from '../../../appServices/route-data.service'
+import { Subscription } from 'rxjs';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { userData } from '../userData';
+import { userData, productData } from '../userData';
 import { GetUsersFullNamePipe } from '../pipes/get-users-full-name.pipe';
 
 @Component({
@@ -14,21 +16,26 @@ import { GetUsersFullNamePipe } from '../pipes/get-users-full-name.pipe';
 	]
 })
 export class ThUserDetailComponent implements OnInit {
-
 	user:any
+	availableProducts:any = [ ...productData ];
 	userDetailsForm: FormGroup;
 	userPasswordResetSent:boolean = false;
+	routeDataChageSubscription:Subscription;
   constructor(
 		private router: Router,
 		private route: ActivatedRoute,
 		private fb: FormBuilder,
 		private getUsersFullName: GetUsersFullNamePipe,
-		private message: NzMessageService
+		private message: NzMessageService,
+		private routeDataService: RouteDataService,
 	) {
 
 	}
 
   ngOnInit() {
+		this.routeDataChageSubscription = this.route.data.subscribe(data => {
+			this.routeDataService.announceRouteData(data)
+		})
 		// get the user id from the route
 		const userId = this.route.snapshot.paramMap.get('id');
 		// filter the selected user details by the userID
@@ -37,12 +44,15 @@ export class ThUserDetailComponent implements OnInit {
 			// assume only one id is found and set that to the selected user
 			this.user = matchedUser[0];
 		}
+		//enabledProducts
+		let enabledProductIds = this.user.enabledProducts.map(({ productId }) => productId)
 		// create the form data
 		this.userDetailsForm = this.fb.group({
       firstName: [this.user.firstName, [Validators.required]],
 			lastName: [this.user.lastName, [Validators.required]],
       email: [this.user.emailAddress, [Validators.email, Validators.required]],
-      enabled: [this.user.enabled]
+			enabled: [this.user.enabled],
+			enabledProducts: [enabledProductIds]
     });
   }
 
@@ -65,5 +75,10 @@ export class ThUserDetailComponent implements OnInit {
 			`Password reset email has been sent to ${this.getUsersFullName.transform(this.user)}.`,
 		);
 		this.userPasswordResetSent = true;
+	}
+
+	ngOnDestroy() {
+		this.routeDataChageSubscription.unsubscribe();
+		this.routeDataService.announceRouteData(this.routeDataService.defaultRoutData)
 	}
 }

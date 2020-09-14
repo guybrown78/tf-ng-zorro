@@ -50,6 +50,8 @@ import { GetUsersAccessPipe } from './example/tennantHub/pipes/get-users-access.
 import { GetPaginationMessagePipe } from './example/tennantHub/pipes/get-pagination-message.pipe';
 import { ThUserDetailComponent } from './example/tennantHub/th-user-detail/th-user-detail.component';
 
+
+import { RouteDataService } from './appServices/route-data.service'
 registerLocaleData(en);
 
 @NgModule({
@@ -101,7 +103,10 @@ registerLocaleData(en);
 		NzButtonModule,
 		NzDropDownModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_GB }],
+  providers: [
+		{ provide: NZ_I18N, useValue: en_GB }, 
+		RouteDataService
+	],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { RouteDataService } from '../../../appServices/route-data.service'
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-th-dashboard',
   templateUrl: './th-dashboard.component.html',
   styleUrls: ['./th-dashboard.component.css']
 })
-export class ThDashboardComponent {
+export class ThDashboardComponent implements OnInit {
 
 	userName:String = "Dinesh";
 	activeProducts = [
@@ -50,9 +52,20 @@ export class ThDashboardComponent {
 			cta:null
 		},
 	];
+	routeDataChageSubscription:Subscription;
+	constructor(
+		private router: Router,
+		private route: ActivatedRoute,
+		private routeDataService: RouteDataService,
+	) { }
 
-	constructor(private router: Router,) { }
-
+	ngOnInit() {
+		this.routeDataChageSubscription = this.route.data.subscribe(data => {
+				this.routeDataService.announceRouteData(data)
+		})
+	}
+	
+	
 	onActiveProductSelected(event){
 		if(event.productCode === "th"){
 			this.router.navigate(["/th/users"]);
@@ -64,4 +77,10 @@ export class ThDashboardComponent {
 	onProductCTASelected(event){
 		console.log(event)
 	}
+
+	ngOnDestroy() {
+		this.routeDataChageSubscription.unsubscribe();
+		this.routeDataService.announceRouteData(this.routeDataService.defaultRoutData)
+	}
+	
 }
