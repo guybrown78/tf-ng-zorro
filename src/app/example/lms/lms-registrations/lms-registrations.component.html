@@ -1,0 +1,59 @@
+
+<tf-ng-card *ngIf="data">
+
+	<nz-table 
+		#basicTable 
+		[nzData]="data"
+		nzTableLayout="fixed"
+		[nzPageSize]="itemsPerPage"
+		nzShowPagination="true"
+		[(nzPageIndex)]="currentPage" 
+		[nzTotal]="totalItems" 
+		[nzSize]="'small'" 
+		[nzShowTotal]="totalTemplate"
+	>
+		<thead>
+			<tr>
+				<th width="40%">COURSE NAME</th>
+				<th>STATUS</th>
+				<th>TOTAL TIME</th>
+				<th>SCORE</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let data of basicTable.data">
+				<td nzEllipsis width="40%">{{ data.course.name }}</td>
+				<td>
+					<tf-ng-status [colour]="(data.status | getRegistrationStatus).colour">
+						{{ (data.status | getRegistrationStatus).status }}
+					</tf-ng-status>
+				</td>
+				<td>
+					{{ data.totalSeconds | getSecondsToHMS }}
+				</td>
+				<td>{{ data.score | getScore }}</td>
+				<td align="right">
+					<button nz-button *ngIf="data.status.id === 1">
+						Start<i nz-icon nzType="caret-right"></i>
+					</button>
+					<button nz-button *ngIf="data.status.id === 2">
+						Resume<i nz-icon nzType="reload"></i>
+					</button>
+					<button nz-button *ngIf="data.status.id === 3">
+						Download Cert<i nz-icon nzType="download"></i>
+					</button>
+					<button nz-button *ngIf="data.status.id === 4">
+						Restart<i nz-icon nzType="reload"></i>
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</nz-table>
+		
+
+</tf-ng-card>
+
+<ng-template #totalTemplate let-total>
+	{{ currentPage | getPaginationMessage: totalItems:itemsPerPage:'Registrations' }}
+</ng-template>

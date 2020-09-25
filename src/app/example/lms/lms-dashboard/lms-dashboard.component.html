@@ -1,0 +1,26 @@
+<tf-ng-page-title-breadcrumbs [show-back-button]="false">
+	<span nz-typography><strong>Hello {{ userName }},</strong> welcome to your Learning Managaement dashboard</span>
+</tf-ng-page-title-breadcrumbs>
+
+<stats-responsive-example [statsData]="lmsStatsData"></stats-responsive-example>
+
+
+<nz-tabset>
+	<nz-tab nzTitle="All">
+		<lms-registrations [data]="_allData"></lms-registrations>
+	</nz-tab>
+
+	<nz-tab nzTitle="Not Started">
+		<lms-registrations [data]="_notStartedData"></lms-registrations>
+	</nz-tab>
+
+	<nz-tab nzTitle="In Progress">
+		<lms-registrations [data]="_inProgData"></lms-registrations>
+	</nz-tab>
+
+	<nz-tab nzTitle="Completed">
+		<lms-registrations [data]="_completedData"></lms-registrations>
+	</nz-tab>
+
+</nz-tabset>
+	

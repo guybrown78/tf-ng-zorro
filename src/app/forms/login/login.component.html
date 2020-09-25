@@ -1,3 +1,80 @@
-<p>
-  login works!
-</p>
+<tf-ng-form-hero [showError]="showFormHeroError">
+	<tf-ng-form-title>
+		<h2 nz-typography class="navy"><strong>Welcome to Transform,</strong> please&nbsp;sign&nbsp;in&nbsp;below.</h2>
+	</tf-ng-form-title>
+
+	<form nz-form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+		<nz-form-item>
+			<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="email">Email</nz-form-label>
+			<nz-form-control [nzSm]="14" [nzXs]="24">
+				<input nz-input formControlName="email" id="email" />
+				<nz-form-explain *ngIf="loginForm.get('email')?.dirty && loginForm.get('email')?.errors">
+					The input is not valid E-mail!
+				</nz-form-explain>
+			</nz-form-control>
+		</nz-form-item>
+
+		<nz-form-item>
+			<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password">Password</nz-form-label>
+			<nz-form-control [nzSm]="14" [nzXs]="24">
+				<input
+					nz-input
+					type="password"
+					id="password"
+					formControlName="password"
+				/>
+				<nz-form-explain *ngIf="loginForm.get('password')?.dirty && loginForm.get('password')?.errors"
+					>Please input your password!</nz-form-explain
+				>
+			</nz-form-control>
+		</nz-form-item>
+
+
+		<div class="btn-container">
+			<a class="left text-underlined" >Having trouble signing in?</a>
+
+				<button 
+					nz-button 
+					[nzLoading]="formLoading"
+					type="submit"
+					[ngClass]="!loginForm.valid ? 'grey' : 'aqua'"
+					[disabled]="!loginForm.valid"
+				>Login</button>
+
+		</div>
+
+	</form>
+
+	<div formerrors>
+		
+		<div class="btn-container top">
+			<tf-ng-hexagon 
+				size="xs" 
+				colour="white" 
+				outline-colour="white"
+			>
+				<i nz-icon nzType="exclamation" nzTheme="outline" class="red"></i>
+			</tf-ng-hexagon>
+			<div class="right-dominant">
+				<h4 class="white">
+					<strong>Sorry, there was an error when we tried to sign you in</strong>
+				</h4>
+				<span class="white">Server error code:1316</span><br/>
+				<span class="white">Your credentials could not be found</span><br/>
+				<span class="white">The authentification service is down!</span><br/>
+			</div>
+		</div>
+	</div>
+	
+</tf-ng-form-hero>
+
+<div class="login-footer">
+	<span class="tagline white">
+		Transform, part of the 3T Energy Group. Together&nbsp;we&nbsp;are&nbsp;Transforming&nbsp;Training&nbsp;with&nbsp;Technology.
+	</span>
+
+	<!-- This is here for only the purpose of this demo app. The login page will require you to successfully authenticate and then on success, should move you on/update the UI etc. This uses a fake flow so the menu icon is only to help navigate away from the demo signin page -->
+	<tf-ng-open-side-drawer>
+		<i nz-icon nzType="menu" nzTheme="outline" class="white"></i>
+	</tf-ng-open-side-drawer>
+</div>

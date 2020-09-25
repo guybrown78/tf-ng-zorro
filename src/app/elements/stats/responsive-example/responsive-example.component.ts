@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { StatDataItem } from '../../../common/models/StatDataItem'
 
 @Component({
   selector: 'stats-responsive-example',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./responsive-example.component.css']
 })
 export class ResponsiveExampleComponent{
-	appStatsData:any = [
+	@Input('statsData') appStatsData:StatDataItem[] = [
 		{
 			status:"red",
 			title:"Not Started",
@@ -23,6 +24,4 @@ export class ResponsiveExampleComponent{
 			data:"22"
 		}
 	];
-
-
 }

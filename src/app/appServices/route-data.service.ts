@@ -8,6 +8,8 @@ export class RouteDataService {
 	defaultRoutData:any = {
 		appTitle:"Transform / NGZorro",
 		appCode:'T',
+		isLogoClickable:true,
+		showAppLogo:true,
 		quickLinks:[
 			{value:"addCourse", title:"Add Course"},
 			{value:"assignCourse", title:"Assign Course"},

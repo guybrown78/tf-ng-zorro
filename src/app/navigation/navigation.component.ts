@@ -35,11 +35,11 @@ export class NavigationComponent implements OnInit {
 					title:"Form components",
 					label:"Other Form Components"
 				},
-				// {
-				// 	routerLink:"/login",
-				// 	title:"Opinionated Login Form",
-				// 	label:"Login form"
-				// },
+				{
+					routerLink:"/login",
+					title:"Opinionated Login Form",
+					label:"Login form"
+				},
 				{
 					routerLink:"/reactive-form",
 					title:"Angular Reactive Form (FormGroup, FormBuilder, Validators)",
@@ -173,7 +173,12 @@ export class NavigationComponent implements OnInit {
 				{
 					routerLink:"/th",
 					title:"",
-					label:"Tennant Hub"
+					label:"Tennant Hub (TH)"
+				},
+				{
+					routerLink:"/lms",
+					title:"",
+					label:"Learning Management (LMS)"
 				},
 			]
 		},

@@ -14,6 +14,7 @@ import en from '@angular/common/locales/en';
 import { TfNgCoreModule } from 'tf-ng-core'
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzTableModule } from 'ng-zorro-antd/table';
 
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -44,15 +45,22 @@ import { DropdownsComponent } from './elements/dropdowns/dropdowns.component';
 import { ThDashboardComponent } from './example/tennantHub/th-dashboard/th-dashboard.component';
 import { ThUsersComponent } from './example/tennantHub/th-users/th-users.component';
 
-import { GetLastLoginPipe } from './example/tennantHub/pipes/get-last-login.pipe';
-import { GetUsersFullNamePipe } from './example/tennantHub/pipes/get-users-full-name.pipe';
-import { GetUsersAccessPipe } from './example/tennantHub/pipes/get-users-access.pipe';
-import { GetPaginationMessagePipe } from './example/tennantHub/pipes/get-pagination-message.pipe';
+import { GetLastLoginPipe } from './common/pipes/get-last-login.pipe';
+import { GetUsersFullNamePipe } from './common/pipes/get-users-full-name.pipe';
+import { GetUsersAccessPipe } from './common/pipes/get-users-access.pipe';
+import { GetPaginationMessagePipe } from './common/pipes/get-pagination-message.pipe';
+import { GetScorePipe } from './common/pipes/get-score.pipe'
+registerLocaleData(en);
+
 import { ThUserDetailComponent } from './example/tennantHub/th-user-detail/th-user-detail.component';
 
 
-import { RouteDataService } from './appServices/route-data.service'
-registerLocaleData(en);
+import { RouteDataService } from './appServices/route-data.service';
+import { LmsDashboardComponent } from './example/lms/lms-dashboard/lms-dashboard.component';
+import { LmsRegistrationsComponent } from './example/lms/lms-registrations/lms-registrations.component';
+import { GetRegistrationStatusPipe } from './common/pipes/get-registration-status.pipe';
+import { GetSecondsToHMSPipe } from './common/pipes/get-seconds-to-h-m-s.pipe';
+
 
 @NgModule({
   declarations: [
@@ -90,6 +98,11 @@ registerLocaleData(en);
     GetUsersAccessPipe,
     GetPaginationMessagePipe,
     ThUserDetailComponent,
+    LmsDashboardComponent,
+    LmsRegistrationsComponent,
+    GetScorePipe,
+    GetRegistrationStatusPipe,
+    GetSecondsToHMSPipe,
   ],
   imports: [
     BrowserModule,
@@ -101,7 +114,8 @@ registerLocaleData(en);
 		BrowserAnimationsModule,
 		TfNgCoreModule,
 		NzButtonModule,
-		NzDropDownModule
+		NzDropDownModule,
+		NzTableModule,
   ],
   providers: [
 		{ provide: NZ_I18N, useValue: en_GB }, 

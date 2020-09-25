@@ -28,7 +28,6 @@ export class HeaderComponent {
 		this.routeData = { ...data }
 	}
 	onUserAccountsMenuToggle(isOpen:boolean){
-		console.log("onUserAccountsMenuToggle", isOpen);
 		this.isUserAccountsMenuOpen = isOpen;
 	}
 	onUserAccountItemSelected(item:string){

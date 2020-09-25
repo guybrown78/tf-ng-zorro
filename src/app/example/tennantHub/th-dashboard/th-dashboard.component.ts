@@ -67,10 +67,16 @@ export class ThDashboardComponent implements OnInit {
 	
 	
 	onActiveProductSelected(event){
-		if(event.productCode === "th"){
-			this.router.navigate(["/th/users"]);
-		}else{
-			console.log(`The product ${event.productTitle} isn't selectable for this example`)
+		switch(event.productCode){
+			case "th":
+				this.router.navigate(["/th/users"]);
+				break;
+			case "lm":
+				this.router.navigate(["/lms/dashboard"]);
+				break;
+			default:
+				console.log(`The product ${event.productTitle} isn't selectable for this example`);
+				break;
 		}
 	}
 

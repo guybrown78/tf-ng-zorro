@@ -4,10 +4,10 @@ import { RouteDataService } from '../../../appServices/route-data.service'
 import { Subscription } from 'rxjs';
 
 import { userData } from '../userData';
-import { GetLastLoginPipe } from '../pipes/get-last-login.pipe';
-import { GetUsersFullNamePipe } from '../pipes/get-users-full-name.pipe';
-import { GetUsersAccessPipe } from '../pipes/get-users-access.pipe';
-import { GetPaginationMessagePipe } from '../pipes/get-pagination-message.pipe';
+import { GetLastLoginPipe } from '../../../common/pipes/get-last-login.pipe';
+import { GetUsersFullNamePipe } from '../../../common/pipes/get-users-full-name.pipe';
+import { GetUsersAccessPipe } from '../../../common/pipes/get-users-access.pipe';
+import { GetPaginationMessagePipe } from '../../../common/pipes/get-pagination-message.pipe';
 @Component({
   selector: 'app-th-users',
   templateUrl: './th-users.component.html',

@@ -1,0 +1,32 @@
+.btn-container{
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.btn-container.top{
+	align-items: flex-start;
+}
+.btn-container .left{
+	margin-right: 16px;
+	flex: 1 1 0%;
+}
+.btn-container .right-dominant{
+	margin-left: 16px;
+	flex: 1 1 0%;
+}
+
+.login-footer{
+	position: absolute;
+	bottom: 0;
+	left:0;
+	width:100%;
+	height:74px;
+	padding: 0 1.4rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.login-footer .tagline{
+	font-size: 12px;
+}

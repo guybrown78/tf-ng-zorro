@@ -1,6 +1,8 @@
 <tf-ng-header 
+	[is-logo-clickable]="routeData.isLogoClickable"
 	[app-code]="routeData.appCode"
 	[app-title]="routeData.appTitle"
+	[show-app-logo]="routeData.showAppLogo"
 >
 
 	<div quickLinks *ngIf="routeData.quickLinks">

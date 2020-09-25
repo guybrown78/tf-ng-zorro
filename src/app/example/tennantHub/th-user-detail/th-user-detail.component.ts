@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { userData, productData } from '../userData';
-import { GetUsersFullNamePipe } from '../pipes/get-users-full-name.pipe';
+import { GetUsersFullNamePipe } from '../../../common/pipes/get-users-full-name.pipe';
 
 @Component({
   selector: 'app-th-user-detail',
