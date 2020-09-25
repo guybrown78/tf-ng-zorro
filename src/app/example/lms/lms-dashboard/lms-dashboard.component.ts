@@ -15,11 +15,11 @@ export class LmsDashboardComponent implements OnInit {
 	routeDataChageSubscription:Subscription;
 	userName:String = "Dinesh";
 	//
-	private _notStartedData:RegistrationDataItem[];
-	private _inProgData:RegistrationDataItem[];
-	private _completedData:RegistrationDataItem[];
-	private _failedData:RegistrationDataItem[];
-	private _allData:RegistrationDataItem[];
+	notStartedData:RegistrationDataItem[];
+	inProgData:RegistrationDataItem[];
+	completedData:RegistrationDataItem[];
+	failedData:RegistrationDataItem[];
+	allData:RegistrationDataItem[];
 	lmsStatsData:StatDataItem[];
 	//
 	constructor(
@@ -33,27 +33,27 @@ export class LmsDashboardComponent implements OnInit {
 			this.routeDataService.announceRouteData(data)
 		})
 		// parses the data for the page
-		this._notStartedData = registrationsData.filter(r => r.status.id === 1);
-		this._inProgData = registrationsData.filter(r => r.status.id === 2);
-		this._completedData = registrationsData.filter(r => r.status.id === 3);
-		this._failedData = registrationsData.filter(r => r.status.id === 4);
-		this._allData = [ ...registrationsData ]
+		this.notStartedData = registrationsData.filter(r => r.status.id === 1);
+		this.inProgData = registrationsData.filter(r => r.status.id === 2);
+		this.completedData = registrationsData.filter(r => r.status.id === 3);
+		this.failedData = registrationsData.filter(r => r.status.id === 4);
+		this.allData = [ ...registrationsData ]
 		// creates a stata data array of strict objects
 		this.lmsStatsData = [
 			{
 				status:"red",
 				title:"Not Started",
-				data:String(this._notStartedData.length)
+				data:String(this.notStartedData.length)
 			},
 			{
 				status:"amber",
 				title:"In Progress",
-				data:String(this._inProgData.length)
+				data:String(this.inProgData.length)
 			},
 			{
 				status:"green",
 				title:"Completed",
-				data:String(this._completedData.length)
+				data:String(this.completedData.length)
 			}
 		];
 	}
