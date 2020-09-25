@@ -13,6 +13,7 @@ import en from '@angular/common/locales/en';
 
 import { TfNgCoreModule } from 'tf-ng-core'
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzTableModule } from 'ng-zorro-antd/table';
 
@@ -114,6 +115,7 @@ import { GetSecondsToHMSPipe } from './common/pipes/get-seconds-to-h-m-s.pipe';
 		BrowserAnimationsModule,
 		TfNgCoreModule,
 		NzButtonModule,
+		NzMenuModule,
 		NzDropDownModule,
 		NzTableModule,
   ],
