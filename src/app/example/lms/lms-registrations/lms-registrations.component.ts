@@ -79,7 +79,19 @@ export class LmsRegistrationsComponent {
 		private getSecondsToHMS: GetSecondsToHMSPipe,
 	) { }
 	
-
+	
+	onStartCourse(data){
+		console.log("start", data.course.name)
+	}
+	onReumeCourse(data){
+		console.log("resume", data.course.name)
+	}
+	onDownloadCert(data){
+		console.log("download certificate for", data.course.name)
+	}
+	onRestartCourse(data){
+		console.log("re-start", data.course.name)
+	}
  
 
 }

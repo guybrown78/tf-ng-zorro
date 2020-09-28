@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { RouteDataService } from '../appServices/route-data.service';
 import { Subscription } from 'rxjs';
 @Component({
@@ -14,6 +15,7 @@ export class HeaderComponent {
 	isUserAccountsMenuOpen:boolean = false;
 	isSignOutModalVisible = false;
   constructor(
+		private router: Router,
 		private routeDataService: RouteDataService,
 	) {
 		this.routeDataSubscription = routeDataService.routeDataAnnounced$.subscribe(
@@ -43,6 +45,8 @@ export class HeaderComponent {
 	}
 	handleOkSignOut(){
 		this.isSignOutModalVisible = false;
+		//
+		this.router.navigate([`/login`]);
 	}
 
 	ngOnDestroy() {

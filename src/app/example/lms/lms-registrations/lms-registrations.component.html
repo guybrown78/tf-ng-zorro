@@ -34,7 +34,41 @@
 				</td>
 				<td>{{ data.score | getScore }}</td>
 				<td align="right">
-					<button nz-button *ngIf="data.status.id === 1">
+					<nz-dropdown nzTrigger="click">
+						<button 
+							nz-button 
+							nz-dropdown
+						>
+							<span>Actions</span> 
+							<i nz-icon type="down"></i>
+						</button>
+						<ul nz-menu>
+							<li 
+								*ngIf="data.status.id === 1"
+								nz-menu-item 
+								(click)="onStartCourse(data)"
+							>Start</li>
+
+							<li 
+								*ngIf="data.status.id === 2"
+								nz-menu-item 
+								(click)="onReumeCourse(data)"
+							>Resume</li>
+
+							<li 
+								*ngIf="data.status.id === 3"
+								nz-menu-item 
+								(click)="onDownloadCert(data)"
+							>Download Cert</li>
+							
+							<li 
+								*ngIf="data.status.id === 4"
+								nz-menu-item 
+								(click)="onRestartCourse(data)"
+							>Restart</li>
+						</ul>
+					</nz-dropdown>
+					<!-- <button nz-button *ngIf="data.status.id === 1">
 						Start<i nz-icon nzType="caret-right"></i>
 					</button>
 					<button nz-button *ngIf="data.status.id === 2">
@@ -45,7 +79,7 @@
 					</button>
 					<button nz-button *ngIf="data.status.id === 4">
 						Restart<i nz-icon nzType="reload"></i>
-					</button>
+					</button> -->
 				</td>
 			</tr>
 		</tbody>
