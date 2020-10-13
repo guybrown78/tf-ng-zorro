@@ -3,20 +3,37 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgZorroAntdModule, NZ_I18N, en_GB } from 'ng-zorro-antd';
-
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_GB } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
-
-import { TfNgCoreModule } from 'tf-ng-core'
+// add Transform Angular Core materials
+import { TfNgCoreModule } from 'tf-ng-core';
+//
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzListModule } from 'ng-zorro-antd/list';
 import { NzTableModule } from 'ng-zorro-antd/table';
-
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+//
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { OneComponent } from './example/one/one.component';
@@ -51,7 +68,7 @@ import { GetUsersFullNamePipe } from './common/pipes/get-users-full-name.pipe';
 import { GetUsersAccessPipe } from './common/pipes/get-users-access.pipe';
 import { GetPaginationMessagePipe } from './common/pipes/get-pagination-message.pipe';
 import { GetScorePipe } from './common/pipes/get-score.pipe'
-registerLocaleData(en);
+
 
 import { ThUserDetailComponent } from './example/tennantHub/th-user-detail/th-user-detail.component';
 
@@ -62,7 +79,7 @@ import { LmsRegistrationsComponent } from './example/lms/lms-registrations/lms-r
 import { GetRegistrationStatusPipe } from './common/pipes/get-registration-status.pipe';
 import { GetSecondsToHMSPipe } from './common/pipes/get-seconds-to-h-m-s.pipe';
 
-
+registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
@@ -108,16 +125,31 @@ import { GetSecondsToHMSPipe } from './common/pipes/get-seconds-to-h-m-s.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgZorroAntdModule,
 		FormsModule,
 		ReactiveFormsModule,
     HttpClientModule,
 		BrowserAnimationsModule,
 		TfNgCoreModule,
+		NzGridModule,
+		NzBreadCrumbModule,
+		NzDividerModule,
+		NzIconModule,
+		NzFormModule,
+		NzInputModule,
+		NzAutocompleteModule,
+		NzCheckboxModule,
+		NzDatePickerModule,
+		NzSelectModule,
+		NzUploadModule,
 		NzButtonModule,
-		NzMenuModule,
 		NzDropDownModule,
+		NzListModule,
 		NzTableModule,
+		NzTabsModule,
+		NzToolTipModule,
+		NzCarouselModule,
+		NzModalModule,
+		NzMessageModule,
   ],
   providers: [
 		{ provide: NZ_I18N, useValue: en_GB }, 

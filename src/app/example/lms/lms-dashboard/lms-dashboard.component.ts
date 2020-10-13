@@ -15,13 +15,19 @@ export class LmsDashboardComponent implements OnInit {
 	routeDataChageSubscription:Subscription;
 	userName:String = "Dinesh";
 	//
-	private _notStartedData:RegistrationDataItem[];
-	private _inProgData:RegistrationDataItem[];
-	private _completedData:RegistrationDataItem[];
-	private _failedData:RegistrationDataItem[];
+	_notStartedData:RegistrationDataItem[];
+	_inProgData:RegistrationDataItem[];
+	_completedData:RegistrationDataItem[];
+	_failedData:RegistrationDataItem[];
 	private _allData:RegistrationDataItem[];
 	lmsStatsData:StatDataItem[];
 	//
+	get allData():RegistrationDataItem[]{
+		return this._allData;
+	}
+	set allData(data:RegistrationDataItem[]){
+		this._allData = data
+	}
 	constructor(
 		private route: ActivatedRoute,
 		private routeDataService: RouteDataService,
@@ -37,7 +43,7 @@ export class LmsDashboardComponent implements OnInit {
 		this._inProgData = registrationsData.filter(r => r.status.id === 2);
 		this._completedData = registrationsData.filter(r => r.status.id === 3);
 		this._failedData = registrationsData.filter(r => r.status.id === 4);
-		this._allData = [ ...registrationsData ]
+		this.allData = [ ...registrationsData ]
 		// creates a stata data array of strict objects
 		this.lmsStatsData = [
 			{

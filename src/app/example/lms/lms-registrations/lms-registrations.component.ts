@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 // import { NzMessageService } from 'ng-zorro-antd/message';
 
-import { NzTableSortOrder, NzTableSortFn } from 'ng-zorro-antd/table';
+// import { NzTableSortOrder, NzTableSortFn } from 'ng-zorro-antd/table';
 // import { NzThFilterType } from 'ng-zorro-antd/table';
 
 import { RegistrationDataItem } from '../../../common/models/RegistrationDataItem';
