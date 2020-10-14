@@ -5,71 +5,71 @@
 			<h3 nz-typography class="navy">Input Form Elements</h3>
 			<nz-divider></nz-divider>
 	
-	
-			<input nz-input placeholder="Basic usage" />
-	
-			<br />
-			<br />
+			<nz-form-item>
+				<input nz-input placeholder="Basic usage" />
+			</nz-form-item>
+			
 	
 			<nz-form-item>
-				<nz-form-label nzFor="email">E-mail</nz-form-label>
-				<nz-form-control>
-					<input nz-input id="email" />
-					<nz-form-explain>
-						The input is not valid E-mail!
-					</nz-form-explain>
-				</nz-form-control>
-			</nz-form-item>
+        <nz-form-label nzFor="email">E-mail</nz-form-label>
+        <nz-form-control>
+          <input nz-input id="email" />
+        </nz-form-control>
+      </nz-form-item>
 	
+
 			<nz-form-item>
-				<nz-form-label nzRequired nzFor="email2">E-mail</nz-form-label>
-				<nz-form-control>
-					<input nz-input id="email2" />
-					<nz-form-explain>
-						Enter the email address you registered with
-					</nz-form-explain>
-				</nz-form-control>
-			</nz-form-item>
+        <nz-form-label nzRequired nzFor="email2">E-mail</nz-form-label>
+        <nz-form-control>
+					<input 
+						nz-input 
+						placeholder="Enter the email address you registered with"
+						id="email2" 
+					/>
+        </nz-form-control>
+      </nz-form-item>
 	
-	
-			<nz-form-item >
-				<nz-form-label nzRequired nzFor="email3">E-mail</nz-form-label>
-				<nz-form-control nzValidateStatus="error" nzHasFeedback nzErrorTip="That's not an email address">
+
+			<nz-form-item>
+        <nz-form-label nzRequired nzFor="email3">E-mail</nz-form-label>
+        <nz-form-control nzValidateStatus="error" nzHasFeedback nzErrorTip="That's not a valid email address">
 					<input nz-input id="email3" />
-					<nz-form-explain>
-						That's not an email address
-					</nz-form-explain>
-				</nz-form-control>
+        </nz-form-control>
+      </nz-form-item>
+	
+			<br />
+
+			<nz-form-item>
+				<nz-input-group [nzSuffix]="suffixSearch">
+					<input 
+						placeholder="input search text" 
+						nz-input 
+						id="search" 
+					/>
+				</nz-input-group>
 			</nz-form-item>
-	
-	
-			<br />
-	
-			<nz-input-group [nzSuffix]="suffixIconSearch">
-				<input type="text" nz-input placeholder="input search text" />
-			</nz-input-group>
-			<ng-template #suffixIconSearch>
-				<i nz-icon nzType="search"></i>
-			</ng-template>
 			
-			<br />
-			<br />
-	
-	
-			<nz-form-item >
-				<nz-form-label nzRequired nzFor="un">Username</nz-form-label>
-				<nz-form-control>
-					<nz-input-group [nzPrefix]="prefixTemplateUser">
-						<input type="text" id="un" nz-input placeholder="Enter your username" />
+
+			<nz-form-item>
+				<nz-form-label nzFor="username">Username</nz-form-label>
+				<nz-form-control nzErrorTip="The input is not valid E-mail!" >
+					<nz-input-group [nzPrefix]="prefixUser">
+						<input 
+							placeholder="Enter your username is the name you log in with" 
+							nz-input 
+							id="username" 
+						/>
 					</nz-input-group>
-					<ng-template #prefixTemplateUser><i nz-icon nzType="user"></i></ng-template>
-					<nz-form-explain>
-						Your username is the name you log in with
-					</nz-form-explain>
 				</nz-form-control>
 			</nz-form-item>
-	
-			
+
 		</form>
-	<!-- </tf-ng-form-card> -->
 </tf-ng-card>
+
+
+<ng-template #prefixUser>
+	<i nz-icon nzType="user"></i>
+</ng-template>
+<ng-template #suffixSearch>
+	<i nz-icon nzType="search"></i>
+</ng-template>

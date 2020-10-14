@@ -1,104 +1,108 @@
+
+
 <tf-ng-card>
+	
 	<h2 nz-typography>Dropdown examples</h2>
 
-	<tf-ng-card-content>
-		<div nz-row>
-			<div nz-col nzSpan="4">
-				
-				<!-- Left hand dropdown -->
-				<nz-dropdown nzTrigger="click">
-					<button 
-						nz-button 
-						nz-dropdown
-						class="grey"
-					>
-						<span>Actions</span> 
-						<i nz-icon type="down"></i>
-					</button>
-					<ul nz-menu>
-						<li nz-menu-item>
-							<a>Account Settings</a>
-						</li>
-						<li nz-menu-item>
-							<a>Application Support</a>
-						</li>	
-						<li nz-menu-item>
-							<a>License Information</a>
-						</li>
-						<li nz-menu-item>
-							<a>Your Profile</a>
-						</li>
-					</ul>
-				</nz-dropdown>
-			
+	<tf-ng-card-content nz-row>
+		<div nz-row nzGutter="16" nzAlign="middle">
+			<div nz-col>
+				<button nz-button class="grey" nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+					Actions<i nz-icon nzType="down"></i>
+				</button>
 			</div>
-			<div nz-col nzSpan="20" style="padding: 0 0.5rem;">
+			<div nz-col nzFlex="auto">
 				<span nzTypography class="navy">Left hand side dropdown, activated by click</span>
 			</div>
 		</div>
+		
+		<nz-dropdown-menu #menu="nzDropdownMenu">
+			<ul nz-menu>
+				<li nz-menu-item>
+					<a>Account Settings</a>
+				</li>
+				<li nz-menu-item>
+					<a>Application Support</a>
+				</li>	
+				<li nz-menu-item>
+					<a>License Information</a>
+				</li>
+				<li nz-menu-item>
+					<a>Your Profile</a>
+				</li>
+			</ul>
+		</nz-dropdown-menu>
+
 	</tf-ng-card-content>
+
 	<br />
-	<tf-ng-card-content>
-		<div nz-row>
-			<div nz-col nzSpan="20" style="padding: 0 0.5rem;">
+
+	<tf-ng-card-content nz-row>
+		<div nz-row nzGutter="16" nzAlign="middle">
+			
+			<div nz-col nzFlex="auto">
 				<span nzTypography class="navy">Drop down activated from hovering over button, postion on the bottom right and includes spacer and disabled items in the menu</span>
 			</div>
-			<div nz-col nzSpan="4" class="text-right">
 
-				<!-- Dropdown 2,  -->
-				<nz-dropdown 
-					nzTrigger="hover"
-					nzPlacement="bottomRight"
+			<div nz-col>
+				<button 
+					nz-button 
+					class="blue" 
+					nz-dropdown 
+					nzPlacement="bottomRight" 
+					[nzDropdownMenu]="menu2"
 				>
-					<button 
-						nz-button 
-						nz-dropdown
-					>
-						<span>Actions</span> 
-						<i nz-icon type="down"></i>
-					</button>
-					<ul nz-menu>
-						<li nz-menu-item>1st menu item</li>
-						<li nz-menu-item>2nd menu item</li>
-						<li nz-menu-divider></li>
-						<li nz-menu-item nzDisabled>disabled menu item</li>
-						<li nz-menu-item>4th menu item</li>
-					</ul>
-				</nz-dropdown>
+					Actions<i nz-icon nzType="down"></i>
+				</button>
 			</div>
-			
+
 		</div>
+		
+		<nz-dropdown-menu #menu2="nzDropdownMenu">
+			<ul nz-menu>
+				<li nz-menu-item>1st menu item</li>
+				<li nz-menu-item>2nd menu item</li>
+				<li nz-menu-divider></li>
+				<li nz-menu-item nzDisabled>disabled menu item</li>
+				<li nz-menu-item>4th menu item</li>
+			</ul>
+		</nz-dropdown-menu>
+
 	</tf-ng-card-content>
+
 	<br />
-	<tf-ng-card-content>
-		<div nz-row>
-			<div nz-col nzSpan="12" >
+
+	<tf-ng-card-content nz-row>
+		<div nz-row nzGutter="16" nzAlign="middle">
+			
+			<div nz-col>
 				<span nzTypography class="navy">Menu appear bottom center for quick link processes</span>
 			</div>
-			<div nz-col nzSpan="12" class="text-centre">
-				<nz-dropdown 
-					nzPlacement="bottomCenter"
-					nzTrigger="click"
-				>
-					<button 
+
+			<div nz-col>
+				<button 
 						nz-button 
 						nz-dropdown
+						nzPlacement="bottom" 
+						[nzDropdownMenu]="menu3"
 						nzSize="large" 
 						nzShape="circle" 
 						class="navy"
 					>
 						<i nz-icon nzType="edit"></i>
 					</button>
-					<ul nz-menu>
-						<li nz-menu-item>Add Course</li>
-						<li nz-menu-item>Assign Course</li>
-						<li nz-menu-item>Assign Category</li>
-					</ul>
-				</nz-dropdown>
 			</div>
-			
+
 		</div>
+		
+		<nz-dropdown-menu #menu3="nzDropdownMenu">
+			<ul nz-menu>
+				<li nz-menu-item>Add Course</li>
+				<li nz-menu-item>Assign Course</li>
+				<li nz-menu-item>Assign Category</li>
+			</ul>
+		</nz-dropdown-menu>
+
 	</tf-ng-card-content>
 
 </tf-ng-card>
-

@@ -18,7 +18,13 @@
 
 
 
-	<form *ngIf="user" nz-form [formGroup]="userDetailsForm" (ngSubmit)="submitForm()">
+	<form 
+		*ngIf="user" 
+		nz-form 
+		nzLayout="vertical"
+		[formGroup]="userDetailsForm" 
+		(ngSubmit)="submitForm()"
+	>
 
 		<h3 nz-typography class="blue">{{ user | getUsersFullName }}</h3>
 		<span nz-typography class="navy">{{ user.emailAddress }}</span>
@@ -49,7 +55,7 @@
 			<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="firstName">
 				First Name
 			</nz-form-label>
-			<nz-form-control [nzSm]="14" [nzXs]="24">
+			<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="You must include the users first name">
 		
 					<input 
 						nz-input 
@@ -58,10 +64,6 @@
 						placeholder="First Name"
 					/>
 
-			
-				<nz-form-explain *ngIf="userDetailsForm.get('firstName')?.dirty && userDetailsForm.get('firstName')?.errors"
-					>You must include the users first name</nz-form-explain
-				>
 			</nz-form-control>
 		</nz-form-item>
 
@@ -71,11 +73,8 @@
 			<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="lastName">
 				Last Name
 			</nz-form-label>
-			<nz-form-control [nzSm]="14" [nzXs]="24">
+			<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="You must include the users last name">
 				<input nz-input id="lastName" formControlName="lastName" />
-				<nz-form-explain *ngIf="userDetailsForm.get('lastName')?.dirty && userDetailsForm.get('lastName')?.errors"
-					>You must include the users last name</nz-form-explain
-				>
 			</nz-form-control>
 		</nz-form-item>
 
@@ -83,11 +82,8 @@
 			<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="email">
 				Email address
 			</nz-form-label>
-			<nz-form-control [nzSm]="14" [nzXs]="24">
+			<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid Email Address">
 				<input nz-input type="email" formControlName="email" id="email" />
-				<nz-form-explain *ngIf="userDetailsForm.get('email')?.dirty && userDetailsForm.get('email')?.errors">
-					The input is not valid Email Address
-				</nz-form-explain>
 			</nz-form-control>
 		</nz-form-item>
 
@@ -100,7 +96,7 @@
 			</nz-form-label> -->
 			<nz-select 
 				nzMode="tags" 
-				nzPlaceHolder="Add Products"
+				nzPlaceHolder="Add and Remove access to each available Transform product"
 				id="enabledProducts"
 				formControlName="enabledProducts"
 			>
@@ -111,9 +107,6 @@
 
 				></nz-option>
 			</nz-select>
-			<nz-form-explain>
-				Add and Remove access to each available Transform product
-			</nz-form-explain>
 		</nz-form-item>
 		
 

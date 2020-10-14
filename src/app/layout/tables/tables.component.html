@@ -31,27 +31,25 @@
 						</tf-ng-status>
 					</td>
 				<td align="right">
+					
+					<button 
+						nz-button 
+						class="blue" 
+						nz-dropdown 
+						nzPlacement="bottomRight" 
+						[nzDropdownMenu]="exampleActionMenu"
+					>
+						Actions<i nz-icon nzType="down"></i>
+					</button>
 
-						<nz-dropdown>
-							<button 
-								nz-button 
-								nz-dropdown
-							>
-								<span>Actions</span> 
-								<i nz-icon type="down"></i>
-							</button>
-							<ul nz-menu>
-								<li nz-menu-item>
-									<a>Edit</a>
-								</li>
-								<li nz-menu-item>
-									<a>Add Delegates</a>
-								</li>
-								<li nz-menu-item>
-									<a>Delete</a>
-								</li>
-							</ul>
-						</nz-dropdown>
+					<nz-dropdown-menu #exampleActionMenu="nzDropdownMenu">
+						<ul nz-menu>
+							<li nz-menu-item><a>Edit</a></li>
+							<li nz-menu-item><a>Add Delegates</a></li>
+							<li nz-menu-item><a>Delete</a></li>
+						</ul>
+					</nz-dropdown-menu>
+					
 					</td>
 				</tr>
 			</tbody>

@@ -6,10 +6,7 @@
 			<nz-form-item>
 				<nz-form-label nzFor="about">About You</nz-form-label>
 				<nz-form-control>
-					<textarea rows="4" nz-input id="about" placeholder="Type here"></textarea>
-					<nz-form-explain>
-						Describe yourself
-					</nz-form-explain>
+					<textarea rows="4" nz-input id="about" placeholder="Describe yourself"></textarea>
 				</nz-form-control>
 			</nz-form-item>
 
@@ -17,11 +14,8 @@
 			<nz-form-item>
 				<nz-form-label nzFor="msg">Message</nz-form-label>
 				
-				<nz-form-control nzValidateStatus="error" nzHasFeedback >
+				<nz-form-control nzValidateStatus="error" nzHasFeedback nzErrorTip="You need to add your message!">
 					<textarea rows="6" nz-input id="msg" placeholder="Type your message"></textarea>
-					<nz-form-explain>
-						You need to add your message!
-					</nz-form-explain>
 				</nz-form-control>
 			</nz-form-item>
 
@@ -39,30 +33,25 @@
 			<nz-form-item>
 				<nz-form-label nzFor="list">List</nz-form-label>
 				<nz-form-control>
-					<nz-select>
+					<nz-select nzPlaceHolder="Select an item from the list">
 						<nz-option nzLabel="option 1" nzValue="option1"></nz-option>
 						<nz-option nzLabel="option 2" nzValue="option2"></nz-option>
 						<nz-option nzLabel="option 3" nzValue="option3"></nz-option>
 						<nz-option nzLabel="option 4" nzValue="option4"></nz-option>
 					</nz-select>
-					<nz-form-explain>
-						Select an item from the list
-					</nz-form-explain>
 				</nz-form-control>
 			</nz-form-item>
 
 			<nz-form-item>
 				<nz-form-label nzFor="list">Location</nz-form-label>
-				<nz-form-control nzValidateStatus="error">
-					<nz-select>
+				<nz-form-control nzValidateStatus="error" nzErrorTip="Select a location">
+					<nz-select nzPlaceHolder="Please select a location">
 						<nz-option nzLabel="England" nzValue="1"></nz-option>
 						<nz-option nzLabel="Scotland" nzValue="2"></nz-option>
 						<nz-option nzLabel="Wales" nzValue="3"></nz-option>
 						<nz-option nzLabel="Northern Ireland" nzValue="4"></nz-option>
 					</nz-select>
-					<nz-form-explain>
-						Please select a location
-					</nz-form-explain>
+	
 				</nz-form-control>
 			</nz-form-item>
 
@@ -87,10 +76,12 @@
 				<label nz-checkbox>
 					<span>Send Notifications</span>
 				</label>
-				<nz-form-explain>
-					We will only contact you with relevant information
-				</nz-form-explain>
+				
 			</nz-form-control>
+
+			<span class="grey">
+				We will only contact you with relevant information
+			</span>
 
 		</form>
 </tf-ng-form-card>

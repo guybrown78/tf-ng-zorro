@@ -26,7 +26,7 @@
       <div nz-col nzSpan="12">
 
 				<nz-input-group 
-					nzSearch 
+					class="search blue" 
 					[nzPrefix]="prefixIconUserSearch"
 				>
 					<input 
@@ -72,16 +72,20 @@
 						{{ (data | getUsersAccess).status }}
 					</tf-ng-status>
 				</td> 
-			<td align="right">
 
-					<nz-dropdown nzTrigger="click">
-						<button 
-							nz-button 
-							nz-dropdown
-						>
-							<span>Actions</span> 
-							<i nz-icon type="down"></i>
-						</button>
+				<td align="right">
+					
+					<button 
+						nz-button 
+						class="blue" 
+						nz-dropdown 
+						nzPlacement="bottomRight" 
+						[nzDropdownMenu]="thUserActionMenu"
+					>
+						Actions<i nz-icon nzType="down"></i>
+					</button>
+
+					<nz-dropdown-menu #thUserActionMenu="nzDropdownMenu">
 						<ul nz-menu>
 							<li nz-menu-item (click)="onUserDetailsSelected(data)">Details</li>
 							<li nz-menu-item nzDisabled>Reset Access</li>
@@ -90,8 +94,9 @@
 								<span nzTypography class="red">Delete</span>
 							</li>
 						</ul>
-					</nz-dropdown>
+					</nz-dropdown-menu>
 				</td>
+
 			</tr>
 		</tbody>
 	</nz-table>
@@ -102,3 +107,4 @@
 <ng-template #totalTemplate let-total>
 	{{ currentPage | getPaginationMessage: totalItems:itemsPerPage:'Users' }}
 </ng-template>
+

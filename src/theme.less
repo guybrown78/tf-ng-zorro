@@ -1158,6 +1158,11 @@ span.italic{
 .ant-form-item-label > label::after {
 	content: '';
 }
+
+.ant-form-horizontal .ant-form-item-control {
+	flex: 1 1 0%;
+}
+
 .ant-input-search-enter-button > input,
 .ant-input-search > input,
 .ant-input-search-lg > input{
@@ -1189,6 +1194,7 @@ span.italic{
 // .ant-input-search-lg .ant-input-affix-wrapper .ant-input:not(:first-child)  {
 // 	padding-left: 36px;
 // }
+
 .ant-input-search-enter-button > input:focus,
 .ant-input-search > input:focus,
 .ant-input-search-lg > input:focus{
@@ -1197,6 +1203,35 @@ span.italic{
 	color: @blue-600;
 	border-color: @blue-600;
 }
+
+
+// search adds search class/styles which takes over from nzSearch 
+.ant-input-affix-wrapper.search{
+	border-radius: 9999px;
+}
+.ant-input-affix-wrapper.search > input{
+	height: 40px;
+	font-size:16px;
+}
+.ant-input-affix-wrapper.search.blue,
+.ant-input-affix-wrapper.search.blue > input{
+	background-color: @blue-500;
+	color: #FFFFFF;
+	border-color: @blue-600;
+}
+
+.ant-input-affix-wrapper.search.blue.cdk-focused{
+	background-color: #FFFFFF;
+	border-color: @blue-600;
+	color: @blue-600;
+}
+.ant-input-affix-wrapper.search.blue > input:focus{
+	background-color: #FFFFFF;
+	color: @blue-600;
+	border-color: @blue-600;
+}
+
+
 
 .ant-form-explain, 
 .ant-form-extra {
@@ -1266,7 +1301,9 @@ span.italic{
 .ant-carousel .slick-slide{
 	margin-bottom: 1rem;
 }
-
+.ant-carousel .slick-dots-bottom {
+	bottom: 0px;
+}
 
 
 .ant-btn{

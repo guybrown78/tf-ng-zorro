@@ -7,31 +7,23 @@
 
 	<div quickLinks *ngIf="routeData.quickLinks">
 		
-		<nz-dropdown 
-			nzPlacement="bottomCenter"
+		<button 
+			nz-button 
+			nz-dropdown
 			nzTrigger="click"
+			nzPlacement="bottom" 
+			[nzDropdownMenu]="headerQuickLinksMenu"
+			class="quick-link-btn"
 		>
-			<button 
-				nz-button 
-				nz-dropdown
-				class="quick-link-btn"
+			<tf-ng-hexagon 
+				size="xl" 
+				colour="aqua"
+				outline-colour="blue"
 			>
-				<tf-ng-hexagon 
-					size="xl" 
-					colour="aqua"
-					outline-colour="blue"
-				>
-					<i nz-icon nzType="plus" nzTheme="outline"></i>
-				</tf-ng-hexagon>
-			</button>
-			<ul nz-menu>
-				<li nz-menu-item 	*ngFor="let option of routeData.quickLinks">
-					{{  option.title }}
-				</li>
-
-			</ul>
-		</nz-dropdown>
-		
+				<i nz-icon nzType="plus" nzTheme="outline"></i>
+			</tf-ng-hexagon>
+		</button>
+	
 	</div>
 	
 
@@ -61,3 +53,15 @@
 >
 	<p nzTypography>Please confirm that you would like to end your session and log out</p>
 </nz-modal>
+
+
+
+
+
+<nz-dropdown-menu #headerQuickLinksMenu="nzDropdownMenu">
+	<ul nz-menu>
+		<li nz-menu-item 	*ngFor="let option of routeData.quickLinks">
+			{{  option.title }}
+		</li>
+	</ul>
+</nz-dropdown-menu>

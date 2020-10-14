@@ -34,7 +34,37 @@
 				</td>
 				<td>{{ data.score | getScore }}</td>
 				<td align="right">
-					<button nz-button *ngIf="data.status.id === 1">
+
+					<button 
+						nz-button 
+						class="blue" 
+						nz-dropdown 
+						nzPlacement="bottomRight" 
+						[nzDropdownMenu]="lmsActionMenu"
+					>
+						Actions<i nz-icon nzType="down"></i>
+					</button>
+
+					<nz-dropdown-menu #lmsActionMenu="nzDropdownMenu">
+						<ul nz-menu>
+						
+							<li nz-menu-item *ngIf="data.status.id === 1">
+								Start
+							</li>
+							<li nz-menu-item *ngIf="data.status.id === 2">
+								Resume
+							</li>
+							<li nz-menu-item *ngIf="data.status.id === 3">
+								Download Cert
+							</li>
+							<li nz-menu-item *ngIf="data.status.id === 4">
+								Restart
+							</li>
+		
+						</ul>
+					</nz-dropdown-menu>
+
+					<!-- <button nz-button *ngIf="data.status.id === 1">
 						Start<i nz-icon nzType="caret-right"></i>
 					</button>
 					<button nz-button *ngIf="data.status.id === 2">
@@ -45,7 +75,7 @@
 					</button>
 					<button nz-button *ngIf="data.status.id === 4">
 						Restart<i nz-icon nzType="reload"></i>
-					</button>
+					</button> -->
 				</td>
 			</tr>
 		</tbody>
