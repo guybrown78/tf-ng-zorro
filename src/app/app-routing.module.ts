@@ -16,16 +16,17 @@ import { ButtonsComponent } from './elements/buttons/buttons.component'
 import { IconsComponent } from './elements/icons/icons.component'
 import { StatsComponent } from './elements/stats/stats.component'
 import { DropdownsComponent } from './elements/dropdowns/dropdowns.component'
+import { CalendarComponent } from './elements/calendar/calendar.component'
 
 // layouts
-import { CardsComponent } from './layout/cards/cards.component'; 
-import { ListsComponent } from './layout/lists/lists.component'; 
-import { TablesComponent } from './layout/tables/tables.component'; 
-import { TabsComponent } from './layout/tabs/tabs.component'; 
+import { CardsComponent } from './layout/cards/cards.component';
+import { ListsComponent } from './layout/lists/lists.component';
+import { TablesComponent } from './layout/tables/tables.component';
+import { TabsComponent } from './layout/tabs/tabs.component';
 
 // examples
-import { OneComponent } from './example/one/one.component'; 
-import { TwoComponent } from './example/two/two.component'; 
+import { OneComponent } from './example/one/one.component';
+import { TwoComponent } from './example/two/two.component';
 
 // Design Sustem
 import { TypographyComponent } from './design-system/typography/typography.component';
@@ -41,20 +42,20 @@ import { ThUserDetailComponent } from './example/tennantHub/th-user-detail/th-us
 // LMS Learning Management
 import { LmsDashboardComponent } from './example/lms/lms-dashboard/lms-dashboard.component';
 const routes: Routes = [
-	{ 
-		path: '', 
-		component: OneComponent, 
-		data: {} 
+	{
+		path: '',
+		component: OneComponent,
+		data: {}
 	},
-	{ 
-		path: 'one', 
-		component: OneComponent, 
-		data: {} 
+	{
+		path: 'one',
+		component: OneComponent,
+		data: {}
 	},
-	{ 
-		path: 'two', 
-		component: TwoComponent, 
-		data: {} 
+	{
+		path: 'two',
+		component: TwoComponent,
+		data: {}
 	},
 	{ path: 'modals', component: TwoComponent, data:{} },
 
@@ -71,16 +72,17 @@ const routes: Routes = [
 	{ path: 'reactive-form', component: ReactiveFormComponent, data:{} },
 	// { path: 'decoupled-login', component: TwoComponent },
 	// { path: 'reactive-login', component: TwoComponent },
-	
-	
+
+
 	{ path: 'header', component: AppHeaderComponent, data:{} },
 	{ path: 'title-breadcrumbs', component: PageTitleBreadcrumbsComponent, data:{} },
 	{ path: 'buttons', component: ButtonsComponent, data:{}},
 	{ path: 'icons', component: IconsComponent, data:{} },
 	{ path: 'stats', component: StatsComponent, data:{} },
-	{ path: 'dropdowns', component: DropdownsComponent, data:{} },
-	
-	
+  { path: 'dropdowns', component: DropdownsComponent, data:{} },
+  { path: 'calandar', component: CalendarComponent, data:{} },
+
+
 	{ path: 'statuses', component: TwoComponent, data:{} },
 	{ path: 'search', component: TwoComponent, data:{} },
 	{ path: 'modals', component: TwoComponent, data:{} },
@@ -95,7 +97,7 @@ const routes: Routes = [
 	{ path: 'nodes', component: TwoComponent, data:{} },
 	{ path: 'node-flex', component: TwoComponent, data:{} },
 	{ path: 'node-row', component: TwoComponent, data:{} },
-	
+
 
 	{ path: 'example-one', component: TwoComponent, data:{} },
 	{ path: 'example-two', component: TwoComponent, data:{} },
@@ -103,7 +105,7 @@ const routes: Routes = [
 	{ path: 'example-four', component: TwoComponent, data:{} },
 	{ path: 'product-hub', component: TwoComponent, data:{} },
 	{ path: 'ngform', component: TwoComponent, data:{} },
-	
+
 	// Design system
 	{ path: 'typography', component: TypographyComponent, data:{} },
 	{ path: 'colour-pallete', component: ColourPalleteComponent, data:{} },
@@ -119,7 +121,7 @@ const routes: Routes = [
 		showAppLogo:true,
 		clientLogoSrc:'https://3-tech.com/wp-content/uploads/2019/09/Transform.png'
 	}},
-	{ path: 'th/dashboard', component: ThDashboardComponent, data: {	
+	{ path: 'th/dashboard', component: ThDashboardComponent, data: {
 		appTitle : 'Welcome to your Transform Platform',
 		appCode : 'T',
 		isLogoClickable:true,

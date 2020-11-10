@@ -21,11 +21,14 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzCalendarModule } from 'ng-zorro-antd/calendar';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
@@ -78,6 +81,7 @@ import { LmsDashboardComponent } from './example/lms/lms-dashboard/lms-dashboard
 import { LmsRegistrationsComponent } from './example/lms/lms-registrations/lms-registrations.component';
 import { GetRegistrationStatusPipe } from './common/pipes/get-registration-status.pipe';
 import { GetSecondsToHMSPipe } from './common/pipes/get-seconds-to-h-m-s.pipe';
+import { CalendarComponent } from './elements/calendar/calendar.component';
 
 registerLocaleData(en);
 @NgModule({
@@ -121,6 +125,7 @@ registerLocaleData(en);
     GetScorePipe,
     GetRegistrationStatusPipe,
     GetSecondsToHMSPipe,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -137,12 +142,15 @@ registerLocaleData(en);
 		NzFormModule,
 		NzInputModule,
 		NzAutocompleteModule,
-		NzCheckboxModule,
+    NzCheckboxModule,
+    NzRadioModule,
+    NzSwitchModule,
 		NzDatePickerModule,
 		NzSelectModule,
 		NzUploadModule,
 		NzButtonModule,
-		NzDropDownModule,
+    NzDropDownModule,
+    NzCalendarModule,
 		NzListModule,
 		NzTableModule,
 		NzTabsModule,
@@ -152,7 +160,7 @@ registerLocaleData(en);
 		NzMessageModule,
   ],
   providers: [
-		{ provide: NZ_I18N, useValue: en_GB }, 
+		{ provide: NZ_I18N, useValue: en_GB },
 		RouteDataService
 	],
   bootstrap: [AppComponent]

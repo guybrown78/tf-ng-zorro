@@ -11,7 +11,9 @@ export class FormElementsComponent implements OnInit {
   defaultOption = [...this.listOfSelectedValue];
 
 	selectedValue = 'Default';
-	
+
+  radioValue = 'A';
+
   constructor() { }
 
   ngOnInit() {

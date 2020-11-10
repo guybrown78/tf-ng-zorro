@@ -103,6 +103,48 @@
     nzLayout="vertical"
   >
 			<h3 nz-typography class="navy">Radio</h3>
-			<nz-divider></nz-divider>
+      <nz-divider></nz-divider>
+
+      <h4 nz-typography class="navy">Single Radio</h4>
+      <nz-form-item>
+        <label nz-radio ngModel name="gaga">Radio</label>
+      </nz-form-item>
+
+      <nz-divider></nz-divider>
+      <h4 nz-typography class="navy">Radio Groups</h4>
+
+      <nz-form-item>
+        <nz-radio-group [(ngModel)]="radioValue" name="rg">
+          <label nz-radio nzValue="A">eLearn</label>
+          <label nz-radio nzValue="B">vLearn</label>
+          <label nz-radio nzValue="C">VR</label>
+          <label nz-radio nzValue="D">AR</label>
+        </nz-radio-group>
+      </nz-form-item>
+
+      <nz-radio-group [(ngModel)]="radioValue" name="rg-1">
+        <label nz-radio-button nzValue="A">eLearn</label>
+        <label nz-radio-button nzValue="B">Video Learn</label>
+        <label nz-radio-button nzValue="C">Virtual Reality</label>
+        <label nz-radio-button nzValue="D">Augmented Reality</label>
+      </nz-radio-group>
+      <br />
+      <br />
+      <nz-radio-group [(ngModel)]="radioValue" name="rg-2">
+        <label nz-radio-button nzValue="A">eLearn</label>
+        <label nz-radio-button nzValue="B" nzDisabled>Video Learn</label>
+        <label nz-radio-button nzValue="C">Virtual Reality</label>
+        <label nz-radio-button nzValue="D">Augmented Reality</label>
+      </nz-radio-group>
+      <br />
+      <br />
+      <nz-radio-group [(ngModel)]="radioValue" name="rg-3">
+        <label nz-radio-button nzValue="A" nzDisabled>eLearn</label>
+        <label nz-radio-button nzValue="B" nzDisabled>Video Learn</label>
+        <label nz-radio-button nzValue="C" nzDisabled>Virtual Reality</label>
+        <label nz-radio-button nzValue="D" nzDisabled>Augmented Reality</label>
+      </nz-radio-group>
+
+
 		</form>
 </tf-ng-form-card>

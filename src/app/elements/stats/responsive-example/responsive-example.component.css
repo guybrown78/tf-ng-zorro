@@ -5,6 +5,17 @@
 	display: block;
 }
 
+.stat-card-carousel-content {
+  text-align: center;
+  height: 150px;
+  line-height: 150px;
+  overflow: hidden;
+  padding:1rem;
+}
+.carousel-container{
+  display: block;
+  height: 160px;
+}
 @media (min-width: 640px) {
 	.large-screen-stat-card{
 		display: block;

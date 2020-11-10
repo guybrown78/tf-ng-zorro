@@ -7,20 +7,20 @@
 				<span data>{{stat.data}}</span>
 			</tf-ng-stat-data-card>
 		</div>
-	
+
 	</div>
 </tf-ng-card>
 
 
-<tf-ng-card class="small-screen-stat-card" colour="navy" padding="none">
-	<nz-carousel nzAutoPlay nzDotPosition="bottom">
 
-		<div nz-carousel-content style="padding:1rem;" *ngFor="let stat of appStatsData">
-			<tf-ng-stat-data-card [colour]="stat.status">
-				<span title>{{stat.title}}</span>
-				<span data>{{stat.data}}</span>
-			</tf-ng-stat-data-card>
-		</div>
+<div class="small-screen-stat-card carousel-container bg-navy rounded-lg shadow-lg">
+  <nz-carousel nzAutoPlay nzEffect="scrollx" nzDotPosition="bottom">
+    <div nz-carousel-content class="stat-card-carousel-content" *ngFor="let stat of appStatsData">
+      <tf-ng-stat-data-card [colour]="stat.status">
+        <span title>{{stat.title}}</span>
+        <span data>{{stat.data}}</span>
+      </tf-ng-stat-data-card>
+    </div>
+  </nz-carousel>
+</div>
 
-	</nz-carousel>
-</tf-ng-card>
