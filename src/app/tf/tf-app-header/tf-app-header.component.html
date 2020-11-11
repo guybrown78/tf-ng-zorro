@@ -1,29 +1,27 @@
-<!-- <tf-ng-header
-	[is-logo-clickable]="routeData.isLogoClickable"
-	[app-code]="routeData.appCode"
-	[app-title]="routeData.appTitle"
+<tf-ng-header
+	[is-logo-clickable]="isLogoClickable"
+	[app-code]="appCode"
+	[app-title]="appTitle"
 	[show-app-logo]="routeData.showAppLogo"
 >
 
 	<div quickLinks *ngIf="routeData.quickLinks">
-
 		<button
 			nz-button
 			nz-dropdown
 			nzTrigger="click"
 			nzPlacement="bottom"
 			[nzDropdownMenu]="headerQuickLinksMenu"
-			class="quick-link-btn"
+			class="tf-app-quick-link-btn"
 		>
 			<tf-ng-hexagon
 				size="xl"
 				colour="aqua"
 				outline-colour="blue"
 			>
-				<i nz-icon nzType="plus" nzTheme="outline"></i>
+				<i nz-icon nzType="plus" nzTheme="outline" class="tf-app-quick-link-icon"></i>
 			</tf-ng-hexagon>
 		</button>
-
 	</div>
 
 
@@ -57,20 +55,10 @@
 </nz-modal>
 
 
-
-
-
 <nz-dropdown-menu #headerQuickLinksMenu="nzDropdownMenu">
 	<ul nz-menu>
 		<li nz-menu-item 	*ngFor="let option of routeData.quickLinks">
 			{{  option.title }}
 		</li>
 	</ul>
-</nz-dropdown-menu> -->
-
-
-<tf-app-header
-  [isLogoClickable]="routeData.isLogoClickable"
-  [appCode]="routeData.appCode"
-  [appTitle]="routeData.appTitle"
-></tf-app-header>
+</nz-dropdown-menu>

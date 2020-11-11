@@ -82,6 +82,7 @@ import { LmsRegistrationsComponent } from './example/lms/lms-registrations/lms-r
 import { GetRegistrationStatusPipe } from './common/pipes/get-registration-status.pipe';
 import { GetSecondsToHMSPipe } from './common/pipes/get-seconds-to-h-m-s.pipe';
 import { CalendarComponent } from './elements/calendar/calendar.component';
+import { TfAppHeaderComponent } from './tf/tf-app-header/tf-app-header.component';
 
 registerLocaleData(en);
 @NgModule({
@@ -126,6 +127,7 @@ registerLocaleData(en);
     GetRegistrationStatusPipe,
     GetSecondsToHMSPipe,
     CalendarComponent,
+    TfAppHeaderComponent,
   ],
   imports: [
     BrowserModule,
