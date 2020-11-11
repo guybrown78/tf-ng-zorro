@@ -1,9 +1,7 @@
-import { Component, OnInit, Input, Output, ElementRef, ViewChild } from '@angular/core';
-import { RouteDataService } from '../../appServices/route-data.service';
-import { Subscription } from 'rxjs';
-import { TfNgClientLogoComponent } from 'tf-ng-core/lib/tf-ng-client-logo/tf-ng-client-logo.component';
 
-
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { QuickLinkItemModel } from '../../common/models/QuickLinkItem.model';
 
 @Component({
   selector: 'tf-app-header',
@@ -12,13 +10,8 @@ import { TfNgClientLogoComponent } from 'tf-ng-core/lib/tf-ng-client-logo/tf-ng-
 })
 export class TfAppHeaderComponent implements OnInit {
 
-  routeData:any;
-	routeDataChage:any;
-	routeDataSubscription: Subscription;
 	isUserAccountsMenuOpen:boolean = false;
   isSignOutModalVisible = false;
-
-  @ViewChild("tfAppHeaderClientLogo") tfAppHeaderClientLogo:ElementRef<TfNgClientLogoComponent>
 
   private _isLogoClickable:boolean = false
   @Input() set isLogoClickable(value:boolean){
@@ -36,7 +29,6 @@ export class TfAppHeaderComponent implements OnInit {
     return this._appCode;
   }
 
-
   private _appTitle:string;
   @Input() set appTitle(value:string){
     this._appTitle = value;
@@ -45,30 +37,43 @@ export class TfAppHeaderComponent implements OnInit {
     return this._appTitle;
   }
 
-  constructor(
-		private routeDataService: RouteDataService,
-	) {
-		this.routeDataSubscription = routeDataService.routeDataAnnounced$.subscribe(
-			(data) => {
-				this.onRouteDataChanged(data);
-			}
-		)
-		this.routeData = routeDataService.defaultRoutData;
+  private _clientLogoSource:string;
+  @Input() set clientLogoSource(value:string){
+    this._clientLogoSource = value;
   }
+  get clientLogoSource():string{
+    return this._clientLogoSource;
+  }
+
+  private _showUserAccount:boolean = false
+  @Input() set showUserAccount(value:boolean){
+    this._showUserAccount = value;
+  }
+  get showUserAccount():boolean{
+    return this._showUserAccount;
+  }
+
+  private _quickLinks:QuickLinkItemModel[]
+  @Input() set quickLinks(values:QuickLinkItemModel[]){
+    this._quickLinks = [ ...values ];
+  }
+  get quickLinks():QuickLinkItemModel[]{
+    return this._quickLinks;
+  }
+
+  constructor(
+    private router:Router
+	) {}
 
   ngOnInit(){
     document.addEventListener("click", (event:MouseEvent) => this.handleClickOutside(event));
   }
-	onRouteDataChanged(data:any){
-		this.routeData = { ...data }
-	}
+
 	onUserAccountsMenuToggle(isOpen:boolean){
-    console.log(" -- onUserAccountsMenuToggle -- ", isOpen );
 		this.isUserAccountsMenuOpen = isOpen;
 	}
 	onUserAccountItemSelected(item:string){
 		if(item === 'signout'){
-      console.log("Sign out")
 			this.isSignOutModalVisible = true;
 		}
 		this.isUserAccountsMenuOpen = false;
@@ -100,8 +105,22 @@ export class TfAppHeaderComponent implements OnInit {
     return false;
   }
 
+  onQuickLinkItemClicked(item:QuickLinkItemModel){
+    if(item.actionHandler){
+      item.actionHandler(item);
+      return;
+    }
+    if(item.routePaths){
+      this.router.navigate(item.routePaths)
+      return;
+    }
+    if(item.url){
+      window.open(item.url);
+      return;
+    }
+  }
+
 	ngOnDestroy() {
     document.removeEventListener("click", (event:MouseEvent) => this.handleClickOutside(event));
-    this.routeDataSubscription.unsubscribe();
   }
 }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouteDataService } from '../appServices/route-data.service';
 import { Subscription } from 'rxjs';
-// import { TfNgClientLogoComponent } from 'tf-ng-core/lib/tf-ng-client-logo/tf-ng-client-logo.component';
-
+import { QuickLinkItemModel } from '../common/models/QuickLinkItem.model';
 
 @Component({
   selector: 'app-header',
@@ -16,8 +15,26 @@ export class HeaderComponent implements OnInit {
 	routeDataSubscription: Subscription;
 	isUserAccountsMenuOpen:boolean = false;
   isSignOutModalVisible = false;
+  // showUserAccount only set this to true if the user is logedin
+  showUserAccount = true;
 
-  // @ViewChild("tfAppHeaderClientLogo") tfAppHeaderClientLogo:ElementRef<TfNgClientLogoComponent>
+  quickLinks:QuickLinkItemModel[] = [
+    {
+      value:"ql1",
+      title:"Use Action Handler",
+      actionHandler: (item:QuickLinkItemModel) => this.onActionHandler(item)
+    },
+    {
+      value:"ql2",
+      title:"Specific App Route",
+      routePaths:["th", "user", "d62b15c7-21ef-40e3-a4a4-08d7d9fd5239"]
+    },
+    {
+      value:"ql3",
+      title:"External URL",
+      url:"https://www.3t-transform.com/"
+    }
+  ]
 
   constructor(
 		private routeDataService: RouteDataService,
@@ -30,52 +47,17 @@ export class HeaderComponent implements OnInit {
 		this.routeData = routeDataService.defaultRoutData;
 	}
 
-  ngOnInit(){
-    // document.addEventListener("click", (event:MouseEvent) => this.handleClickOutside(event));
-  }
+  ngOnInit(){}
+
 	onRouteDataChanged(data:any){
 		this.routeData = { ...data }
 	}
-	// onUserAccountsMenuToggle(isOpen:boolean){
-  //   console.log(" -- onUserAccountsMenuToggle -- ", isOpen );
-	// 	this.isUserAccountsMenuOpen = isOpen;
-	// }
-	// onUserAccountItemSelected(item:string){
-	// 	if(item === 'signout'){
-  //     console.log("Sign out")
-	// 		this.isSignOutModalVisible = true;
-	// 	}
-	// 	this.isUserAccountsMenuOpen = false;
-	// }
 
-	// handleCancelSignOut(){
-	// 	this.isSignOutModalVisible = false;
-	// }
-	// handleOkSignOut(){
-	// 	this.isSignOutModalVisible = false;
-	// }
-
-  // handleClickOutside(event:MouseEvent){
-  //   if(this.isUserAccountsMenuOpen){
-  //     const isInEl:boolean = this.isNodeWithinAppHeaderClientLogo(event.target);
-  //     if(!isInEl){
-  //       this.isUserAccountsMenuOpen = false;
-  //     }
-  //   }
-  // }
-  // isNodeWithinAppHeaderClientLogo(child):boolean{
-  //   let node = child.parentNode;
-  //   while (node != null) {
-  //       if (node.id === "tfAppHeaderClientLogo") {
-  //         return true;
-  //       }
-  //       node = node.parentNode;
-  //   }
-  //   return false;
-  // }
+  onActionHandler(quickLinkItem?:QuickLinkItemModel){
+    console.log(" ---- onActionHandler !!! !!! ", quickLinkItem.value)
+  }
 
 	ngOnDestroy() {
-    // document.removeEventListener("click", (event:MouseEvent) => this.handleClickOutside(event));
     this.routeDataSubscription.unsubscribe();
   }
 

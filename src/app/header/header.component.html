@@ -1,76 +1,8 @@
-<!-- <tf-ng-header
-	[is-logo-clickable]="routeData.isLogoClickable"
-	[app-code]="routeData.appCode"
-	[app-title]="routeData.appTitle"
-	[show-app-logo]="routeData.showAppLogo"
->
-
-	<div quickLinks *ngIf="routeData.quickLinks">
-
-		<button
-			nz-button
-			nz-dropdown
-			nzTrigger="click"
-			nzPlacement="bottom"
-			[nzDropdownMenu]="headerQuickLinksMenu"
-			class="quick-link-btn"
-		>
-			<tf-ng-hexagon
-				size="xl"
-				colour="aqua"
-				outline-colour="blue"
-			>
-				<i nz-icon nzType="plus" nzTheme="outline"></i>
-			</tf-ng-hexagon>
-		</button>
-
-	</div>
-
-
-  <tf-ng-client-logo
-    #tfAppHeaderClientLogo
-    id="tfAppHeaderClientLogo"
-		clientLogo
-		*ngIf="routeData.clientLogoSrc"
-		[client-logo-source]="routeData.clientLogoSrc"
-		show-user-account="true"
-		[is-open]="isUserAccountsMenuOpen"
-		(is-open-clicked)="onUserAccountsMenuToggle($event)"
-	>
-		<ul nz-menu userAccountMenu class="user-account">
-			<li nz-menu-item (click)="onUserAccountItemSelected('signout')">Sign Out</li>
-		</ul>
-	</tf-ng-client-logo>
-
-</tf-ng-header>
-
-
-
-<nz-modal
-	[(nzVisible)]="isSignOutModalVisible"
-	nzTitle="Log Out"
-	(nzOnCancel)="handleCancelSignOut()"
-	nzOkText="Yes, Log Me Out"
-	(nzOnOk)="handleOkSignOut()"
->
-	<p nzTypography>Please confirm that you would like to end your session and log out</p>
-</nz-modal>
-
-
-
-
-
-<nz-dropdown-menu #headerQuickLinksMenu="nzDropdownMenu">
-	<ul nz-menu>
-		<li nz-menu-item 	*ngFor="let option of routeData.quickLinks">
-			{{  option.title }}
-		</li>
-	</ul>
-</nz-dropdown-menu> -->
-
-
 <tf-app-header
   [isLogoClickable]="routeData.isLogoClickable"
   [appCode]="routeData.appCode"
   [appTitle]="routeData.appTitle"
+  [clientLogoSource]="routeData.clientLogoSrc"
+  [showUserAccount]="showUserAccount"
+  [quickLinks]="quickLinks"
 ></tf-app-header>

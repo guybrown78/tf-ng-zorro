@@ -2,10 +2,9 @@
 	[is-logo-clickable]="isLogoClickable"
 	[app-code]="appCode"
 	[app-title]="appTitle"
-	[show-app-logo]="routeData.showAppLogo"
 >
 
-	<div quickLinks *ngIf="routeData.quickLinks">
+	<div quickLinks *ngIf="quickLinks">
 		<button
 			nz-button
 			nz-dropdown
@@ -29,9 +28,9 @@
     #tfAppHeaderClientLogo
     id="tfAppHeaderClientLogo"
 		clientLogo
-		*ngIf="routeData.clientLogoSrc"
-		[client-logo-source]="routeData.clientLogoSrc"
-		show-user-account="true"
+		*ngIf="clientLogoSource"
+		[client-logo-source]="clientLogoSource"
+		[show-user-account]="showUserAccount"
 		[is-open]="isUserAccountsMenuOpen"
 		(is-open-clicked)="onUserAccountsMenuToggle($event)"
 	>
@@ -57,7 +56,11 @@
 
 <nz-dropdown-menu #headerQuickLinksMenu="nzDropdownMenu">
 	<ul nz-menu>
-		<li nz-menu-item 	*ngFor="let option of routeData.quickLinks">
+    <li
+      nz-menu-item
+      *ngFor="let option of quickLinks"
+      (click)="onQuickLinkItemClicked(option)"
+    >
 			{{  option.title }}
 		</li>
 	</ul>
