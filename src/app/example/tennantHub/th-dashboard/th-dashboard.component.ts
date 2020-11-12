@@ -64,8 +64,8 @@ export class ThDashboardComponent implements OnInit {
 				this.routeDataService.announceRouteData(data)
 		})
 	}
-	
-	
+
+
 	onActiveProductSelected(event){
 		switch(event.productCode){
 			case "th":
@@ -84,9 +84,13 @@ export class ThDashboardComponent implements OnInit {
 		console.log(event)
 	}
 
+  qlAddUser(){
+    console.log("ADD Tennant Hub USER");
+  }
+
 	ngOnDestroy() {
 		this.routeDataChageSubscription.unsubscribe();
 		this.routeDataService.announceRouteData(this.routeDataService.defaultRoutData)
 	}
-	
+
 }

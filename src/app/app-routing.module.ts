@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { QuickLinkItemModel } from './common/models/QuickLinkItem.model'
+
 // forms
 import { InputsComponent } from './forms/inputs/inputs.component';
 import { FileSelectComponent } from './forms/file-select/file-select.component'
@@ -67,8 +69,9 @@ const routes: Routes = [
 		appTitle : 'Transform',
 		appCode : 't',
 		isLogoClickable:false,
-		showAppLogo:true,
-	} },
+    showAppLogo:true,
+    quickLinks:[]
+	}},
 	{ path: 'reactive-form', component: ReactiveFormComponent, data:{} },
 	// { path: 'decoupled-login', component: TwoComponent },
 	// { path: 'reactive-login', component: TwoComponent },
@@ -119,43 +122,71 @@ const routes: Routes = [
 		appCode : 'T',
 		isLogoClickable:true,
 		showAppLogo:true,
-		clientLogoSrc:'https://3-tech.com/wp-content/uploads/2019/09/Transform.png'
-	}},
+    clientLogoSrc:'https://www.3t-transform.com/wp-content/uploads/2019/09/Transform.png',
+    quickLinks:  [
+      {
+        value:"qlAddUser",
+        title:"Add User",
+        routePaths:["th", "users"]
+      }
+    ]}
+	},
 	{ path: 'th/dashboard', component: ThDashboardComponent, data: {
 		appTitle : 'Welcome to your Transform Platform',
 		appCode : 'T',
 		isLogoClickable:true,
 		showAppLogo:true,
-		clientLogoSrc:'https://3-tech.com/wp-content/uploads/2019/09/Transform.png'
-	}},
+    clientLogoSrc:'https://www.3t-transform.com/wp-content/uploads/2019/09/Transform.png',
+    quickLinks:  [
+      {
+        value:"qlAddUser",
+        title:"Add User",
+        routePaths:["th", "users"]
+      }
+    ]}
+	},
 	{ path: 'th/users', component: ThUsersComponent, data: {
 		appTitle : 'Tennant Hub',
 		appCode : 'T',
 		isLogoClickable:true,
 		showAppLogo:true,
-		clientLogoSrc:'https://3-tech.com/wp-content/uploads/2019/09/Transform.png'
-	}},
+    clientLogoSrc:'https://www.3t-transform.com/wp-content/uploads/2019/09/Transform.png',
+    quickLinks:  [
+      {
+        value:"qlAddUser",
+        title:"Add User",
+        routePaths:["th", "users"]
+      }
+    ]}
+	},
 	{ path: 'th/user/:id', component: ThUserDetailComponent, data: {
 		appTitle : 'Tennant Hub',
 		appCode : 'T',
 		isLogoClickable:true,
 		showAppLogo:true,
-		clientLogoSrc:'https://3-tech.com/wp-content/uploads/2019/09/Transform.png'
-	}},
+    clientLogoSrc:'https://www.3t-transform.com/wp-content/uploads/2019/09/Transform.png',
+    quickLinks:  [
+      {
+        value:"qlAddUser",
+        title:"Add User",
+        routePaths:["th", "users"]
+      }
+    ]}
+	},
 	// LMS
 	{ path: 'lms', component: LmsDashboardComponent, data: {
 		appTitle : 'Learning Management',
 		appCode : 'lm',
 		isLogoClickable:true,
 		showAppLogo:true,
-		clientLogoSrc:'https://3-tech.com/wp-content/uploads/2019/09/Transform.png'
+		clientLogoSrc:'https://www.3t-transform.com/wp-content/uploads/2019/09/Transform.png'
 	}},
 	{ path: 'lms/dashboard', component: LmsDashboardComponent, data: {
 		appTitle : 'Learning Management',
 		appCode : 'lm',
 		isLogoClickable:true,
 		showAppLogo:true,
-		clientLogoSrc:'https://3-tech.com/wp-content/uploads/2019/09/Transform.png'
+		clientLogoSrc:'https://www.3t-transform.com/wp-content/uploads/2019/09/Transform.png'
 	}},
 ];
 

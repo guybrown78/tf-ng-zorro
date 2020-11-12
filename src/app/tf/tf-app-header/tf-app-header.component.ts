@@ -55,7 +55,9 @@ export class TfAppHeaderComponent implements OnInit {
 
   private _quickLinks:QuickLinkItemModel[]
   @Input() set quickLinks(values:QuickLinkItemModel[]){
-    this._quickLinks = [ ...values ];
+    values = !values.length
+      ? this._quickLinks = null
+      : this._quickLinks = [ ...values ];
   }
   get quickLinks():QuickLinkItemModel[]{
     return this._quickLinks;
