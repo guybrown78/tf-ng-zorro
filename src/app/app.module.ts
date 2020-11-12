@@ -38,7 +38,7 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 //
 import { HeaderComponent } from './header/header.component';
-import { NavigationComponent } from './navigation/navigation.component';
+
 import { OneComponent } from './example/one/one.component';
 import { TwoComponent } from './example/two/two.component';
 import { BrowserIconsComponent } from './design-system/browser-icons/browser-icons.component';
@@ -83,13 +83,13 @@ import { GetRegistrationStatusPipe } from './common/pipes/get-registration-statu
 import { GetSecondsToHMSPipe } from './common/pipes/get-seconds-to-h-m-s.pipe';
 import { CalendarComponent } from './elements/calendar/calendar.component';
 import { TfAppHeaderComponent } from './tf/tf-app-header/tf-app-header.component';
+import { TfAppSideDrawerComponent } from './tf/tf-app-side-drawer/tf-app-side-drawer.component';
 
 registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavigationComponent,
     OneComponent,
     TwoComponent,
     BrowserIconsComponent,
@@ -128,6 +128,7 @@ registerLocaleData(en);
     GetSecondsToHMSPipe,
     CalendarComponent,
     TfAppHeaderComponent,
+    TfAppSideDrawerComponent,
   ],
   imports: [
     BrowserModule,
