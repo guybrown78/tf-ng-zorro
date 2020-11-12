@@ -1,18 +1,45 @@
 <tf-ng-card>
 	<h2 nz-typography>Standard Buttons</h2>
 	<tf-ng-card-content>
-		
+
 		<div class="button-container">
 
 			<button nz-button nzSize="small" nzType="primary">Small Button</button>
 
-			<button nz-button nzType="default">Default</button>
+			<button nz-button nzType="default" class="blue">Default</button>
 
 			<button nz-button nzType="primary">Primary</button>
-			
+
 			<button nz-button nzSize="large" class="navy">Large Button</button>
 
-			<button nz-button class="grey">Subtle Grey</button>
+      <button nz-button class="grey">Subtle Grey</button>
+
+      <button nz-button nzDanger>Danger</button>
+
+		</div>
+
+	</tf-ng-card-content>
+</tf-ng-card>
+
+
+<tf-ng-card>
+	<h2 nz-typography>Outline Buttons</h2>
+	<tf-ng-card-content>
+
+		<div class="button-container">
+
+			<button nz-button nzSize="small" class="outline-blue">Small Outline Button</button>
+
+			<button nz-button class="outline">Default Outline</button>
+
+			<button nz-button nzType="primary" class="outline">Primary Outline</button>
+
+			<button nz-button nzSize="large" class="outline-navy">Large Outline Button</button>
+
+      <button nz-button class="outline-grey">Outline Grey</button>
+
+      <button nz-button nzDanger class="outline">Danger</button>
+
 		</div>
 
 	</tf-ng-card-content>
@@ -21,22 +48,28 @@
 <tf-ng-card>
 	<h2 nz-typography>Button States</h2>
 	<tf-ng-card-content>
-		
+
 		<div class="button-container">
 
 			<button nz-button nzSize="small" nzLoading class="aqua">Small Button</button>
 
-			<button nz-button disabled class="aqua">Primary</button>
-			
+      <button nz-button disabled class="aqua">Primary</button>
+      <button nz-button disabled class="outline-aqua">Primary</button>
+
 			<button nz-button nzLoading class="blue">Default</button>
-			<button nz-button disabled class="blue">Default</button>
-			
+      <button nz-button disabled class="blue">Default</button>
+      <button nz-button disabled class="outline-blue">Default</button>
+
 			<button nz-button nzLoading nzSize="large" class="navy">Large Button</button>
-			<button nz-button disabled nzSize="large" class="navy">Large Button</button>
+      <button nz-button disabled nzSize="large" class="navy">Large Button</button>
+      <button nz-button disabled nzSize="large" class="outline-navy">Large Button</button>
 
 			<button nz-button nzLoading class="grey">Subtle Grey</button>
-			<button nz-button disabled class="grey">Subtle Grey</button>
+      <button nz-button disabled class="grey">Subtle Grey</button>
+      <button nz-button disabled class="outline-grey">Subtle Grey</button>
 
+      <button nz-button nzDanger nzLoading class="outline">Danger</button>
+      <button nz-button nzDanger disabled class="outline">Danger</button>
 		</div>
 
 	</tf-ng-card-content>
@@ -45,10 +78,10 @@
 <tf-ng-card>
 	<h2 nz-typography>Buttons with Leading Icons</h2>
 	<tf-ng-card-content>
-		
+
 		<div class="button-container">
-			<button nz-button nzSize="small" class="blue">
-				<i nz-icon nzType="left"></i>Back
+			<button nz-button class="outline-blue">
+				<i nz-icon nzType="github" nzTheme="outline"></i>Source Code
 			</button>
 
 			<button nz-button class="aqua">
@@ -58,7 +91,7 @@
 			<button nz-button>
 				<i nz-icon nzType="search"></i>Search
 			</button>
-			
+
 			<button nz-button nzSize="large" class="navy">
 				<i nz-icon nzType="mail"></i>Send Welcome Email
 			</button>
@@ -72,10 +105,12 @@
 </tf-ng-card>
 
 
+
+
 <tf-ng-card>
 	<h2 nz-typography>Buttons with Trailing Icons</h2>
 	<tf-ng-card-content>
-		
+
 		<div class="button-container">
 
 			<button nz-button class="aqua">
@@ -98,6 +133,10 @@
 				more information<i nz-icon nzType="ellipsis" nzTheme="outline"></i>
 			</button>
 
+      <button nz-button nzDanger class="outline">
+				Delete<i nz-icon nzType="delete" nzTheme="outline"></i>
+      </button>
+
 		</div>
 
 	</tf-ng-card-content>
@@ -106,7 +145,7 @@
 <tf-ng-card>
 	<h2 nz-typography>Icon Buttons</h2>
 	<tf-ng-card-content>
-		
+
 		<div class="button-container">
 
 			<button nz-button nzSize="small" nzShape="circle" class="blue">
@@ -128,6 +167,16 @@
 			<button nz-button nzShape="circle" class="grey">
 				<i nz-icon nzType="right"></i>
 			</button>
+
+      <button nz-button nzShape="square" class="blue">
+				<i nz-icon nzType="close"></i>
+      </button>
+      <button nz-button nzShape="square" class="outline-blue">
+				<i nz-icon nzType="close"></i>
+      </button>
+      <button nz-button nzDanger nzShape="square" class="outline">
+				<i nz-icon nzType="delete"></i>
+      </button>
 
 		</div>
 
