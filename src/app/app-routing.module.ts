@@ -26,6 +26,10 @@ import { ListsComponent } from './layout/lists/lists.component';
 import { TablesComponent } from './layout/tables/tables.component';
 import { TabsComponent } from './layout/tabs/tabs.component';
 
+// displays
+import { ModalComponent } from './displays/modal/modal.component'
+import { MessagesComponent } from './displays/messages/messages.component'
+
 // examples
 import { OneComponent } from './example/one/one.component';
 import { TwoComponent } from './example/two/two.component';
@@ -59,7 +63,6 @@ const routes: Routes = [
 		component: TwoComponent,
 		data: {}
 	},
-	{ path: 'modals', component: TwoComponent, data:{} },
 
 	{ path: 'inputs', component: InputsComponent, data:{} },
 	{ path: 'file-select', component: FileSelectComponent, data:{} },
@@ -88,8 +91,6 @@ const routes: Routes = [
 
 	{ path: 'statuses', component: TwoComponent, data:{} },
 	{ path: 'search', component: TwoComponent, data:{} },
-	{ path: 'modals', component: TwoComponent, data:{} },
-	{ path: 'alerts', component: TwoComponent, data:{} },
 	{ path: 'layouts', component: TwoComponent, data:{} },
 
 	{ path: 'cards', component: CardsComponent, data:{} },
@@ -100,6 +101,12 @@ const routes: Routes = [
 	{ path: 'nodes', component: TwoComponent, data:{} },
 	{ path: 'node-flex', component: TwoComponent, data:{} },
 	{ path: 'node-row', component: TwoComponent, data:{} },
+
+
+  { path: 'modals', component: ModalComponent, data:{} },
+
+  { path: 'messages', component: MessagesComponent, data:{} },
+  { path: 'alerts', component: MessagesComponent, data:{} },
 
 
 	{ path: 'example-one', component: TwoComponent, data:{} },

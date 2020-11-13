@@ -1,0 +1,154 @@
+<tf-ng-card>
+
+	<h2 nz-typography>Modal popup examples</h2>
+
+	<tf-ng-card-content nz-row>
+		<div nz-row nzGutter="16" nzAlign="middle">
+
+			<div nz-col nzFlex="auto">
+				<span nzTypography class="navy">Basic template based modals</span>
+			</div>
+
+			<div nz-col>
+				<button
+					nz-button
+          class="blue"
+          (click)="openModal('basicModal')"
+				>
+					Show Template Modal
+        </button>
+
+        <button
+					nz-button
+          class="blue"
+          (click)="openModal('basic2Modal')"
+				>
+					Show Template 2 Modal
+				</button>
+      </div>
+
+      <button nz-button nzType="primary" (click)="createComponentModal()">
+        <span>Use Component</span>
+      </button>
+
+		</div>
+
+	</tf-ng-card-content>
+
+  <br />
+
+  <tf-ng-card-content nz-row>
+		<div nz-row nzGutter="16" nzAlign="middle">
+			<div nz-col nzFlex="auto">
+				<span nzTypography class="navy">Confirm modal created in the component with <span class="blue">NzModalService</span>.</span>
+			</div>
+
+			<div nz-col>
+				<button
+					nz-button
+          class="blue"
+          (click)="showConfirm()"
+				>
+					Show Confirm Modal
+        </button>
+      </div>
+    </div>
+
+    <br />
+
+    <div nz-row nzGutter="16" nzAlign="middle">
+			<div nz-col nzFlex="auto">
+				<span nzTypography class="navy">Confirm modal created in the component with <span class="blue">NzModalService</span>.</span>
+			</div>
+
+			<div nz-col>
+				<button nz-button class="outline-red" (click)="showDeleteConfirm()">
+          <span>Delete</span>
+        </button>
+      </div>
+		</div>
+  </tf-ng-card-content>
+
+  <br />
+
+  <tf-ng-card-content>
+
+    <p nzTypography>Notification type modals, created in the component with <span class="blue">NzModalService</span>.</p>
+    <div nz-row nzGutter="16" nzAlign="middle">
+      <div nz-col nzSpan="6">
+        <button
+          nz-button
+          nzBlock
+          nzSize="small"
+          class="blue"
+          (click)="info()"
+        >
+          Info
+        </button>
+      </div>
+
+      <div nz-col nzSpan="6">
+        <button
+          nz-button
+          nzBlock
+          nzSize="small"
+          class="blue"
+          (click)="success()"
+        >
+          Success
+        </button>
+      </div>
+
+      <div nz-col nzSpan="6">
+        <button
+          nz-button
+          nzBlock
+          nzSize="small"
+          class="blue"
+          (click)="error()"
+        >
+          Error
+        </button>
+      </div>
+
+      <div nz-col nzSpan="6">
+        <button
+          nz-button
+          nzBlock
+          nzSize="small"
+          class="blue"
+          (click)="warning()"
+        >
+          Warning
+        </button>
+      </div>
+
+    </div>
+  </tf-ng-card-content>
+
+</tf-ng-card>
+
+
+
+<nz-modal
+	[(nzVisible)]="basicModalVisible"
+  nzTitle="Basic Modal"
+	(nzOnCancel)="handleCancel()"
+	nzOkText="Okay, I've got it!"
+	(nzOnOk)="handleOk()"
+>
+  <p nzTypography>This is a basic modal compiled in the template. Nothing to it really.</p>
+</nz-modal>
+
+<nz-modal
+  [(nzVisible)]="basicModal2Visible"
+  nzClassName="tf-app-modal-single-btn"
+  nzTitle="Basic Modal 2"
+  [nzCancelText]="null"
+  nzOkText="OK"
+  (nzOnCancel)="handleCancel()"
+	(nzOnOk)="handleOk()"
+>
+  <p nzTypography>This is a basic modal compiled in the template. Nothing to it really.</p>
+</nz-modal>
+

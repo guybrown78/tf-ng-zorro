@@ -84,6 +84,10 @@ import { GetSecondsToHMSPipe } from './common/pipes/get-seconds-to-h-m-s.pipe';
 import { CalendarComponent } from './elements/calendar/calendar.component';
 import { TfAppHeaderComponent } from './tf/tf-app-header/tf-app-header.component';
 import { TfAppSideDrawerComponent } from './tf/tf-app-side-drawer/tf-app-side-drawer.component';
+import { ModalComponent } from './displays/modal/modal.component';
+import { MessagesComponent } from './displays/messages/messages.component';
+import { ModalContentComponent } from './displays/modal/modal-content/modal-content.component';
+
 
 registerLocaleData(en);
 @NgModule({
@@ -129,6 +133,9 @@ registerLocaleData(en);
     CalendarComponent,
     TfAppHeaderComponent,
     TfAppSideDrawerComponent,
+    ModalComponent,
+    MessagesComponent,
+    ModalContentComponent,
   ],
   imports: [
     BrowserModule,
