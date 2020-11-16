@@ -25,7 +25,7 @@
             class="blue"
             (click)="openModal('basic2Modal')"
           >
-            Show Template 2 Modal
+            Custom Header Modal
           </button>
 
 
@@ -150,10 +150,9 @@
 <nz-modal
   [(nzVisible)]="basicModal2Visible"
   nzClassName="tf-app-modal-single-btn"
-  nzTitle="Basic Modal 2"
+  [nzTitle]="modalTitle"
   [nzCancelText]="null"
   nzOkText="OK"
-  nzOkType="default"
   (nzOnCancel)="handleCancel()"
 	(nzOnOk)="handleOk()"
 >
@@ -164,3 +163,9 @@
   </div>
 </nz-modal>
 
+
+
+<ng-template #modalTitle>
+  <div><span class="text-xl">Custom Modal Title</span></div>
+  <span nz-typography class="text-md"><span class="italic">Delegate:</span> John Smith</span>
+</ng-template>

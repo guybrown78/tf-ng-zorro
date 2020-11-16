@@ -90,6 +90,9 @@ import { ModalContentComponent } from './displays/modal/modal-content/modal-cont
 
 
 registerLocaleData(en);
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
