@@ -25,6 +25,7 @@ import { CardsComponent } from './layout/cards/cards.component';
 import { ListsComponent } from './layout/lists/lists.component';
 import { TablesComponent } from './layout/tables/tables.component';
 import { TabsComponent } from './layout/tabs/tabs.component';
+import { NoDataComponent } from './layout/no-data/no-data.component'
 
 // displays
 import { ModalComponent } from './displays/modal/modal.component'
@@ -96,7 +97,8 @@ const routes: Routes = [
 	{ path: 'cards', component: CardsComponent, data:{} },
 	{ path: 'tables', component: TablesComponent, data:{} },
 	{ path: 'lists', component: ListsComponent, data:{} },
-	{ path: 'tabs', component: TabsComponent, data:{} },
+  { path: 'tabs', component: TabsComponent, data:{} },
+  { path: 'no-data', component: NoDataComponent, data:{} },
 
 	{ path: 'nodes', component: TwoComponent, data:{} },
 	{ path: 'node-flex', component: TwoComponent, data:{} },

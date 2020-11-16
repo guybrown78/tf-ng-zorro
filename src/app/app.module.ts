@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NzConfig, NZ_CONFIG } from 'ng-zorro-antd/core/config';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 //
 import { HeaderComponent } from './header/header.component';
 
@@ -87,11 +89,13 @@ import { TfAppSideDrawerComponent } from './tf/tf-app-side-drawer/tf-app-side-dr
 import { ModalComponent } from './displays/modal/modal.component';
 import { MessagesComponent } from './displays/messages/messages.component';
 import { ModalContentComponent } from './displays/modal/modal-content/modal-content.component';
+import { NoDataComponent } from './layout/no-data/no-data.component';
 
 
 registerLocaleData(en);
 
-
+// potentially config a few things out...
+const ngZorroConfig: NzConfig = {};
 
 @NgModule({
   declarations: [
@@ -139,6 +143,7 @@ registerLocaleData(en);
     ModalComponent,
     MessagesComponent,
     ModalContentComponent,
+    NoDataComponent,
   ],
   imports: [
     BrowserModule,
@@ -170,9 +175,11 @@ registerLocaleData(en);
 		NzToolTipModule,
 		NzCarouselModule,
 		NzModalModule,
-		NzMessageModule,
+    NzMessageModule,
+    NzEmptyModule
   ],
   providers: [
+    // { provide: NZ_CONFIG, useValue: ngZorroConfig },
 		{ provide: NZ_I18N, useValue: en_GB },
 		RouteDataService
 	],

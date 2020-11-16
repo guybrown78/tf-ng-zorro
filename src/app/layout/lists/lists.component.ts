@@ -50,7 +50,8 @@ export class ListsComponent implements OnInit {
 			name: "Course Six",
 			registered:10666
 		}
-	];
+  ];
+  data2:any[] = [];
   constructor() { }
 
   ngOnInit() {

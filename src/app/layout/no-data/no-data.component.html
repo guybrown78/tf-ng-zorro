@@ -1,0 +1,113 @@
+<tf-ng-card>
+  <h2 nz-typography>No data</h2>
+  <tf-ng-card-content>
+    <nz-empty nzNotFoundImage="simple"></nz-empty>
+  </tf-ng-card-content>
+</tf-ng-card>
+
+
+
+<tf-ng-card>
+	<h2 nz-typography>Lists - no data available</h2>
+
+		<nz-list
+			[nzHeader]="headerTemplate"
+      [nzFooter]="footerTemplate"
+      [nzDataSource]="data"
+		>
+      <nz-list-item *ngFor="let item of data">
+
+				<div nz-row>
+					<div nz-col nzSpan="16">
+						<span nz-typography>{{ item.name }}</span>
+					</div>
+					<div nz-col nzSpan="8" class="text-center">
+						<span nz-typography class="blue">{{ item.code }}</span>
+					</div>
+				</div>
+
+      </nz-list-item>
+    </nz-list>
+
+</tf-ng-card>
+
+
+
+
+
+<tf-ng-card>
+	<h2 nz-typography>Table - no data available</h2>
+
+		<nz-table
+			#basicTable
+			[nzData]="data"
+			nzTableLayout="fixed"
+			nzShowPagination="false"
+		>
+			<thead>
+				<tr *ngIf="data.length">
+					<th>Name</th>
+					<th>Code</th>
+					<th>Status</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let data of data">
+					<td nzEllipsis>{{ data.name }}</td>
+					<td>{{ data.code }}</td>
+					<td>
+						<tf-ng-status
+						[colour]="
+							data.status.toLowerCase() === 'live' ? 'green'
+							: data.status.toLowerCase() === 'archived' ? 'red'
+							: 'amber'
+						">
+							{{ data.status.toUpperCase() }}
+						</tf-ng-status>
+					</td>
+				<td align="right">
+
+					<button
+						nz-button
+						class="blue"
+						nz-dropdown
+						nzPlacement="bottomRight"
+						[nzDropdownMenu]="exampleActionMenu"
+					>
+						Actions<i nz-icon nzType="down"></i>
+					</button>
+
+					<nz-dropdown-menu #exampleActionMenu="nzDropdownMenu">
+						<ul nz-menu>
+							<li nz-menu-item><a>Edit</a></li>
+							<li nz-menu-item><a>Add Delegates</a></li>
+							<li nz-menu-item><a>Delete</a></li>
+						</ul>
+					</nz-dropdown-menu>
+
+					</td>
+				</tr>
+			</tbody>
+		</nz-table>
+
+</tf-ng-card>
+
+
+
+<ng-template #headerTemplate>
+	<div nz-row *ngIf="data.length">
+		<div nz-col nzSpan="16">Course</div>
+		<div nz-col nzSpan="8" class="text-center">Course Code</div>
+	</div>
+</ng-template>
+
+
+<ng-template #footerTemplate>
+	<div nz-row>
+		<div nz-col nzSpan="16">&nbsp;</div>
+		<div nz-col nzSpan="8" class="text-center">
+			<button nz-button nzBlock [disabled]="data.length">View All</button>
+		</div>
+	</div>
+</ng-template>

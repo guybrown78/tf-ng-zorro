@@ -102,6 +102,11 @@
         "routerLink":"/tabs",
         "title":"Tab examples",
         "label":"Tabs"
+      },
+      {
+        "routerLink":"/no-data",
+        "title":"Handle no data",
+        "label":"No Data / Empty"
       }
     ]
   },

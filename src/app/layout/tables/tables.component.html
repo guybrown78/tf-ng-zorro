@@ -1,9 +1,9 @@
 <tf-ng-card>
 	<h2 nz-typography>Table</h2>
 	<!-- <tf-ng-card-content colour="grey"> -->
-		
-		<nz-table 
-			#basicTable 
+
+		<nz-table
+			#basicTable
 			[nzData]="listOfData"
 			nzTableLayout="fixed"
 			nzShowPagination="false"
@@ -21,7 +21,7 @@
 					<td nzEllipsis>{{ data.name }}</td>
 					<td>{{ data.code }}</td>
 					<td>
-						<tf-ng-status 
+						<tf-ng-status
 						[colour]="
 							data.status.toLowerCase() === 'live' ? 'green'
 							: data.status.toLowerCase() === 'archived' ? 'red'
@@ -31,12 +31,12 @@
 						</tf-ng-status>
 					</td>
 				<td align="right">
-					
-					<button 
-						nz-button 
-						class="blue" 
-						nz-dropdown 
-						nzPlacement="bottomRight" 
+
+					<button
+						nz-button
+						class="blue"
+						nz-dropdown
+						nzPlacement="bottomRight"
 						[nzDropdownMenu]="exampleActionMenu"
 					>
 						Actions<i nz-icon nzType="down"></i>
@@ -49,11 +49,72 @@
 							<li nz-menu-item><a>Delete</a></li>
 						</ul>
 					</nz-dropdown-menu>
-					
+
 					</td>
 				</tr>
 			</tbody>
 		</nz-table>
-		
+
 	<!-- </tf-ng-card-content> -->
 </tf-ng-card>
+
+
+<!--
+<tf-ng-card>
+	<h2 nz-typography>Table</h2>
+
+
+		<nz-table
+			#basicTable
+			[nzData]="listOfData2"
+			nzTableLayout="fixed"
+			nzShowPagination="false"
+		>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Code</th>
+					<th>Status</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let data of listOfData2">
+					<td nzEllipsis>{{ data.name }}</td>
+					<td>{{ data.code }}</td>
+					<td>
+						<tf-ng-status
+						[colour]="
+							data.status.toLowerCase() === 'live' ? 'green'
+							: data.status.toLowerCase() === 'archived' ? 'red'
+							: 'amber'
+						">
+							{{ data.status.toUpperCase() }}
+						</tf-ng-status>
+					</td>
+				<td align="right">
+
+					<button
+						nz-button
+						class="blue"
+						nz-dropdown
+						nzPlacement="bottomRight"
+						[nzDropdownMenu]="exampleActionMenu"
+					>
+						Actions<i nz-icon nzType="down"></i>
+					</button>
+
+					<nz-dropdown-menu #exampleActionMenu="nzDropdownMenu">
+						<ul nz-menu>
+							<li nz-menu-item><a>Edit</a></li>
+							<li nz-menu-item><a>Add Delegates</a></li>
+							<li nz-menu-item><a>Delete</a></li>
+						</ul>
+					</nz-dropdown-menu>
+
+					</td>
+				</tr>
+			</tbody>
+		</nz-table>
+
+</tf-ng-card> -->

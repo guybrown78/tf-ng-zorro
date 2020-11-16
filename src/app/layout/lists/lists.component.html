@@ -1,12 +1,12 @@
 <tf-ng-card>
 	<h2 nz-typography>Lists</h2>
 
-		<nz-list 
+		<nz-list
 			[nzHeader]="headerTemplate"
 			[nzFooter]="footerTemplate"
 		>
       <nz-list-item *ngFor="let item of data">
-			
+
 				<div nz-row>
 					<div nz-col nzSpan="16">
 						<span nz-typography>{{ item.name }}</span>
@@ -21,6 +21,31 @@
 
 </tf-ng-card>
 
+
+
+<!-- <tf-ng-card>
+	<h2 nz-typography>Lists</h2>
+
+		<nz-list
+			[nzHeader]="headerTemplate"
+      [nzFooter]="footerTemplate"
+      [nzDataSource]="data2"
+		>
+      <nz-list-item *ngFor="let item of data2">
+
+				<div nz-row>
+					<div nz-col nzSpan="16">
+						<span nz-typography>{{ item.name }}</span>
+					</div>
+					<div nz-col nzSpan="8" class="text-center">
+						<span nz-typography class="blue">{{ item.code }}</span>
+					</div>
+				</div>
+
+      </nz-list-item>
+    </nz-list>
+
+</tf-ng-card> -->
 
 <ng-template #headerTemplate>
 	<div nz-row>
@@ -38,3 +63,9 @@
 		</div>
 	</div>
 </ng-template>
+
+
+
+
+
+

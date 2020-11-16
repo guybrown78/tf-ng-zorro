@@ -25,6 +25,7 @@ export class TablesComponent {
       code: 'CS_300',
       status: 'ARCHIVED'
     }
-	];
+  ];
+  listOfData2:any[] = null;
 
 }
