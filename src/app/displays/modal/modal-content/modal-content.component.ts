@@ -13,9 +13,16 @@ export class ModalContentComponent implements OnInit {
   @Input() subtitle?: string;
 
   demoForm: FormGroup;
+  loading:boolean = false
 
   submitForm(): void {
-    //
+    if(this.demoForm.valid){
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+        this.destroyModal();
+      }, 1000);
+    }
   }
 
   constructor(
@@ -25,15 +32,13 @@ export class ModalContentComponent implements OnInit {
 
   ngOnInit(): void {
     this.demoForm = this.fb.group({
+      name: [null, [Validators.required]],
       email: [null, [Validators.email, Validators.required]],
-      phoneNumberPrefix: ['+44'],
-      phoneNumber: [null, [Validators.required]],
     });
   }
 
   destroyModal(): void {
-    console.log()
-    this.modal.destroy({ data: 'this the result data' });
+    this.modal.destroy({ ...this.demoForm.value });
   }
 
 }

@@ -25,7 +25,7 @@
     "ng-zorro-antd": "^10.0.1",
     "rxjs": "~6.6.3",
     "tf-ng-core": "0.0.21",
-    "tf-ng-zorro-theme": "^1.0.7",
+    "tf-ng-zorro-theme": "^1.0.8",
     "tslib": "^2.0.0",
     "web-animations-js": "^2.3.2",
     "zone.js": "~0.10.2"

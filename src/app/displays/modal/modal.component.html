@@ -9,27 +9,33 @@
 				<span nzTypography class="navy">Basic template based modals</span>
 			</div>
 
-			<div nz-col>
-				<button
-					nz-button
-          class="blue"
-          (click)="openModal('basicModal')"
-				>
-					Show Template Modal
-        </button>
+			<div nz-col class="btn-cnt">
 
-        <button
-					nz-button
-          class="blue"
-          (click)="openModal('basic2Modal')"
-				>
-					Show Template 2 Modal
-				</button>
+
+          <button
+            nz-button
+            class="blue"
+            (click)="openModal('basicModal')"
+          >
+            Show Template Modal
+          </button>
+
+          <button
+            nz-button
+            class="blue"
+            (click)="openModal('basic2Modal')"
+          >
+            Show Template 2 Modal
+          </button>
+
+
+          <button nz-button nzType="primary" (click)="createComponentModal()">
+            <span>Use Component</span>
+          </button>
+
       </div>
 
-      <button nz-button nzType="primary" (click)="createComponentModal()">
-        <span>Use Component</span>
-      </button>
+
 
 		</div>
 
@@ -58,7 +64,7 @@
 
     <div nz-row nzGutter="16" nzAlign="middle">
 			<div nz-col nzFlex="auto">
-				<span nzTypography class="navy">Confirm modal created in the component with <span class="blue">NzModalService</span>.</span>
+				<span nzTypography class="navy">Delete modal providing user with a danger warning.</span>
 			</div>
 
 			<div nz-col>
@@ -79,10 +85,10 @@
         <button
           nz-button
           nzBlock
-          nzSize="small"
-          class="blue"
+          class="outline-blue"
           (click)="info()"
         >
+          <i nz-icon nzType="info-circle" nzTheme="outline"></i>
           Info
         </button>
       </div>
@@ -91,10 +97,10 @@
         <button
           nz-button
           nzBlock
-          nzSize="small"
-          class="blue"
+          class="outline-blue"
           (click)="success()"
         >
+          <i nz-icon nzType="check-circle" nzTheme="outline"></i>
           Success
         </button>
       </div>
@@ -103,10 +109,10 @@
         <button
           nz-button
           nzBlock
-          nzSize="small"
-          class="blue"
+          class="outline-blue"
           (click)="error()"
         >
+          <i nz-icon nzType="close-circle" nzTheme="outline"></i>
           Error
         </button>
       </div>
@@ -115,10 +121,10 @@
         <button
           nz-button
           nzBlock
-          nzSize="small"
-          class="blue"
+          class="outline-blue"
           (click)="warning()"
         >
+          <i nz-icon nzType="exclamation-circle" nzTheme="outline"></i>
           Warning
         </button>
       </div>
@@ -133,6 +139,7 @@
 <nz-modal
 	[(nzVisible)]="basicModalVisible"
   nzTitle="Basic Modal"
+  nzCancelType="default"
 	(nzOnCancel)="handleCancel()"
 	nzOkText="Okay, I've got it!"
 	(nzOnOk)="handleOk()"
@@ -146,9 +153,14 @@
   nzTitle="Basic Modal 2"
   [nzCancelText]="null"
   nzOkText="OK"
+  nzOkType="default"
   (nzOnCancel)="handleCancel()"
 	(nzOnOk)="handleOk()"
 >
-  <p nzTypography>This is a basic modal compiled in the template. Nothing to it really.</p>
+  <p nzTypography>This is another basic modal compiled in the template. The cancel button is&nbsp;nullified.</p>
+  <div class="row">
+    <img src="assets/favicon-32x32.png">
+    <span nz-typography>Remember to always include the Transform mark logo in the browser&nbsp;title</span>
+  </div>
 </nz-modal>
 

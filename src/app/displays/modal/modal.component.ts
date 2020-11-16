@@ -84,7 +84,7 @@ export class ModalComponent implements OnInit {
   info() {
     this.modal.info({
       nzTitle: 'This is a notification message',
-      nzContent: '<p>some messages...some messages...</p><p>some messages...some messages...</p>',
+      nzContent: '<p>Information on some UI element that may need further description.</p><p>Lorum ipsum solar dolar... </p>',
       nzOnOk: () => console.log('Info OK')
     });
   }
@@ -92,21 +92,21 @@ export class ModalComponent implements OnInit {
   success() {
     this.modal.success({
       nzTitle: 'This is a success message',
-      nzContent: 'some messages...some messages...'
+      nzContent: 'Task successful'
     });
   }
 
   error() {
     this.modal.error({
       nzTitle: 'This is an error message',
-      nzContent: 'some messages...some messages...'
+      nzContent: 'Task was unsuccessful'
     });
   }
 
   warning() {
     this.modal.warning({
       nzTitle: 'This is an warning message',
-      nzContent: 'some messages...some messages...'
+      nzContent: 'Are you sure this is what you want to do within this UI?'
     });
   }
 

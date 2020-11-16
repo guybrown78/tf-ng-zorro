@@ -1,9 +1,17 @@
-<div>
+<div class="form-hero-card">
 
     <form nz-form [formGroup]="demoForm" nzLayout="vertical" (ngSubmit)="submitForm()">
 
-      <h3 nz-typography>Create Course</h3>
+      <h3 nz-typography>Book a demo</h3>
       <nz-divider></nz-divider>
+
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="name">Name</nz-form-label>
+        <nz-form-control nzErrorTip="Please enter tell us who you are">
+          <input nz-input formControlName="name" id="name" />
+        </nz-form-control>
+      </nz-form-item>
+
       <nz-form-item>
         <nz-form-label nzRequired nzFor="email">E-mail</nz-form-label>
         <nz-form-control nzErrorTip="The input is not valid E-mail!">
@@ -12,30 +20,22 @@
       </nz-form-item>
 
 
-      <nz-form-item>
-        <nz-form-label nzFor="phoneNumber" nzRequired>Phone Number</nz-form-label>
-        <nz-form-control nzErrorTip="Please input your phone number!" [nzValidateStatus]="demoForm.controls['phoneNumber']">
-          <nz-input-group [nzAddOnBefore]="addOnBeforeTemplate">
-            <ng-template #addOnBeforeTemplate>
-              <nz-select formControlName="phoneNumberPrefix" style="width: 70px;">
-                <nz-option nzLabel="+44" nzValue="+44"></nz-option>
-                <nz-option nzLabel="+00" nzValue="+00"></nz-option>
-              </nz-select>
-            </ng-template>
-            <input formControlName="phoneNumber" id="'phoneNumber'" nz-input />
-          </nz-input-group>
-
-        </nz-form-control>
-      </nz-form-item>
-
-
       <div nz-row nzJustify="space-between">
-
-        <!-- <nzContainer> -->
-          <button nz-button nzType="primary">Register</button>
-        <!-- </nzContainer> -->
+        <button
+          type="button"
+          nz-button
+          class="outline"
+          (click)="destroyModal()"
+        >Cancel</button>
+        <button
+          type="submit"
+          nz-button
+          nzType="primary"
+          [disabled]="!demoForm.valid"
+          [nzLoading]="loading"
+        >Register</button>
       </div>
+
     </form>
 
-  <button nz-button [nzType]="'primary'" (click)="destroyModal()">destroy modal in the component</button>
 </div>
