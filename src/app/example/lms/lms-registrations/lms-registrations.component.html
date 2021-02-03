@@ -1,15 +1,15 @@
 
 <tf-ng-card *ngIf="data">
 
-	<nz-table 
-		#basicTable 
+	<nz-table
+		#basicTable
 		[nzData]="data"
 		nzTableLayout="fixed"
 		[nzPageSize]="itemsPerPage"
 		nzShowPagination="true"
-		[(nzPageIndex)]="currentPage" 
-		[nzTotal]="totalItems" 
-		[nzSize]="'small'" 
+		[(nzPageIndex)]="currentPage"
+		[nzTotal]="totalItems"
+		[nzSize]="'small'"
 		[nzShowTotal]="totalTemplate"
 	>
 		<thead>
@@ -35,11 +35,11 @@
 				<td>{{ data.score | getScore }}</td>
 				<td align="right">
 
-					<button 
-						nz-button 
-						class="blue" 
-						nz-dropdown 
-						nzPlacement="bottomRight" 
+					<button
+						nz-button
+						class="blue"
+						nz-dropdown
+						nzPlacement="bottomRight"
 						[nzDropdownMenu]="lmsActionMenu"
 					>
 						Actions<i nz-icon nzType="down"></i>
@@ -47,7 +47,7 @@
 
 					<nz-dropdown-menu #lmsActionMenu="nzDropdownMenu">
 						<ul nz-menu>
-						
+
 							<li nz-menu-item *ngIf="data.status.id === 1">
 								Start
 							</li>
@@ -60,7 +60,7 @@
 							<li nz-menu-item *ngIf="data.status.id === 4">
 								Restart
 							</li>
-		
+
 						</ul>
 					</nz-dropdown-menu>
 
@@ -80,7 +80,7 @@
 			</tr>
 		</tbody>
 	</nz-table>
-		
+
 
 </tf-ng-card>
 

@@ -11,6 +11,7 @@ export class GetPaginationMessagePipe implements PipeTransform {
   }
 
 	getPagintationMessage(currentPage: number, totalItems: number, itemsPerPage:number, dataType:string):String{
+    return "";
 		// return `${userObj.firstName} ${userObj.lastName}`
 		let pageStartIndex = ((currentPage - 1) * itemsPerPage) + 1;
 		let pageEndIndex = (currentPage * itemsPerPage);
