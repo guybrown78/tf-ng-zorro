@@ -34,6 +34,7 @@ import { MessagesComponent } from './displays/messages/messages.component'
 // examples
 import { OneComponent } from './example/one/one.component';
 import { TwoComponent } from './example/two/two.component';
+import { PlaygroundComponent } from './example/playground/playground.component';
 
 // Design Sustem
 import { TypographyComponent } from './design-system/typography/typography.component';
@@ -117,6 +118,7 @@ const routes: Routes = [
 	{ path: 'example-four', component: TwoComponent, data:{} },
 	{ path: 'product-hub', component: TwoComponent, data:{} },
 	{ path: 'ngform', component: TwoComponent, data:{} },
+  { path: 'playground', component: PlaygroundComponent, data:{} },
 
 	// Design system
 	{ path: 'typography', component: TypographyComponent, data:{} },

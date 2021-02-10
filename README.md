@@ -144,3 +144,10 @@ if ('NodeList' in window && !NodeList.prototype.forEach) {
 ng serve --port 0 --open
 
 ---
+
+
+
+if updating and npm 7 is still causing problems then update with
+
+```javascript 
+  npm install --legacy-peer-deps

@@ -90,6 +90,8 @@ import { ModalComponent } from './displays/modal/modal.component';
 import { MessagesComponent } from './displays/messages/messages.component';
 import { ModalContentComponent } from './displays/modal/modal-content/modal-content.component';
 import { NoDataComponent } from './layout/no-data/no-data.component';
+import { PlaygroundComponent } from './example/playground/playground.component';
+import { StatGridComponent } from './example/playground/stat-grid/stat-grid.component';
 
 
 registerLocaleData(en);
@@ -144,6 +146,8 @@ const ngZorroConfig: NzConfig = {};
     MessagesComponent,
     ModalContentComponent,
     NoDataComponent,
+    PlaygroundComponent,
+    StatGridComponent,
   ],
   imports: [
     BrowserModule,
