@@ -16,9 +16,12 @@ export class TfAppSideDrawerService {
   set navigationData(values:NavigationItemModel[]){
     this._navigationData = [ ...values ]
   }
+
+
   constructor(private http: HttpClient) {
 
   }
+
 
   public getJSON(): Observable<any> {
     return this.http.get(this._navigationJSON);

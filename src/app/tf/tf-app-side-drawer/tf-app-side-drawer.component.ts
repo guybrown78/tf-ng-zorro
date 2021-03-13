@@ -12,6 +12,19 @@ export class TfAppSideDrawerComponent implements OnInit {
   isOpened:boolean = false;
   navigationData:NavigationItemModel[]
 
+  appList:any[] = [
+    {name:'Home', code:'home'},
+    {name:'Competance Management', code:'cm'},
+    {name:'Learning Management', code:'lm'},
+    {name:'Training Management', code:'tm'},
+    // {name:'4Competance Management', code:'cm'},
+    // {name:'5Learning Management', code:'lm'},
+    // {name:'6Training Management', code:'tm'},
+    // {name:'7Competance Management', code:'cm'},
+    // {name:'8Learning Management', code:'lm'},
+    // {name:'9Training Management', code:'tm'},
+  ]
+
   constructor(
     private sideDrawerService: TfAppSideDrawerService
   ) {}
@@ -25,4 +38,9 @@ export class TfAppSideDrawerComponent implements OnInit {
   onItemSelected(){
 		this.isOpened = !this.isOpened;
 	}
+  onAppSelected(appCode:string){
+    console.log(appCode)
+    this.isOpened = !this.isOpened;
+  }
+
 }

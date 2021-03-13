@@ -139,6 +139,27 @@ if ('NodeList' in window && !NodeList.prototype.forEach) {
 	};
 }
 ```
+
+
+## Configuring CommonJS dependencies
+
+You might get a few warnings from Angular CLI when starting the project, one of those is about CommonJS or AMD dependencies can cause optimization bailouts. This is because of dependancies like 'date-fns' that zorro use in some of their examples. To stop these warnings, add the dependancies to the build options in angular.json
+
+e.g.
+
+```javascript
+"build": {
+  "builder": "@angular-devkit/build-angular:browser",
+  "options": {
+     "allowedCommonJsDependencies": [
+        "date-fns"
+     ]
+     ...
+   }
+   ...
+},
+```
+
 ---
 
 ng serve --port 0 --open
@@ -151,3 +172,4 @@ if updating and npm 7 is still causing problems then update with
 
 ```javascript 
   npm install --legacy-peer-deps
+  npm update --legacy-peer-deps

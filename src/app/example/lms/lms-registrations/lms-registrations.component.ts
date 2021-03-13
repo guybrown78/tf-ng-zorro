@@ -34,7 +34,7 @@ export class LmsRegistrationsComponent {
   //     name: 'Course Name',
   //     sortOrder: null,
   //     sortFn: (a: RegistrationDataItem, b: RegistrationDataItem) => a.course.name.localeCompare(b.course.name),
-    
+
 	// 	},
 	// 	{
 	// 		name: 'Status',
@@ -72,14 +72,14 @@ export class LmsRegistrationsComponent {
 	// trackByName(_: number, item: ColumnItem): string {
   //   return item.name;
 	// }
-	
+
   constructor(
 		private getRegistrationStatus: GetRegistrationStatusPipe,
 		private getScore: GetScorePipe,
 		private getSecondsToHMS: GetSecondsToHMSPipe,
 	) { }
-	
 
- 
+
+
 
 }

@@ -33,7 +33,11 @@
               "src/theme.less",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "date-fns"
+            ]
+
           },
           "configurations": {
             "production": {
