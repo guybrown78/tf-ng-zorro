@@ -104,6 +104,11 @@
         "label":"Tabs"
       },
       {
+        "routerLink":"/tree",
+        "title":"Tree examples",
+        "label":"Tree"
+      },
+      {
         "routerLink":"/no-data",
         "title":"Handle no data",
         "label":"No Data / Empty"

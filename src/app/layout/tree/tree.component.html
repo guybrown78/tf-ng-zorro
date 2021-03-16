@@ -1,0 +1,111 @@
+<tf-ng-card>
+	<h2 nz-typography>Basic tree</h2>
+	<tf-ng-card-content>
+    <nz-tree
+      #tree
+      [nzData]="nodes"
+    >
+    </nz-tree>
+	</tf-ng-card-content>
+</tf-ng-card>
+
+
+<!--
+
+  The TF UI design states that the icon should sit outside of the bordered node.  And has a default placer for this icon and it is called a 'ant-tree-switcher'. However, it is easy to customise the ant-tree-switcher for an expandable node, but doesn't seem to work for a leaf unless you add nzShowLine.
+
+  nzShowLine should be used if you want to add icons outside the bordered area of a leaf node. If you want the line to be hidden, then add the class 'tf-app-tree-hidden-line' to the tree
+
+-->
+<tf-ng-card>
+	<h2 nz-typography>Custom icons</h2>
+  <p nz-typography class="blue">Transform design, seperating the node icon and the node details.<br />
+  Sets a simple custom ngTemplate for nzExpandedIcon.<br />
+  nzShowLine should be used to achieve this. Also needs the additional class 'tf-app-tree-hidden-line' to hide expansion line</p>
+	<tf-ng-card-content>
+    <nz-tree
+      class="tf-app-tree tf-app-tree-hidden-line"
+      [nzData]="nodes"
+      nzShowLine
+      [nzExpandedIcon]="simpleIcons"
+    ></nz-tree>
+    <!-- Simple icons template for filestore example -->
+    <ng-template #simpleIcons let-node let-origin="origin">
+      <!-- folder expansion opened/closed -->
+      <i *ngIf="!origin.isLeaf" nz-icon [nzType]="node.isExpanded ? 'folder-open' : 'folder'" class="ant-tree-switcher-line-icon"></i>
+      <!-- Leaf / node icon, reads the ng-zorro icon name property in the data  or defaults to 'file' icon -->
+      <i *ngIf="origin.isLeaf" nz-icon [nzType]="origin.icon ? origin.icon : 'file' "></i>
+    </ng-template>
+	</tf-ng-card-content>
+</tf-ng-card>
+
+
+<tf-ng-card>
+	<h2 nz-typography>Custom templates</h2>
+  <p nz-typography class="blue">Completely customable template showing custom expandable icons, different node templates and right click contectual menu.<br />
+  This is shown purely as an example of how the nodes data and tree view can be manipulated to suit different user stories.<br />
+  If used, the templates and styling would have to follow bespoke UI designs</p>
+	<tf-ng-card-content>
+    <nz-tree
+      class="tf-app-tree tf-app-tree-hidden-line"
+      [nzData]="nodes"
+      nzShowLine
+      [nzExpandedIcon]="customIcons"
+      (nzClick)="nzClick($event)"
+      [nzTreeTemplate]="nzTreeTemplate"
+      [nzCheckedKeys]="defaultCheckedKeys"
+      [nzExpandedKeys]="defaultExpandedKeys"
+      [nzSelectedKeys]="defaultSelectedKeys"
+      (nzClick)="nzClick($event)"
+      (nzContextMenu)="nzClick($event)"
+      (nzCheckBoxChange)="nzCheck($event)"
+      (nzExpandChange)="nzCheck($event)"
+    ></nz-tree>
+	</tf-ng-card-content>
+</tf-ng-card>
+
+
+<ng-template #customIcons let-node let-origin="origin">
+  <div
+    *ngIf="!origin.isLeaf"
+    class="custom-expand-icon rounded"
+    [ngClass]="node.isExpanded ? 'bg-navy white' : 'bg-blue white'"
+  >
+    <i nz-icon class="white"
+      [nzType]="node.isExpanded ? 'folder-open' : 'folder'"
+    ></i>
+  </div>
+
+  <!-- Leaf / node icon, checks the template type first, then if icon is needed, adds it from the icon name in data -->
+  <i *ngIf="origin.isLeaf && origin.templateType !== 'infoNode' " nz-icon [nzType]="origin.icon" class="blue"></i>
+</ng-template>
+
+<!-- Custom node templates, driven from additional data within the nodes model (desc and templateType ) -->
+<ng-template #nzTreeTemplate let-node let-origin="origin">
+  <span class="custom-node">
+    <span *ngIf="!node.isLeaf" (contextmenu)="contextMenu($event, menu)">
+      <h4 nz-typography class="navy uppercase">{{ node.title }}</h4>
+    </span>
+
+    <span *ngIf="node.isLeaf && origin.templateType !== 'infoNode'" (contextmenu)="contextMenu($event, menu)">
+      <span nz-typography class="blue">{{ node.title }}</span>
+    </span>
+
+
+    <div *ngIf="node.isLeaf && origin.templateType === 'infoNode'" (contextmenu)="contextMenu($event, menu)" class="info-node">
+      <span nz-typography class="blue italic text-md"><strong>{{ node.title }}</strong></span>
+      <div>
+        <span nz-typography class="blue text-sm">{{ origin.desc }}</span>
+      </div>
+    </div>
+
+  </span>
+</ng-template>
+
+<!-- Example of a right click contectual menu -->
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu>
+    <li nz-menu-item (click)="selectDropdown()">Action 1</li>
+    <li nz-menu-item (click)="selectDropdown()">Action 2</li>
+  </ul>
+</nz-dropdown-menu>

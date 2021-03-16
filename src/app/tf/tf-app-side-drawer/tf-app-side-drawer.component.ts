@@ -38,6 +38,9 @@ export class TfAppSideDrawerComponent implements OnInit {
   onItemSelected(){
 		this.isOpened = !this.isOpened;
 	}
+  // onSubMenuSelected(event){
+  //   console.log(event)
+  // }
   onAppSelected(appCode:string){
     console.log(appCode)
     this.isOpened = !this.isOpened;

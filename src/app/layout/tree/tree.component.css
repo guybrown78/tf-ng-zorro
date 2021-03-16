@@ -1,0 +1,17 @@
+
+
+.custom-node {
+  cursor: pointer;
+  line-height: 24px;
+  margin-left: 4px;
+  display: inline-block;
+}
+.info-node {
+  line-height: 20px;
+}
+
+.custom-expand-icon{
+  padding: 4px;
+  min-width:38px;
+  margin-right:10px;
+}

@@ -38,6 +38,7 @@ import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzTreeModule } from 'ng-zorro-antd/tree';
 //
 import { HeaderComponent } from './header/header.component';
 
@@ -92,6 +93,7 @@ import { ModalContentComponent } from './displays/modal/modal-content/modal-cont
 import { NoDataComponent } from './layout/no-data/no-data.component';
 import { PlaygroundComponent } from './example/playground/playground.component';
 import { StatGridComponent } from './example/playground/stat-grid/stat-grid.component';
+import { TreeComponent } from './layout/tree/tree.component';
 
 
 registerLocaleData(en);
@@ -148,6 +150,7 @@ const ngZorroConfig: NzConfig = {};
     NoDataComponent,
     PlaygroundComponent,
     StatGridComponent,
+    TreeComponent,
   ],
   imports: [
     BrowserModule,
@@ -180,7 +183,8 @@ const ngZorroConfig: NzConfig = {};
 		NzCarouselModule,
 		NzModalModule,
     NzMessageModule,
-    NzEmptyModule
+    NzEmptyModule,
+    NzTreeModule
   ],
   providers: [
     // { provide: NZ_CONFIG, useValue: ngZorroConfig },

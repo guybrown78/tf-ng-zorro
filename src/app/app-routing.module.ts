@@ -25,6 +25,7 @@ import { CardsComponent } from './layout/cards/cards.component';
 import { ListsComponent } from './layout/lists/lists.component';
 import { TablesComponent } from './layout/tables/tables.component';
 import { TabsComponent } from './layout/tabs/tabs.component';
+import { TreeComponent } from './layout/tree/tree.component';
 import { NoDataComponent } from './layout/no-data/no-data.component'
 
 // displays
@@ -99,6 +100,7 @@ const routes: Routes = [
 	{ path: 'tables', component: TablesComponent, data:{} },
 	{ path: 'lists', component: ListsComponent, data:{} },
   { path: 'tabs', component: TabsComponent, data:{} },
+  { path: 'tree', component: TreeComponent, data:{} },
   { path: 'no-data', component: NoDataComponent, data:{} },
 
 	{ path: 'nodes', component: TwoComponent, data:{} },
