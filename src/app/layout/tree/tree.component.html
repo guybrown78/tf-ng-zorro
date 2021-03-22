@@ -40,6 +40,35 @@
 </tf-ng-card>
 
 
+
+<tf-ng-card>
+	<h2 nz-typography>Custom nodes</h2>
+  <p nz-typography class="blue">Incorporating the expansion arrow and node icon<br />
+    This custom template checks the data for an icon and displays it. If no icon, the template displays a default</p>
+	<tf-ng-card-content>
+    <nz-tree
+      class="tf-app-tree"
+      [nzData]="nodes"
+      nzShowIcon
+      [nzTreeTemplate]="nodeDefaultIcons"
+    ></nz-tree>
+    <ng-template #nodeDefaultIcons let-node let-origin="origin">
+      <span class="custom-node">
+        <span *ngIf="!node.isLeaf">
+          <i nz-icon [nzType]="node.isExpanded ? 'folder-open' : 'folder'" (click)="openFolder(node)"></i>
+          <span class="folder-name">{{ node.title }}</span>
+        </span>
+        <span *ngIf="node.isLeaf">
+          <i nz-icon [nzType]="origin.icon ? origin.icon : 'file'"></i>
+          <span class="file-name">{{ node.title }}</span>
+        </span>
+      </span>
+    </ng-template>
+	</tf-ng-card-content>
+</tf-ng-card>
+
+
+
 <tf-ng-card>
 	<h2 nz-typography>Custom templates</h2>
   <p nz-typography class="blue">Completely customable template showing custom expandable icons, different node templates and right click contectual menu.<br />
@@ -47,7 +76,7 @@
   If used, the templates and styling would have to follow bespoke UI designs</p>
 	<tf-ng-card-content>
     <nz-tree
-      class="tf-app-tree tf-app-tree-hidden-line"
+      class="tf-custom-tree tf-app-tree tf-app-tree-hidden-line"
       [nzData]="nodes"
       nzShowLine
       [nzExpandedIcon]="customIcons"
@@ -65,16 +94,25 @@
 </tf-ng-card>
 
 
+
 <ng-template #customIcons let-node let-origin="origin">
-  <div
-    *ngIf="!origin.isLeaf"
-    class="custom-expand-icon rounded"
-    [ngClass]="node.isExpanded ? 'bg-navy white' : 'bg-blue white'"
-  >
-    <i nz-icon class="white"
-      [nzType]="node.isExpanded ? 'folder-open' : 'folder'"
-    ></i>
-  </div>
+  <!-- <div *ngIf="!origin.isLeaf" class="expansion-arrow-icon"> -->
+    <!-- <div class="custom-expand-arrow">
+      <i nz-icon class="blue"
+        [nzType]="node.isExpanded ? 'caret-down' : 'caret-right'"
+      ></i>
+    </div> -->
+    <div
+      *ngIf="!origin.isLeaf"
+      class="custom-expand-icon rounded"
+      [ngClass]="node.isExpanded ? 'bg-navy white' : 'bg-blue white'"
+    >
+      <i nz-icon class="white"
+        [nzType]="node.isExpanded ? 'folder-open' : 'folder'"
+      ></i>
+    </div>
+  <!-- </div> -->
+
 
   <!-- Leaf / node icon, checks the template type first, then if icon is needed, adds it from the icon name in data -->
   <i *ngIf="origin.isLeaf && origin.templateType !== 'infoNode' " nz-icon [nzType]="origin.icon" class="blue"></i>
@@ -84,16 +122,17 @@
 <ng-template #nzTreeTemplate let-node let-origin="origin">
   <span class="custom-node">
     <span *ngIf="!node.isLeaf" (contextmenu)="contextMenu($event, menu)">
-      <h4 nz-typography class="navy uppercase">{{ node.title }}</h4>
+      <h4 nz-typography class="blue"><strong>{{ node.title }}</strong></h4>
     </span>
 
-    <span *ngIf="node.isLeaf && origin.templateType !== 'infoNode'" (contextmenu)="contextMenu($event, menu)">
+    <span *ngIf="node.isLeaf && origin.templateType !== 'infoNode'" (contextmenu)="contextMenu($event, menu)" class="file-node">
       <span nz-typography class="blue">{{ node.title }}</span>
+      <span class="file-updated blue text-sm">modified by {{ origin.updated | date }}</span>
     </span>
 
 
     <div *ngIf="node.isLeaf && origin.templateType === 'infoNode'" (contextmenu)="contextMenu($event, menu)" class="info-node">
-      <span nz-typography class="blue italic text-md"><strong>{{ node.title }}</strong></span>
+      <span nz-typography class="blue text-md"><strong>{{ node.title }}</strong></span>
       <div>
         <span nz-typography class="blue text-sm">{{ origin.desc }}</span>
       </div>

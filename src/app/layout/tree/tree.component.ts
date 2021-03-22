@@ -3,6 +3,12 @@ import { NzFormatEmitEvent, NzTreeComponent, NzTreeNode, NzTreeNodeOptions } fro
 
 import { NzContextMenuService, NzDropdownMenuComponent } from 'ng-zorro-antd/dropdown';
 
+
+function getDate(day){
+  const date = new Date()
+  date.setDate(date.getDate() - day);
+  return date;
+}
 @Component({
   selector: 'app-tree',
   templateUrl: './tree.component.html',
@@ -19,54 +25,58 @@ export class TreeComponent implements AfterViewInit {
 
   nodes: NzTreeNodeOptions[] = [
     {
-      title: 'parent 1',
+      title: 'Parent 1',
       key: '100',
       children: [
         {
-          title: 'parent 1-0',
+          title: 'Parent 1-0',
           key: '1001',
           disabled: true,
           children: [
             {
-              title: 'leaf 1-0-0',
+              title: 'Leaf 1-0-0',
               key: '10010',
               icon:'warning',
               disableCheckbox: true,
               isLeaf: true,
+              updated:getDate(0),
               templateType: 'fileNode'
             },
             {
-              title: 'leaf 1-0-1',
+              title: 'Leaf 1-0-1',
               key: '10011',
               icon:'file-image',
-              isLeaf: true
+              isLeaf: true,
+              updated:getDate(7),
             },
             {
-              title: 'leaf 1-0-2',
+              title: 'Leaf 1-0-2',
               key: '10012',
               isLeaf: true,
+              updated:getDate(2),
               templateType: 'infoNode',
               desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus sapien nec nunc pharetra, at mattis enim sollicitudin. Donec et quam sit amet mi ultricies fringilla. Aliquam quam urna, consequat.',
             }
           ]
         },
         {
-          title: 'parent 1-1',
+          title: 'Parent 1-1',
           key: '1002',
           children: [
-            { title: 'leaf 1-1-0', key: '10020', icon:'file-pdf', isLeaf: true },
+            { title: 'leaf 1-1-0', key: '10020', icon:'file-pdf', isLeaf: true, updated:getDate(1), },
             {
-              title: 'leaf 1-1-1',
+              title: 'Leaf 1-1-1',
               key: '10021',
               isLeaf: true,
+              updated:getDate(14),
               templateType: 'infoNode',
               desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus sapien nec nunc pharetra, at mattis enim sollicitudin. Donec et quam sit amet mi ultricies fringilla. Aliquam quam urna, consequat.',
             },
             {
-              title: 'parent 1-1-2',
+              title: 'Parent 1-1-2',
               key: '10022',
               children: [
-                { title: 'leaf 1-1-2-1', key: '1002201', icon:'file-pdf', isLeaf: true }
+                { title: 'leaf 1-1-2-1', key: '1002201', icon:'file-pdf', isLeaf: true, updated:getDate(0), }
               ]
             }
           ]

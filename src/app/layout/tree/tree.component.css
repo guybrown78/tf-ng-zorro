@@ -4,7 +4,8 @@
   cursor: pointer;
   line-height: 24px;
   margin-left: 4px;
-  display: inline-block;
+  display: inline-flex;
+  width: 100%;
 }
 .info-node {
   line-height: 20px;
@@ -14,4 +15,33 @@
   padding: 4px;
   min-width:38px;
   margin-right:10px;
+}
+.custom-expand-arrow{
+  min-width:15px;
+}
+.expansion-arrow-icon{
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: solid 1px red;
+}
+
+.file-node {
+  display: inline-flex;
+  flex: 1 0 0%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.file-name,
+.folder-name {
+  margin-left: 4px;
+}
+
+.file-updated{
+  padding: 0 8px;
+}
+
+.tf-custom-tree .ant-tree-switcher{
+  width:60px;
 }
