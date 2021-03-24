@@ -127,7 +127,7 @@
 
     <span *ngIf="node.isLeaf && origin.templateType !== 'infoNode'" (contextmenu)="contextMenu($event, menu)" class="file-node">
       <span nz-typography class="blue">{{ node.title }}</span>
-      <span class="file-updated blue text-sm">modified by {{ origin.updated | date }}</span>
+      <span class="file-updated blue text-sm">last updated {{ origin.updated | date }}</span>
     </span>
 
 

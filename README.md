@@ -1,4 +1,4 @@
-# MarketplaceBooking
+# Transform Core, NG Zorro and Transform Theme example
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
@@ -55,11 +55,22 @@ body {
 
 When we were adding the zorro components (`ng add ng-zorro-antd`) it asked us if we wanted to add a theme. Answering yes exposed `src/theme.less`. 
 
-Even if we initially created our angular project with basic css, Zorro will still display a `less` file as it is built upon less. In `src/theme.less` we need to add the variables and the overriding styles that make the zorro components look and feel like they belong to Transform.
+Even if we initially created our angular project with basic css, Zorro will still display a `less` file as it is built upon less. In `src/theme.less` we need to add the bespoke theme and overriding styles that make the zorro components look and feel like they belong to Transform.
 
-replace all that is in the `src/theme.less` with this....
+The Transform theme and styling can be installed from;
 
-...to do, get a link for the styles
+`npm i tf-ng-zorro-theme`
+
+And then link the installed zorro theme to tf-ng-zorro-theme by replacing all that is in the `src/theme.less` with the following;
+
+
+```javascript
+
+@import "../node_modules/ng-zorro-antd/ng-zorro-antd.less";
+@import "../node_modules/tf-ng-zorro-theme/theme.less";
+
+```
+
 
 
 ## ADD TF-NG-CORE

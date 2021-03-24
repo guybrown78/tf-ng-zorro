@@ -1,5 +1,5 @@
 
-		
+
 <tf-ng-form-card>
 
 	<form nz-form [formGroup]="validateForm" nzLayout="vertical" (ngSubmit)="submitForm()">
@@ -22,7 +22,7 @@
 					formControlName="password"
 					(ngModelChange)="updateConfirmValidator()"
 				/>
-		
+
 			</nz-form-control>
 		</nz-form-item>
 		<nz-form-item>
@@ -39,7 +39,7 @@
 					</ng-container>
 				</ng-template>
 
-		
+
 			</nz-form-control>
 		</nz-form-item>
 
@@ -67,33 +67,33 @@
 					</ng-template>
 					<input formControlName="phoneNumber" id="'phoneNumber'" nz-input />
 				</nz-input-group>
-	
+
 			</nz-form-control>
 		</nz-form-item>
 		<nz-form-item>
 			<nz-form-label nzFor="category" nzRequired>CATEGORY</nz-form-label>
 			<nz-form-control nzErrorTip="Please input category!">
 				<input nz-input id="category" formControlName="category" placeholder="The course category" />
-			
+
 			</nz-form-control>
 		</nz-form-item>
-		
-		
+
+
 		<div nz-row nzJustify="space-between">
 			<nz-form-item>
 				<nz-form-control >
 					<label nz-checkbox formControlName="agree">
 						<span>I have read the <strong><a class="underlined">agreement</a></strong></span>
-					</label>	
+					</label>
 				</nz-form-control>
 			</nz-form-item>
 			<!-- <nzContainer> -->
 				<button nz-button nzType="primary">Register</button>
 			<!-- </nzContainer> -->
 		</div>
-		
+
 	</form>
-	
+
 </tf-ng-form-card>
 
 
