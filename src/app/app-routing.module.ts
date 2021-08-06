@@ -50,6 +50,7 @@ import { ThUsersComponent } from './example/tennantHub/th-users/th-users.compone
 import { ThUserDetailComponent } from './example/tennantHub/th-user-detail/th-user-detail.component';
 // LMS Learning Management
 import { LmsDashboardComponent } from './example/lms/lms-dashboard/lms-dashboard.component';
+import { NumberInputComponent } from './forms/number-input/number-input.component';
 const routes: Routes = [
 	{
 		path: '',
@@ -68,6 +69,7 @@ const routes: Routes = [
 	},
 
 	{ path: 'inputs', component: InputsComponent, data:{} },
+  { path: 'number-inputs', component: NumberInputComponent, data:{} },
 	{ path: 'file-select', component: FileSelectComponent, data:{} },
 	{ path: 'date-picker', component: DatePickerComponent, data:{} },
 	{ path: 'form-elements', component: FormElementsComponent, data:{} },

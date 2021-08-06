@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
 			console.log(data)
 		})
 
-		
+
 	}
 	// prepareRoute(outlet: RouterOutlet) {
 	// 	this.updateRouteData(outlet.activatedRouteData)

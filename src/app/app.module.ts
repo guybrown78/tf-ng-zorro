@@ -20,6 +20,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
@@ -94,6 +95,7 @@ import { NoDataComponent } from './layout/no-data/no-data.component';
 import { PlaygroundComponent } from './example/playground/playground.component';
 import { StatGridComponent } from './example/playground/stat-grid/stat-grid.component';
 import { TreeComponent } from './layout/tree/tree.component';
+import { NumberInputComponent } from './forms/number-input/number-input.component';
 
 
 registerLocaleData(en);
@@ -151,6 +153,7 @@ const ngZorroConfig: NzConfig = {};
     PlaygroundComponent,
     StatGridComponent,
     TreeComponent,
+    NumberInputComponent,
   ],
   imports: [
     BrowserModule,
@@ -166,6 +169,7 @@ const ngZorroConfig: NzConfig = {};
 		NzIconModule,
 		NzFormModule,
 		NzInputModule,
+    NzInputNumberModule,
 		NzAutocompleteModule,
     NzCheckboxModule,
     NzRadioModule,

@@ -1,0 +1,59 @@
+<tf-ng-card colour="white">
+	<!-- <tf-ng-form-card> -->
+    <form
+      nz-form
+      nzLayout="vertical"
+    >
+
+			<h3 nz-typography class="navy">Input Number Form Elements</h3>
+      <span class="italic">Numeric-only input box.</span>
+			<nz-divider></nz-divider>
+
+			<nz-form-item>
+				<nz-input-number
+          [ngModelOptions]="{standalone: true}"
+          [(ngModel)]="demoValue"
+          [nzMin]="1"
+          [nzMax]="10"
+          [nzStep]="1"
+        ></nz-input-number>
+			</nz-form-item>
+
+
+
+			<nz-form-item>
+        <nz-form-label nzFor="email">Decimals</nz-form-label>
+        <nz-form-control>
+          <nz-input-number
+            [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="demoDecimal"
+            [nzMin]="1"
+            [nzMax]="10"
+            [nzStep]="0.1"
+            [nzPlaceHolder]="'Digital'"
+          ></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
+
+
+
+			<nz-form-item>
+        <nz-form-label nzRequired nzFor="email2">Format</nz-form-label>
+        <nz-form-control>
+          <nz-input-number
+            [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="demoPercent"
+            [nzMin]="1"
+            [nzMax]="100"
+            [nzStep]="1"
+            [nzFormatter]="formatterPercent"
+            [nzParser]="parserPercent"
+          ></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
+
+
+
+    </form>
+
+</tf-ng-card>
