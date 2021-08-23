@@ -18,6 +18,12 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "tf-ng-t3-course-editor": [
+        "dist/tf-ng-t3-course-editor/tf-ng-t3-course-editor",
+        "dist/tf-ng-t3-course-editor"
+      ]
+    }
   }
 }

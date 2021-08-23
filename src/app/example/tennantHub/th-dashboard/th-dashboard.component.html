@@ -5,14 +5,15 @@
 
 <nz-tabset>
 	<nz-tab nzTitle="Active Apps">
-			
+
 		<tf-ng-info-panel>
 
 			<tf-ng-info-panel-item-container 	*ngFor="let product of activeProducts">
-				<tf-ng-ph-overview-card 
-					is-active="true" 
+				<tf-ng-ph-overview-card
+					is-active="true"
 					[product-code]="product.code"
 					[product-title]="product.title"
+          [logo-source]="product.logoSource || null"
 					(button-clicked)="onActiveProductSelected($event)"
 				></tf-ng-ph-overview-card>
 			</tf-ng-info-panel-item-container>
@@ -21,7 +22,7 @@
 
 	</nz-tab>
 	<nz-tab nzTitle="More Apps">
-		
+
 		<p nz-typography class="white">
 			Below are the additional products we recommend for your business.
 		</p>
@@ -31,7 +32,7 @@
 			<tf-ng-info-panel-item-container 	*ngFor="let product of additionalProducts">
 				<tf-ng-ph-overview-card *ngIf="product.cta"
 					[card-title]="product.cardTitle ? product.cardTitle : 'Recommended Software'"
-					[is-active]="false" 
+					[is-active]="false"
 					[product-code]="product.code"
 					[product-title]="product.title"
 					[product-description]="product.desc"
@@ -42,7 +43,7 @@
 				<!--  -->
 				<tf-ng-ph-overview-card *ngIf="!product.cta"
 					[card-title]="product.cardTitle ? product.cardTitle : 'Recommended Software'"
-					[is-active]="false" 
+					[is-active]="false"
 					[product-code]="product.code"
 					[product-title]="product.title"
 					[product-description]="product.desc"
@@ -54,4 +55,3 @@
 
 	</nz-tab>
 </nz-tabset>
-	

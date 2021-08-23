@@ -145,6 +145,46 @@
           }
         }
       }
+    },
+    "tf-ng-t3-course-editor": {
+      "projectType": "library",
+      "root": "projects/tf-ng-t3-course-editor",
+      "sourceRoot": "projects/tf-ng-t3-course-editor/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/tf-ng-t3-course-editor/tsconfig.lib.json",
+            "project": "projects/tf-ng-t3-course-editor/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/tf-ng-t3-course-editor/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tf-ng-t3-course-editor/src/test.ts",
+            "tsConfig": "projects/tf-ng-t3-course-editor/tsconfig.spec.json",
+            "karmaConfig": "projects/tf-ng-t3-course-editor/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tf-ng-t3-course-editor/tsconfig.lib.json",
+              "projects/tf-ng-t3-course-editor/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "tf-ng-zorro"
