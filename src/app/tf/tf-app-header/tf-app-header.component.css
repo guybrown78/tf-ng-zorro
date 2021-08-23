@@ -1,0 +1,18 @@
+.tf-app-quick-link-btn{
+	background-color: transparent;
+	width:50px;
+	height:58px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #363154;
+}
+.tf-app-quick-link-btn:focus,
+.tf-app-quick-link-btn:hover,
+.tf-app-quick-link-btn:active{
+	color: #363154;
+	outline: none;
+	background-color: transparent;
+	border-color: transparent;
+	box-shadow:none;
+}
