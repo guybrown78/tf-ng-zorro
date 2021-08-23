@@ -26,6 +26,18 @@ export class ThDashboardComponent implements OnInit {
 			title:"Tennant Hub",
 			code:"th",
 		},
+    {
+			title:"Generic Large Name Hub",
+      logoSource:"https://logodix.com/logo/80482.png"
+		},
+    {
+			title:"Tennant Hub",
+      logoSource:"https://www.altradservices.com/wp-content/themes/altrad/assets/svg/global/logo-altrad-v2.svg"
+		},
+    {
+			title:"Hub",
+      logoSource:"https://dwglogo.com/wp-content/uploads/2016/01/Petrofac-Logo.png"
+		},
 	];
 	additionalProducts = [
 		{
