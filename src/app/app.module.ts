@@ -12,7 +12,7 @@ import { en_GB } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 // add Transform Angular Core materials
-import { TfNgCoreModule } from 'tf-ng-core';
+import { TfNgCoreModule } from '@3t-transform/tf-ng-core';
 //
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';

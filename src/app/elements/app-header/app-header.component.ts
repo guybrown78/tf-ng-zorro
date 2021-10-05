@@ -9,11 +9,16 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
 	tenantLogo:string = "https://logodix.com/logo/80482.png"
 	index:number = 0;
 	tenants:any [] = [
+    {code:"t", title:"3T transform", logo:"https://i.ibb.co/XVhVRZ2/bear.png"},
 		{code:"Bi", title:"Business intelligence", logo:"https://logodix.com/logo/80482.png"},
 		{code:"R3", title:"R3", logo:"https://www.altradservices.com/wp-content/themes/altrad/assets/svg/global/logo-altrad-v2.svg"},
 		{code:"MP", title:"Global Training Marketplace", logo:"https://dwglogo.com/wp-content/uploads/2016/01/Petrofac-Logo.png"}
 	]
 	int = null;
+
+  showUserAccount:boolean = true;
+
+
   constructor() {
 
 	}

@@ -129,4 +129,72 @@
 
 	</div>
 
+
+
+
+
+<div class="header-wrapper">
+	<div class="info">
+		<h3 nz-typography class="white">Logout</h3>
+		<p nz-typography class="white">
+      Add the param <span class="aqua">show-user-account</span> to show the user button. Add the contents of the dropdown within the components content.
+		</p>
+    <p nz-typography class="white">
+      You can specify the <span class="aqua">icon</span> to be displayed and also supress the client logo with the bool <span class="aqua">show-client-logo</span> as false.
+		</p>
+		<p nz-typography class="white">
+
+		</p>
+	</div>
+
+	<div class="header-container big-gap">
+
+
+    <tf-ng-header
+			app-code="cm"
+			app-title="Competence Management"
+		>
+
+			<tf-ng-client-logo
+				clientLogo
+				client-logo-source="https://www.altradservices.com/wp-content/themes/altrad/assets/svg/global/logo-altrad-v2.svg"
+        [show-user-account]="showUserAccount"
+        icon="logout"
+			>
+        <ul nz-menu userAccountMenu class="user-account">
+          <li nz-menu-item>Sign Out</li>
+        </ul>
+			</tf-ng-client-logo>
+
+		</tf-ng-header>
+
+	</div>
+
+
+
+  <div class="header-container big-gap">
+
+    <tf-ng-header
+			app-code="cm"
+			app-title="Competence Management"
+		>
+
+			<tf-ng-client-logo
+				clientLogo
+				client-logo-source=""
+        [show-user-account]="showUserAccount"
+        icon="logout"
+        [show-client-logo]="false"
+			>
+        <ul nz-menu userAccountMenu class="user-account">
+          <li nz-menu-item>Sign Out</li>
+        </ul>
+			</tf-ng-client-logo>
+
+		</tf-ng-header>
+
+	</div>
+
+
+
 </div>
