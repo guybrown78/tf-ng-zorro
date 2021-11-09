@@ -136,6 +136,49 @@
 
 
 
+
+
+<tf-ng-card>
+
+  <h2 nz-typography>Custom Footer Examples</h2>
+  <tf-ng-card-content nz-row>
+    <div nz-row nzGutter="16" nzAlign="middle">
+
+      <div nz-col nzFlex="auto">
+        <span nzTypography class="navy">Add QA 'data-automated' hook attributes to modal buttons</span>
+      </div>
+
+      <div nz-col class="btn-cnt">
+
+        <button
+          nz-button
+          class="blue"
+          (click)="openModal('basicModalFooter')"
+        >
+          With Template
+        </button>
+
+        <button
+          nz-button
+          class="blue"
+          (click)="showModalFooterFromService()"
+        >
+          From Service
+        </button>
+
+      </div>
+    </div>
+
+
+
+  </tf-ng-card-content>
+</tf-ng-card>
+
+
+
+
+
+
 <nz-modal
 	[(nzVisible)]="basicModalVisible"
   nzTitle="Basic Modal"
@@ -169,3 +212,61 @@
   <div><span class="text-xl">Custom Modal Title</span></div>
   <span nz-typography class="text-md"><span class="italic">Delegate:</span> John Smith</span>
 </ng-template>
+
+
+
+<nz-modal
+  [(nzVisible)]="basicModalFooterVisible"
+  nzTitle="Custom Modal Title"
+  (nzOnCancel)="handleCancel()">
+  <div *nzModalContent>
+    <p>Modal Content</p>
+    <p>Modal Content</p>
+    <p>Modal Content</p>
+  </div>
+
+  <div *nzModalFooter nz-col nzFlex="100%">
+
+    <div nz-row nzJustify="space-between">
+      <!-- Add your QA Testing hook attribute directly to the buttons -->
+      <button
+        nz-col
+        data-automated-id="cancel-remove"
+        nz-button nzType="default"
+        (click)="handleCancel()"
+      >Custom Callback...</button>
+      <button
+        nz-col
+        data-automated-id="confirm-remove"
+        nz-button nzType="primary"
+        (click)="handleOk()"
+      >Custom Submit</button>
+    </div>
+  </div>
+
+</nz-modal>
+
+
+
+<ng-template #customModalFooter>
+  <div nz-col nzFlex="100%">
+    <div nz-row nzJustify="space-between">
+      <!-- Add your QA Testing hook attribute directly to the buttons -->
+      <button
+        nz-col
+        data-automated-id="cancel-remove"
+        nz-button nzType="default"
+        (click)="handleCancel()"
+      >Custom Callback...</button>
+      <button
+        nz-col
+        data-automated-id="confirm-remove"
+        nz-button nzType="primary"
+        (click)="handleOk()"
+      >Custom Submit</button>
+    </div>
+  </div>
+</ng-template>
+
+
+

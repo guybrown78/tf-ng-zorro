@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ViewChild, TemplateRef } from '@angular/core';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
 import { ModalContentComponent } from './modal-content/modal-content.component'
 @Component({
@@ -10,8 +10,15 @@ export class ModalComponent implements OnInit {
 
   basicModalVisible:boolean = false;
   basicModal2Visible:boolean = false;
+  basicModalFooterVisible:boolean = false;
 
-  confirmModal?: NzModalRef;
+  currentModal?: NzModalRef;
+
+
+
+  // @ViewChild('customModalFooter', { static: false }) customModalFooter!: TemplateRef;
+  @ViewChild('customModalFooter', { read: TemplateRef }) customModalFooter:TemplateRef<any>;
+
 
   constructor(
     private modal: NzModalService,
@@ -23,7 +30,6 @@ export class ModalComponent implements OnInit {
 
 
   openModal(modalIdentifier:string){
-    console.log(modalIdentifier);
     this.reset()
     switch(modalIdentifier){
       case "basicModal":
@@ -31,6 +37,9 @@ export class ModalComponent implements OnInit {
         return;
       case "basic2Modal":
         this.basicModal2Visible = true;
+        return;
+      case "basicModalFooter":
+        this.basicModalFooterVisible = true;
         return;
     }
   }
@@ -60,7 +69,7 @@ export class ModalComponent implements OnInit {
   }
 
   showConfirm(){
-    this.confirmModal = this.modal.confirm({
+    this.currentModal = this.modal.confirm({
       nzTitle: 'Do you Want to delete these items?',
       nzContent: 'When clicked the OK button, this dialog will be closed after 1 second',
       nzOnOk: () =>
@@ -118,8 +127,25 @@ export class ModalComponent implements OnInit {
     this.reset()
   }
 
+
+  showModalFooterFromService(){
+    this.currentModal = this.modal.create({
+      nzTitle: 'Custom Modal Title....',
+      nzContent: `
+        <p>Modal Content</p>
+        <p>Modal Content</p>
+        <p>Modal Content</p>
+      `,
+      nzFooter:this.customModalFooter,
+    });
+  }
+
+
   reset(){
     this.basicModalVisible = false;
     this.basicModal2Visible = false;
+    this.basicModalFooterVisible = false;
+    this.currentModal?.close();
   }
+
 }
